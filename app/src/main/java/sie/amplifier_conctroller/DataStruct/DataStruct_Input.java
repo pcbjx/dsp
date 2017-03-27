@@ -31,15 +31,7 @@ public class DataStruct_Input
   
   public DataStruct_Input()
   {
-    int i = 0;
-    for (;;)
-    {
-      if (i >= 9) {
-        return;
-      }
-      this.EQ[i] = new DataStruct_EQ();
-      i += 1;
-    }
+
   }
 }
 

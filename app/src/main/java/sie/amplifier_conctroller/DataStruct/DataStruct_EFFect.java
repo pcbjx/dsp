@@ -29,15 +29,7 @@ public class DataStruct_EFFect
   
   public DataStruct_EFFect()
   {
-    int i = 0;
-    for (;;)
-    {
-      if (i >= 8) {
-        return;
-      }
-      this.EQ[i] = new DataStruct_EQ();
-      i += 1;
-    }
+
   }
 }
 

@@ -41,15 +41,7 @@ public class DataStruct_Output
   
   public DataStruct_Output()
   {
-    int i = 0;
-    for (;;)
-    {
-      if (i >= 31) {
-        return;
-      }
-      this.EQ[i] = new DataStruct_EQ();
-      i += 1;
-    }
+
   }
 }
 

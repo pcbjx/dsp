@@ -67,7 +67,7 @@ public class DataStruct
   public static final int FRAME_STA = 238;
   public static final float[] FREQ241;
   public static final int GROUP_NAME = 0;
-  public static int HEAD_DATA = 107;
+  public static int HEAD_DATA = 0xde;
   public static boolean HW_MUTE = false;
   public static final int IAP_DSP_END_INFO = 60;
   public static final int IAP_DSP_PROGAM_INFO = 59;
@@ -177,7 +177,7 @@ public class DataStruct
   public static final int XOVER_OCT_MAX = 7;
   public static final int[] XOver_FREQ;
   public static int input_sourcetemp = 0;
-  public static final String welcome_logo = "ADKP-NV1.00";
+  public static final String welcome_logo = "B2-NV1.00";
   public int AutoSource = 0;
   public int AutoSourcedB = 0;
   public int[] Buf = new int['Ɛ'];

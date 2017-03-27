@@ -6,15 +6,7 @@ public class DataStruct_EQ_Output_All
   
   public DataStruct_EQ_Output_All()
   {
-    int i = 0;
-    for (;;)
-    {
-      if (i >= 8) {
-        return;
-      }
-      this.OutPut_EQ[i] = new DataStruct_EQ_Output();
-      i += 1;
-    }
+
   }
 }
 

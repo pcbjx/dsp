@@ -6,15 +6,7 @@ public class DataStruct_EQ_Output
   
   public DataStruct_EQ_Output()
   {
-    int i = 0;
-    for (;;)
-    {
-      if (i >= 31) {
-        return;
-      }
-      this.EQ[i] = new DataStruct_EQ();
-      i += 1;
-    }
+
   }
 }
 

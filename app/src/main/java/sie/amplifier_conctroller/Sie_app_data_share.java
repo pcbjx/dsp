@@ -131,11 +131,11 @@ public class Sie_app_data_share extends Application {
 
     public void ReceiveDataFromDevice(int paramInt1, int paramInt2)
     {
-        if (this.U0HeadFlg == 0) {
-            if ((paramInt1 == DataStruct.HEAD_DATA) && (this.U0HeadCnt == 0))
+        if (U0HeadFlg == 0) {
+            if ((paramInt1 == DataStruct.HEAD_DATA) && (U0HeadCnt == 0))
             {
-                this.U0HeadCnt += 1;
-                this.U0DataCnt = 0;
+                U0HeadCnt += 1;
+                U0DataCnt = 0;
             }
         }
         do
@@ -144,59 +144,61 @@ public class Sie_app_data_share extends Application {
             {
                 do
                 {
-                    if ((paramInt1 == DataStruct.HEAD_DATA) && (this.U0HeadCnt == 1))
+                    if ((paramInt1 == DataStruct.HEAD_DATA) && (U0HeadCnt == 1))
                     {
-                        this.U0HeadCnt += 1;
+                        U0HeadCnt += 1;
                         break;
                     }
-                    if ((paramInt1 == DataStruct.HEAD_DATA) && (this.U0HeadCnt == 2))
+                    if ((paramInt1 == DataStruct.HEAD_DATA) && (U0HeadCnt == 2))
                     {
-                        this.U0HeadCnt += 1;
+                        U0HeadCnt += 1;
                         break;
                     }
-                    if ((paramInt1 == 238) && (this.U0HeadCnt == 3))
+                    if ((paramInt1 == 0x57) && (U0HeadCnt == 3))
                     {
-                        this.U0HeadFlg = 1;
-                        this.U0HeadCnt = 0;
+                        U0HeadFlg = 1;
+                        U0HeadCnt = 0;
                         break;
                     }
-                    this.U0HeadCnt = 0;
+                    U0HeadCnt = 0;
                     break;
-                } while (this.U0HeadFlg != 1);
-                this.U0HeadCnt = 0;
-                this.RcvDeviceData.DataBuf[this.U0DataCnt] = paramInt1;
-                this.U0DataCnt += 1;
-            } while (this.U0DataCnt < this.RcvDeviceData.DataBuf[8] + this.RcvDeviceData.DataBuf[9] * 256 + 16 - 4);
-            this.RcvDeviceData.FrameType = this.RcvDeviceData.DataBuf[0];
-            this.RcvDeviceData.DeviceID = this.RcvDeviceData.DataBuf[1];
-            this.RcvDeviceData.UserID = this.RcvDeviceData.DataBuf[2];
-            this.RcvDeviceData.DataType = this.RcvDeviceData.DataBuf[3];
-            this.RcvDeviceData.ChannelID = this.RcvDeviceData.DataBuf[4];
-            this.RcvDeviceData.DataID = this.RcvDeviceData.DataBuf[5];
-            this.RcvDeviceData.PCFadeInFadeOutFlg = this.RcvDeviceData.DataBuf[6];
-            this.RcvDeviceData.PcCustom = this.RcvDeviceData.DataBuf[7];
-            this.RcvDeviceData.DataLen = (this.RcvDeviceData.DataBuf[8] + this.RcvDeviceData.DataBuf[9] * 256);
-            this.RcvDeviceData.CheckSum = this.RcvDeviceData.DataBuf[(this.RcvDeviceData.DataLen + 16 - 6)];
-            this.RcvDeviceData.FrameEnd = this.RcvDeviceData.DataBuf[(this.RcvDeviceData.DataLen + 16 - 5)];
-            this.U0HeadFlg = 0;
-            this.U0DataCnt = 0;
-        } while (this.RcvDeviceData.FrameEnd != 170);
+                } while (U0HeadFlg != 1);
+                U0HeadCnt = 0;
+                RcvDeviceData.DataBuf[U0DataCnt] = paramInt1;
+                U0DataCnt += 1;
+            } while (U0DataCnt < RcvDeviceData.DataBuf[8] + RcvDeviceData.DataBuf[9] * 256 + 16 - 4);
+            RcvDeviceData.FrameType = RcvDeviceData.DataBuf[0];
+            RcvDeviceData.DeviceID = RcvDeviceData.DataBuf[1];
+            RcvDeviceData.UserID = RcvDeviceData.DataBuf[2];
+            RcvDeviceData.DataType = RcvDeviceData.DataBuf[3];
+            RcvDeviceData.ChannelID = RcvDeviceData.DataBuf[4];
+            RcvDeviceData.DataID = RcvDeviceData.DataBuf[5];
+            RcvDeviceData.PCFadeInFadeOutFlg = RcvDeviceData.DataBuf[6];
+            RcvDeviceData.PcCustom = RcvDeviceData.DataBuf[7];
+            RcvDeviceData.DataLen = (RcvDeviceData.DataBuf[8] + RcvDeviceData.DataBuf[9] * 256);
+            RcvDeviceData.CheckSum = RcvDeviceData.DataBuf[(RcvDeviceData.DataLen + 16 - 6)];
+            RcvDeviceData.FrameEnd = RcvDeviceData.DataBuf[(RcvDeviceData.DataLen + 16 - 5)];
+            U0HeadFlg = 0;
+            U0DataCnt = 0;
+        } while (RcvDeviceData.FrameEnd != 170);
         int i = 0;
         paramInt1 = 0;
         for (;;)
         {
-            if (paramInt1 >= this.RcvDeviceData.DataLen + 16 - 6)
+            if (paramInt1 >= RcvDeviceData.DataLen + 16 - 6)
             {
-                if (i != this.RcvDeviceData.CheckSum) {
+                if (i != RcvDeviceData.CheckSum) {
                     break;
                 }
-                //this.PcConnectFlg = 1;
-               // this.PcConnectCnt = 0;
-                //this.ComType = paramInt2;
+
+                //PcConnectFlg = 1;
+                //PcConnectCnt = 0;
+                //ComType = paramInt2;
                 //ProcessRcvData();
+
                 return;
             }
-            i ^= this.RcvDeviceData.DataBuf[paramInt1];
+            i ^= RcvDeviceData.DataBuf[paramInt1];
             paramInt1 += 1;
         }
     }
@@ -215,12 +217,12 @@ public class Sie_app_data_share extends Application {
 
     public void startrev()
     {
-        this.rThread = new Thread(this.rRunnable);
-        this.rThread.start();
-        this.sThread = new Thread(this.sRunnable);
-        this.sThread.start();
-        this.tThread = new Thread(this.tRunnable);
-        this.tThread.start();
+        rThread = new Thread(rRunnable);
+        rThread.start();
+        sThread = new Thread(sRunnable);
+        sThread.start();
+        tThread = new Thread(tRunnable);
+        tThread.start();
     }
 
     //监听
