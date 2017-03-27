@@ -1,0 +1,3246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<common.zhang.customer.MHorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:eq_seekbar="http://schemas.android.com/apk/res-auto"
+    android:id="@id/id_llyout_equalizer_hsrollview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@id/id_llyout_equalizer_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:fillViewport="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_1"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_1"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/equalizer_id_color"
+                android:textSize="@dimen/equalizer_id_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer1"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_1"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/equalizer_gain_color"
+                android:textSize="@dimen/equalizer_gain_text_size"
+                android:text="500Hz"/>
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_1"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/equalizer_q_color"
+                android:textSize="@dimen/equalizer_q_text_size"
+                android:text="-2.2dB"/>
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_1"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/equalizer_freq_color"
+                android:textSize="@dimen/equalizer_freq_text_size"
+                android:text="2.515"/>
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_1"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_1"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_2"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_2"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer2"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_2"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_2"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_2"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_2"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_2"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_3"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_3"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer3"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_3"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_3"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_3"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_3"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_3"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_4"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_4"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer4"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_4"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.1"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_4"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_4"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_4"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_4"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_5"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_5"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer5"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_5"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_5"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_5"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_5"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_5"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_5"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_6"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_6"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer6"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_6"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_6"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_6"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_6"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_6"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_6"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_7"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_7"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContaine7"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_7"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_7"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_7"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_7"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_7"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_7"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_8"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_8"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer8"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_8"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_8"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_8"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_8"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_8"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_8"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_9"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_9"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer9"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_9"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_9"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_9"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_9"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_9"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_9"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_10"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_10"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer10"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_10"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_10"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_10"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_10"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_10"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_10"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_11"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_11"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer11"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_11"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_11"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_11"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_11"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_11"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_11"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_12"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_12"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer12"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_12"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_12"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_12"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_12"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_12"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_12"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_13"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_13"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer13"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_13"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_13"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_13"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_13"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_13"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_13"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_14"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_14"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer14"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_14"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_14"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.1"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_14"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_14"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_14"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_14"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_15"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_15"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer15"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_15"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_15"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_15"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_15"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_15"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_15"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_16"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_16"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer16"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_16"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_16"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_16"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_16"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_16"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_16"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_17"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_17"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer17"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_17"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_17"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_17"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_17"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_17"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_17"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_18"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_18"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer18"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_18"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_18"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_18"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_18"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_18"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_18"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_19"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_19"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer19"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_19"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_19"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_19"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_19"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_19"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_19"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_20"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_20"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer20"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_20"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_20"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_20"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_20"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_20"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_20"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_21"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_21"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer21"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_21"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_21"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_21"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_21"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_21"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_21"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_22"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_22"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer22"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_22"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_22"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_22"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_22"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_22"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_22"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_23"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_23"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer23"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_23"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_23"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_23"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_23"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_23"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_23"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_24"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_24"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer24"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_24"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_24"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.1"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_24"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_24"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_24"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_24"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_25"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_25"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer25"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_25"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_25"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_25"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_25"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_25"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_25"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_26"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_26"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer26"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_26"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_26"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_26"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_26"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_26"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_26"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_27"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_27"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer27"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_27"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_27"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_27"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_27"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_27"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_27"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_28"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_28"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer28"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_28"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_28"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_28"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_28"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_28"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_28"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_29"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_29"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer29"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_29"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_29"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_29"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_29"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_29"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_29"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_30"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_30"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer30"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_30"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_30"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_30"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_30"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_30"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_30"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_equalizer_one_31"
+            android:layout_width="@dimen/eq_page_item_ly_width"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_tv_id_equalizer_one_31"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_eqnum_color"
+                android:textSize="@dimen/eq_page_eqnum_text_size" />
+
+            <!-- Clock wise - 90 -->
+            <common.zhang.customer.VerticalSeekBarWrapper
+                android:id="@+id/seekBarContainer31"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="8.0"
+                android:gravity="center"
+                android:thumb="@drawable/set_delay_seekbar_thumb">
+                <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_mvs_equalizer_one_31"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/equalizer_eq_progress_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/equalizer_eq_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/equalizer_eq_progress_width"
+                    />
+            </common.zhang.customer.VerticalSeekBarWrapper>
+
+            <Button
+                android:id="@id/id_tv_gain_equalizer_one_31"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_gain_color"
+                android:textSize="@dimen/eq_page_gain_text_size" />
+
+            <Button
+                android:id="@id/id_tv_q_equalizer_one_31"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_q_color"
+                android:textSize="@dimen/eq_page_q_text_size" />
+
+            <Button
+                android:id="@id/id_tv_freq_equalizer_one_31"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_vivid_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/eq_page_freq_color"
+                android:textSize="@dimen/eq_page_freq_text_size" />
+
+            <LinearLayout
+                android:id="@id/id_ly_reset_eqg_one_31"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.55"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_tv_reset_eqg_one_31"
+                    android:layout_width="@dimen/equalizer_reset_width"
+                    android:layout_height="@dimen/equalizer_reset_height"
+                    android:background="@drawable/eq_resetg_normal"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+    </LinearLayout>
+</common.zhang.customer.MHorizontalScrollView>

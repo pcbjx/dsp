@@ -1,0 +1,1927 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="0.1" />
+
+        <LinearLayout
+            android:id="@id/id_llyout_xover_ch0_ch1"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="1.5"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@id/id_llyout_xover_ch0"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_ch0"
+                            android:layout_width="@dimen/xover_channel_bg_width"
+                            android:layout_height="@dimen/xover_channel_bg_height"
+                            android:layout_gravity="center"
+                            android:background="@drawable/xover_channel_bg"
+                            android:gravity="center"
+                            android:text="@string/CH1"
+                            android:textColor="@color/xover_channel_text_color"
+                            android:textSize="@dimen/channel_type_text_size" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="5.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_hl_xover_ch0"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_high_pass_ch0"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/HighPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_low_pass_ch0"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/LowPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_high_pass_xover_ch0"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_filter_ch0"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_otc_ch0"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_freq_ch0"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_filter_ch0"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_otc_ch0"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_freq_ch0"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/id_llyout_xover_ch1"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_ch1"
+                            android:layout_width="@dimen/xover_channel_bg_width"
+                            android:layout_height="@dimen/xover_channel_bg_height"
+                            android:layout_gravity="center"
+                            android:background="@drawable/xover_channel_bg"
+                            android:gravity="center"
+                            android:text="@string/CH2"
+                            android:textColor="@color/xover_channel_text_color"
+                            android:textSize="@dimen/channel_type_text_size" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="5.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_hl_xover_ch1"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_high_pass_ch1"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/HighPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_low_pass_ch1"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/LowPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_high_pass_xover_ch1"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_filter_ch1"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_otc_ch1"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_freq_ch1"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_filter_ch1"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_otc_ch1"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_freq_ch1"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_xover_ch2_ch3"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="1.5"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@id/id_llyout_xover_ch2"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_ch2"
+                            android:layout_width="@dimen/xover_channel_bg_width"
+                            android:layout_height="@dimen/xover_channel_bg_height"
+                            android:layout_gravity="center"
+                            android:background="@drawable/xover_channel_bg"
+                            android:gravity="center"
+                            android:text="@string/CH3"
+                            android:textColor="@color/xover_channel_text_color"
+                            android:textSize="@dimen/channel_type_text_size" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="5.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_hl_xover_ch2"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_high_pass_ch2"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/HighPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_low_pass_ch2"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/LowPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_high_pass_xover_ch2"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_filter_ch2"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_otc_ch2"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_freq_ch2"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_filter_ch2"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_otc_ch2"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_freq_ch2"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/id_llyout_xover_ch3"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_ch3"
+                            android:layout_width="@dimen/xover_channel_bg_width"
+                            android:layout_height="@dimen/xover_channel_bg_height"
+                            android:layout_gravity="center"
+                            android:background="@drawable/xover_channel_bg"
+                            android:gravity="center"
+                            android:text="@string/CH4"
+                            android:textColor="@color/xover_channel_text_color"
+                            android:textSize="@dimen/channel_type_text_size" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="5.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_hl_xover_ch3"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_high_pass_ch3"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/HighPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_low_pass_ch3"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/LowPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_high_pass_xover_ch3"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_filter_ch3"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_otc_ch3"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_freq_ch3"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_filter_ch3"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_otc_ch3"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_freq_ch3"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_xover_ch4_ch5"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="1.5"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@id/id_llyout_xover_ch4"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_ch4"
+                            android:layout_width="@dimen/xover_channel_bg_width"
+                            android:layout_height="@dimen/xover_channel_bg_height"
+                            android:layout_gravity="center"
+                            android:background="@drawable/xover_channel_bg"
+                            android:gravity="center"
+                            android:text="@string/CH5"
+                            android:textColor="@color/xover_channel_text_color"
+                            android:textSize="@dimen/channel_type_text_size" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="5.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_hl_xover_ch4"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_high_pass_ch4"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/HighPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_low_pass_ch4"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/LowPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_high_pass_xover_ch4"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_filter_ch4"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_otc_ch4"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_freq_ch4"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_filter_ch4"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_otc_ch4"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_freq_ch4"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/id_llyout_xover_ch5"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_ch5"
+                            android:layout_width="@dimen/xover_channel_bg_width"
+                            android:layout_height="@dimen/xover_channel_bg_height"
+                            android:layout_gravity="center"
+                            android:background="@drawable/xover_channel_bg"
+                            android:gravity="center"
+                            android:text="@string/CH6"
+                            android:textColor="@color/xover_channel_text_color"
+                            android:textSize="@dimen/channel_type_text_size" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="5.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_hl_xover_ch5"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_high_pass_ch5"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/HighPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_low_pass_ch5"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/LowPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_high_pass_xover_ch5"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_filter_ch5"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_otc_ch5"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_freq_ch5"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_filter_ch5"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_otc_ch5"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_freq_ch5"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/id_llyout_xover_ch6_ch7"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="1.5"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@id/id_llyout_xover_ch6"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_ch6"
+                            android:layout_width="@dimen/xover_channel_bg_width"
+                            android:layout_height="@dimen/xover_channel_bg_height"
+                            android:layout_gravity="center"
+                            android:background="@drawable/xover_channel_bg"
+                            android:gravity="center"
+                            android:text="@string/CH7"
+                            android:textColor="@color/xover_channel_text_color"
+                            android:textSize="@dimen/channel_type_text_size" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="5.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_hl_xover_ch6"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_high_pass_ch6"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/HighPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_low_pass_ch6"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/LowPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_high_pass_xover_ch6"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_filter_ch6"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_otc_ch6"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_freq_ch6"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_filter_ch6"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_otc_ch6"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_freq_ch6"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/id_llyout_xover_ch7"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_ch7"
+                            android:layout_width="@dimen/xover_channel_bg_width"
+                            android:layout_height="@dimen/xover_channel_bg_height"
+                            android:layout_gravity="center"
+                            android:background="@drawable/xover_channel_bg"
+                            android:gravity="center"
+                            android:text="@string/CH8"
+                            android:textColor="@color/xover_channel_text_color"
+                            android:textSize="@dimen/channel_type_text_size" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="5.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_hl_xover_ch7"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_high_pass_ch7"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/HighPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_low_pass_ch7"
+                            android:layout_width="@dimen/xover_hlpass_text_width"
+                            android:layout_height="@dimen/xover_hlpass_text_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/LowPass"
+                            android:textColor="@color/xover_hlpass_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="2.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/id_llyout_high_pass_xover_ch7"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_filter_ch7"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_otc_ch7"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_hp_freq_ch7"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_filter_ch7"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_otc_ch7"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/pop_selector_sinner"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@id/id_b_lp_freq_ch7"
+                            android:layout_width="@dimen/filter_button_width"
+                            android:layout_height="@dimen/filter_type_freq_button_height"
+                            android:background="@drawable/xover_show_freq"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/freq_button_paddingLeft"
+                            android:text="@string/freq20"
+                            android:textColor="@color/text_color_xovernotset"
+                            android:textSize="@dimen/filter_type_freq_text_size" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:orientation="horizontal" />
+    </LinearLayout>
+
+    <Button
+        android:id="@id/id_b_encryption_xover"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/encryption"
+        android:text="@string/HadEncryption"
+        android:textColor="@color/text_color_red"
+        android:textSize="35.0sp"
+        android:visibility="gone" />
+</RelativeLayout>

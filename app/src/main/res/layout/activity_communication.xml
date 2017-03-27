@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightBlue"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="sie.amplifier_conctroller.CommunicationChat">
+
+    <Button
+        android:id="@+id/btn_goBack"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:textAllCaps="false"
+        android:padding="2dp"
+        android:background="@drawable/btn_background_default_hightlight"
+        android:text="@string/disConnect" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:textAllCaps="false"
+        android:padding="2dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/btn_background_default_hightlight"
+        android:text="@string/clear"
+        />
+
+    <Button
+        android:id="@+id/sw_hexRe"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:textAllCaps="false"
+        android:padding="2dp"
+        android:layout_toEndOf="@+id/btn_goBack"
+        android:layout_toRightOf="@+id/btn_goBack"
+        android:background="@drawable/btn_background_default_hightlight"
+        android:text="@string/hex_re"
+         />
+
+    <RadioGroup
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_below="@+id/btn_clear"
+        android:layout_marginTop="8dp"
+        android:layout_above="@+id/se_tv"
+        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayout">
+
+            <TextView
+                android:text="@string/receive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_re"
+                android:layout_weight="1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
+
+            <TextView
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tv_re"
+                android:layout_toEndOf="@+id/tv_re"
+                android:id="@+id/re_byteTV" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_byte"
+                android:layout_weight="1"
+                android:text="@string/Byte"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/re_byteTV"
+                android:layout_toEndOf="@+id/re_byteTV" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/re_packageTV"
+                android:layout_weight="1"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv_byte"
+                android:layout_toEndOf="@+id/tv_byte" />
+
+            <TextView
+                android:text="@string/Package"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_package"
+                android:layout_weight="1"
+                android:layout_toRightOf="@+id/re_packageTV"
+                android:layout_toEndOf="@+id/re_packageTV"
+                />
+            <TextView
+                android:id="@+id/re_CRC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="00000000" />
+
+            <TextView
+                android:id="@+id/tv_crc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/re_CRC"
+                android:text="CRC32: " />
+            <TextView
+                android:text="@string/send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_send"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"/>
+            <TextView
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/se_byteTV"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/tv_send"
+                android:layout_toEndOf="@+id/tv_send"/>
+
+            <TextView
+                android:text="@string/Byte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_seByte"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/se_byteTV"
+                android:layout_toEndOf="@+id/se_byteTV"/>
+
+            <TextView
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/se_packageTV"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv_seByte"
+                android:layout_toEndOf="@+id/tv_seByte"/>
+            <TextView
+                android:text="@string/Package"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_sePackage"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/se_packageTV"
+                android:layout_toEndOf="@+id/se_packageTV"
+                />
+            <TextView
+                android:id="@+id/se_CRC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="00000000" />
+
+            <TextView
+                android:id="@+id/tv_crcSe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@+id/se_CRC"
+                android:text="CRC32: " />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/re_tv"
+                android:focusable="false"
+                android:layout_weight="1"
+                android:gravity="top"
+                android:layout_below="@+id/tv_re"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="20dp"/>
+        </RelativeLayout>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/sw_hexSe"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:textAllCaps="false"
+        android:padding="2dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/btn_background_default_hightlight"
+        android:text="@string/hex_se"
+        tools:targetApi="ice_cream_sandwich" />
+
+    <EditText
+        android:id="@+id/et_interval"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_above="@+id/sw_hexSe"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="15dp"
+        android:layout_toLeftOf="@+id/tv_ms"
+        android:layout_toStartOf="@+id/tv_ms"
+        android:background="@color/white"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:text="ms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_ms"
+        android:layout_alignBaseline="@+id/sw_intervalSend"
+        android:layout_toLeftOf="@+id/sw_intervalSend"
+        android:layout_toStartOf="@+id/sw_intervalSend"/>
+
+    <Button
+        android:id="@+id/sw_response"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:textAllCaps="false"
+        android:layout_alignBottom="@+id/sw_hexSe"
+        android:layout_marginLeft="8dp"
+        android:layout_toEndOf="@+id/sw_hexSe"
+        android:layout_toRightOf="@+id/sw_hexSe"
+        android:padding="2dp"
+        android:background="@color/btn_color_disselect"
+        android:text="Response"
+        android:visibility="invisible"
+         />
+
+    <Button
+        android:id="@+id/sw_intervalSend"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:textAllCaps="false"
+        android:layout_alignBottom="@+id/et_interval"
+        android:layout_alignEnd="@+id/sw_response"
+        android:layout_alignRight="@+id/sw_response"
+        android:padding="2dp"
+        android:background="@drawable/btn_background_default_hightlight"
+        android:text="@string/intervalSend"
+         />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:ems="10"
+        android:gravity="top"
+        android:id="@+id/se_tv"
+        android:layout_above="@+id/btn_send"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="90dp"
+        />
+
+    <Button
+        android:id="@+id/btn_send"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:textAllCaps="false"
+        android:layout_alignBaseline="@+id/sw_intervalSend"
+        android:layout_alignBottom="@+id/sw_intervalSend"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:padding="2dp"
+        android:background="@drawable/btn_background_default_hightlight"
+        android:text="@string/btnSend" />
+
+    <Button
+        android:id="@+id/btn_sendFile"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:padding="2dp"
+        android:text="@string/btnSendFile"
+        android:background="@drawable/btn_background_default_hightlight" />
+
+    <TextView
+        android:id="@+id/tv_connectState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sw_hexRe"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_toEndOf="@+id/sw_hexRe"
+        android:layout_toRightOf="@+id/sw_hexRe"
+        android:text="@string/connecting"
+        android:textAllCaps="false"
+        android:textColor="@color/text_color_yellow" />
+
+</RelativeLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sie.amplifier_conctroller.ui.AnimationTabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    >
+
+
+
+
+    <LinearLayout
+        android:id="@+id/LayoutSwitch"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+
+        >
+
+        <common.zhang.customer.MyToolBar
+            android:id="@+id/myToolBar"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            custom:leftButtonBackground="@null"
+            custom:leftButtonText="@string/BtnBack"
+            custom:leftButtonTextColor="#0000ff"
+            custom:leftButtonTextSize="12sp"
+            custom:rightButtonBackground="@null"
+            custom:rightButtonText="@string/offline_link"
+            custom:rightButtonTextColor="#0000ff"
+            custom:rightButtonTextSize="8sp"
+            custom:textTitle="MyTitle"
+            custom:titleTextColor="#A10000"
+            custom:titleTextSize="12sp" >
+        </common.zhang.customer.MyToolBar>
+
+
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.99"
+          >
+        </FrameLayout>
+
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.01"
+                >
+            </TabWidget>
+
+
+    </LinearLayout>
+
+</sie.amplifier_conctroller.ui.AnimationTabHost>

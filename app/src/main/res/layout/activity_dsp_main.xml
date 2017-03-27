@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <common.zhang.customer.MyToolBar
+        android:id="@+id/myToolBar"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        custom:leftButtonBackground="@null"
+        custom:leftButtonText="@string/BtnBack"
+        custom:leftButtonTextColor="#0000ff"
+        custom:leftButtonTextSize="12sp"
+        custom:rightButtonBackground="@null"
+        custom:rightButtonText="@string/offline_link"
+        custom:rightButtonTextColor="#0000ff"
+        custom:rightButtonTextSize="8sp"
+        custom:textTitle="MyTitle"
+        custom:titleTextColor="#A10000"
+        custom:titleTextSize="12sp" >
+    </common.zhang.customer.MyToolBar>
+
+    <LinearLayout
+        android:orientation="vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        >
+
+
+
+
+        <LinearLayout
+            android:id="@+id/id_llyout_mainvol"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="190sp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            >
+            <common.zhang.customer.RotateButtom
+                android:id="@+id/main_volume"
+                android:layout_width="@dimen/main_vl_rotate_bt_width"
+                android:layout_height="@dimen/main_vl_rotate_bt_hieght"
+                android:layout_marginRight="@dimen/main_vl_rotate_bt_right"
+                android:layout_marginTop="@dimen/main_vl_rotate_bt_top"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38sp"
+            android:gravity="center_horizontal">
+            <TextView
+                android:text="@string/MSUB_VAL"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5sp"
+                android:textSize="18sp"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/vol" />
+
+            <TextView
+                android:text="15"
+                android:layout_width="35sp"
+                android:layout_height="match_parent"
+                android:textSize="18sp"
+                android:layout_marginTop="10sp"
+                android:gravity="center_horizontal"
+                android:id="@+id/vol_tips"
+                android:layout_gravity="center_horizontal"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:gravity="center_horizontal">
+
+            <SeekBar
+                android:id="@+id/seekBar_bass_volume"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="50sp"
+                android:layout_marginRight="50sp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@id/id_inputsel_memony"
+            android:layout_width="fill_parent"
+            android:layout_height="180dip"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@id/id_llyout_memony_123"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_marginTop="5.0dip"
+                android:layout_weight="2.0"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical" />
+
+                <RelativeLayout
+                    android:id="@id/id_llyout_b_1"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="2.0"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@id/id_b_1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/usergroup_button_tv_num_marginTop"
+                        android:background="@drawable/use_group_1_normal"
+                        android:gravity="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text_color_user_group_name"
+                        android:textSize="@dimen/usergroup_button_tv_name_size" />
+
+                    <TextView
+                        android:id="@id/id_tv_name_1"
+                        android:layout_width="@dimen/usergroup_button_layout_width"
+                        android:layout_height="@dimen/usergroup_button_tv_name_height"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/usergroup_button_tv_name_marginTop"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/one"
+                        android:textColor="@color/text_color_user_group_name"
+                        android:textSize="@dimen/usergroup_button_tv_name_size" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:orientation="vertical" />
+
+                <RelativeLayout
+                    android:id="@id/id_llyout_b_2"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="2.0"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@id/id_b_2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/usergroup_button_tv_num_marginTop"
+                        android:background="@drawable/use_group_2_normal"
+                        android:gravity="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text_color_user_group_name"
+                        android:textSize="@dimen/usergroup_button_tv_name_size" />
+
+                    <TextView
+                        android:id="@id/id_tv_name_2"
+                        android:layout_width="@dimen/usergroup_button_layout_width"
+                        android:layout_height="@dimen/usergroup_button_tv_name_height"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/usergroup_button_tv_name_marginTop"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/two"
+                        android:textColor="@color/text_color_user_group_name"
+                        android:textSize="@dimen/usergroup_button_tv_name_size" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:orientation="vertical" />
+
+                <RelativeLayout
+                    android:id="@id/id_llyout_b_3"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="2.0"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@id/id_b_3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/usergroup_button_tv_num_marginTop"
+                        android:background="@drawable/use_group_3_normal"
+                        android:gravity="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text_color_user_group_name"
+                        android:textSize="@dimen/usergroup_button_tv_name_size" />
+
+                    <TextView
+                        android:id="@id/id_tv_name_3"
+                        android:layout_width="@dimen/usergroup_button_layout_width"
+                        android:layout_height="@dimen/usergroup_button_tv_name_height"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/usergroup_button_tv_name_marginTop"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/three"
+                        android:textColor="@color/text_color_user_group_name"
+                        android:textSize="@dimen/usergroup_button_tv_name_size" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="0.3"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:id="@id/id_llyout_memony_456"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_marginTop="5.0dip"
+                android:layout_weight="2.0"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical" />
+
+                <RelativeLayout
+                    android:id="@id/id_llyout_b_4"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="2.0"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@id/id_b_4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/usergroup_button_tv_num_marginTop"
+                        android:background="@drawable/use_group_4_normal"
+                        android:gravity="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text_color_user_group_name"
+                        android:textSize="@dimen/usergroup_button_tv_name_size" />
+
+                    <TextView
+                        android:id="@id/id_tv_name_4"
+                        android:layout_width="@dimen/usergroup_button_layout_width"
+                        android:layout_height="@dimen/usergroup_button_tv_name_height"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/usergroup_button_tv_name_marginTop"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/four"
+                        android:textColor="@color/text_color_user_group_name"
+                        android:textSize="@dimen/usergroup_button_tv_name_size" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:orientation="vertical" />
+
+                <RelativeLayout
+                    android:id="@id/id_llyout_b_5"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="2.0"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@id/id_b_5"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/usergroup_button_tv_num_marginTop"
+                        android:background="@drawable/use_group_5_normal"
+                        android:gravity="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text_color_user_group_name"
+                        android:textSize="@dimen/usergroup_button_tv_name_size" />
+
+                    <TextView
+                        android:id="@id/id_tv_name_5"
+                        android:layout_width="@dimen/usergroup_button_layout_width"
+                        android:layout_height="@dimen/usergroup_button_tv_name_height"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/usergroup_button_tv_name_marginTop"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/five"
+                        android:textColor="@color/text_color_user_group_name"
+                        android:textSize="@dimen/usergroup_button_tv_name_size" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:orientation="vertical" />
+
+                <RelativeLayout
+                    android:id="@id/id_llyout_b_6"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="2.0"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@id/id_b_6"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/usergroup_button_tv_num_marginTop"
+                        android:background="@drawable/use_group_6_normal"
+                        android:gravity="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text_color_user_group_name"
+                        android:textSize="@dimen/usergroup_button_tv_name_size" />
+
+                    <TextView
+                        android:id="@id/id_tv_name_6"
+                        android:layout_width="@dimen/usergroup_button_layout_width"
+                        android:layout_height="@dimen/usergroup_button_tv_name_height"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/usergroup_button_tv_name_marginTop"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/six"
+                        android:textColor="@color/text_color_user_group_name"
+                        android:textSize="@dimen/usergroup_button_tv_name_size" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_gravity="center"
+        android:orientation="vertical" />
+    <Button
+        android:text="@string/setting"
+        android:id="@+id/bt_setting"
+        android:layout_width="250sp"
+        android:layout_height="60sp"
+        android:layout_marginBottom="20sp"
+        android:background="@drawable/btn_highset_selector"
+        android:textAllCaps="false"
+        android:textColor="@color/text_color_hightset_normal"
+        android:textSize="18.0sp"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

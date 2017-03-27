@@ -1,0 +1,1356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:eq_seekbar="http://schemas.android.com/apk/res-auto"
+    android:id="@id/id_layout_delaysettings"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="1.5"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="2.2" />
+
+            <LinearLayout
+                android:id="@id/id_llyout_ch0"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="26.0"
+                android:background="@drawable/layoutc_delay_normal"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:tag="0">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="4.0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_delay_ch0"
+                            android:layout_width="@dimen/delay_item_delay_ch_name_width"
+                            android:layout_height="@dimen/delay_item_delay_ch_name_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/CH1"
+                            android:textColor="@color/delay_seekbar_name_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@id/id_llyout_delay_subinc_ch0"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_sub_ch0"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_sub_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="2.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_b_delay_show_ch0"
+                                android:layout_width="@dimen/delay_item_delay_ch_val_width"
+                                android:layout_height="@dimen/delay_item_delay_ch_val_height"
+                                android:layout_gravity="center"
+                                android:background="@drawable/button_vivid_bg"
+                                android:gravity="center"
+                                android:scaleType="fitCenter"
+                                android:text="@string/delay20"
+                                android:textColor="@color/text_color_delay"
+                                android:textSize="@dimen/delay_item_delay_text_size" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_inc_ch0"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_inc_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="0.1" />
+                </LinearLayout>
+
+                <!-- Clock wise - 270 -->
+                <common.zhang.customer.VerticalSeekBarWrapper
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.1"
+                    android:gravity="center"
+                    android:thumb="@drawable/set_delay_seekbar_thumb">
+                    <common.zhang.customer.VerticalSeekBar
+                        android:id="@+id/id_sb_delay_ch0"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:splitTrack="false"
+                        eq_seekbar:seekBarRotation="CW270"
+                        eq_seekbar:eq_progress_background_color="@color/delay_seekbar_background_color"
+                        eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                        eq_seekbar:eq_progress_color="@color/delay_seekbar_progress_color"
+                        eq_seekbar:eq_progress_width="@dimen/set_delay_progress_width"
+                    />
+                </common.zhang.customer.VerticalSeekBarWrapper>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="4.4" />
+
+            <LinearLayout
+                android:id="@id/id_llyout_ch1"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="26.0"
+                android:background="@drawable/layoutc_delay_normal"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:tag="0">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="4.0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_delay_ch1"
+                            android:layout_width="@dimen/delay_item_delay_ch_name_width"
+                            android:layout_height="@dimen/delay_item_delay_ch_name_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/CH2"
+                            android:textColor="@color/delay_seekbar_name_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@id/id_llyout_delay_subinc_ch1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_sub_ch1"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_sub_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="2.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_b_delay_show_ch1"
+                                android:layout_width="@dimen/delay_item_delay_ch_val_width"
+                                android:layout_height="@dimen/delay_item_delay_ch_val_height"
+                                android:layout_gravity="center"
+                                android:background="@drawable/button_vivid_bg"
+                                android:gravity="center"
+                                android:scaleType="fitCenter"
+                                android:text="@string/delay20"
+                                android:textColor="@color/text_color_delay"
+                                android:textSize="@dimen/delay_item_delay_text_size" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_inc_ch1"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_inc_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="0.1" />
+                </LinearLayout>
+
+                <!-- Clock wise - 90 -->
+                <common.zhang.customer.VerticalSeekBarWrapper
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.1"
+                    android:gravity="center"
+                    android:thumb="@drawable/set_delay_seekbar_thumb">
+                    <common.zhang.customer.VerticalSeekBar
+                        android:id="@+id/id_sb_delay_ch1"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:splitTrack="false"
+                        eq_seekbar:seekBarRotation="CW270"
+                        eq_seekbar:eq_progress_background_color="@color/delay_seekbar_background_color"
+                        eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                        eq_seekbar:eq_progress_color="@color/delay_seekbar_progress_color"
+                        eq_seekbar:eq_progress_width="@dimen/set_delay_progress_width"
+                    />
+                </common.zhang.customer.VerticalSeekBarWrapper>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="2.2" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="0.22"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="1.5"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="2.2" />
+
+            <LinearLayout
+                android:id="@id/id_llyout_ch2"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="26.0"
+                android:background="@drawable/layoutc_delay_normal"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:tag="0">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="4.0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_delay_ch2"
+                            android:layout_width="@dimen/delay_item_delay_ch_name_width"
+                            android:layout_height="@dimen/delay_item_delay_ch_name_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/CH3"
+                            android:textColor="@color/delay_seekbar_name_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@id/id_llyout_delay_subinc_ch2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_sub_ch2"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_sub_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="2.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_b_delay_show_ch2"
+                                android:layout_width="@dimen/delay_item_delay_ch_val_width"
+                                android:layout_height="@dimen/delay_item_delay_ch_val_height"
+                                android:layout_gravity="center"
+                                android:background="@drawable/button_vivid_bg"
+                                android:gravity="center"
+                                android:scaleType="fitCenter"
+                                android:text="@string/delay20"
+                                android:textColor="@color/text_color_delay"
+                                android:textSize="@dimen/delay_item_delay_text_size" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_inc_ch2"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_inc_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="0.1" />
+                </LinearLayout>
+
+                <!-- Clock wise - 270-->
+                <common.zhang.customer.VerticalSeekBarWrapper
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.1"
+                    android:gravity="center"
+                    android:thumb="@drawable/set_delay_seekbar_thumb">
+                    <common.zhang.customer.VerticalSeekBar
+                        android:id="@+id/id_sb_delay_ch2"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:splitTrack="false"
+                        eq_seekbar:seekBarRotation="CW270"
+                        eq_seekbar:eq_progress_background_color="@color/delay_seekbar_background_color"
+                        eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                        eq_seekbar:eq_progress_color="@color/delay_seekbar_progress_color"
+                        eq_seekbar:eq_progress_width="@dimen/set_delay_progress_width"
+                    />
+                </common.zhang.customer.VerticalSeekBarWrapper>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="4.4" />
+
+            <LinearLayout
+                android:id="@id/id_llyout_ch3"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="26.0"
+                android:background="@drawable/layoutc_delay_normal"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:tag="0">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="4.0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_delay_ch3"
+                            android:layout_width="@dimen/delay_item_delay_ch_name_width"
+                            android:layout_height="@dimen/delay_item_delay_ch_name_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/CH4"
+                            android:textColor="@color/delay_seekbar_name_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@id/id_llyout_delay_subinc_ch3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_sub_ch3"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_sub_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="2.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_b_delay_show_ch3"
+                                android:layout_width="@dimen/delay_item_delay_ch_val_width"
+                                android:layout_height="@dimen/delay_item_delay_ch_val_height"
+                                android:layout_gravity="center"
+                                android:background="@drawable/button_vivid_bg"
+                                android:gravity="center"
+                                android:scaleType="fitCenter"
+                                android:text="@string/delay20"
+                                android:textColor="@color/text_color_delay"
+                                android:textSize="@dimen/delay_item_delay_text_size" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_inc_ch3"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_inc_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="0.1" />
+                </LinearLayout>
+
+                <!-- Clock wise - 270-->
+                <common.zhang.customer.VerticalSeekBarWrapper
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.1"
+                    android:gravity="center"
+                    android:thumb="@drawable/set_delay_seekbar_thumb">
+                    <common.zhang.customer.VerticalSeekBar
+                        android:id="@+id/id_sb_delay_ch3"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:splitTrack="false"
+                        eq_seekbar:seekBarRotation="CW270"
+                        eq_seekbar:eq_progress_background_color="@color/delay_seekbar_background_color"
+                        eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                        eq_seekbar:eq_progress_color="@color/delay_seekbar_progress_color"
+                        eq_seekbar:eq_progress_width="@dimen/set_delay_progress_width"
+                    />
+                </common.zhang.customer.VerticalSeekBarWrapper>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="2.2" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="0.22"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="1.5"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="2.2" />
+
+            <LinearLayout
+                android:id="@id/id_llyout_ch4"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="26.0"
+                android:background="@drawable/layoutc_delay_normal"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:tag="0">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="4.0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_delay_ch4"
+                            android:layout_width="@dimen/delay_item_delay_ch_name_width"
+                            android:layout_height="@dimen/delay_item_delay_ch_name_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/CH5"
+                            android:textColor="@color/delay_seekbar_name_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@id/id_llyout_delay_subinc_ch4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_sub_ch4"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_sub_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="2.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_b_delay_show_ch4"
+                                android:layout_width="@dimen/delay_item_delay_ch_val_width"
+                                android:layout_height="@dimen/delay_item_delay_ch_val_height"
+                                android:layout_gravity="center"
+                                android:background="@drawable/button_vivid_bg"
+                                android:gravity="center"
+                                android:scaleType="fitCenter"
+                                android:text="@string/delay20"
+                                android:textColor="@color/text_color_delay"
+                                android:textSize="@dimen/delay_item_delay_text_size" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_inc_ch4"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_inc_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="0.1" />
+                </LinearLayout>
+
+                <!-- Clock wise - 270-->
+                <common.zhang.customer.VerticalSeekBarWrapper
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.1"
+                    android:gravity="center"
+                    android:thumb="@drawable/set_delay_seekbar_thumb">
+                    <common.zhang.customer.VerticalSeekBar
+                        android:id="@+id/id_sb_delay_ch4"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:splitTrack="false"
+                        eq_seekbar:seekBarRotation="CW270"
+                        eq_seekbar:eq_progress_background_color="@color/delay_seekbar_background_color"
+                        eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                        eq_seekbar:eq_progress_color="@color/delay_seekbar_progress_color"
+                        eq_seekbar:eq_progress_width="@dimen/set_delay_progress_width"
+                    />
+                </common.zhang.customer.VerticalSeekBarWrapper>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="4.4" />
+
+            <LinearLayout
+                android:id="@id/id_llyout_ch5"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="26.0"
+                android:background="@drawable/layoutc_delay_normal"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:tag="0">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="4.0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_delay_ch5"
+                            android:layout_width="@dimen/delay_item_delay_ch_name_width"
+                            android:layout_height="@dimen/delay_item_delay_ch_name_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/CH6"
+                            android:textColor="@color/delay_seekbar_name_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@id/id_llyout_delay_subinc_ch5"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_sub_ch5"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_sub_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="2.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_b_delay_show_ch5"
+                                android:layout_width="@dimen/delay_item_delay_ch_val_width"
+                                android:layout_height="@dimen/delay_item_delay_ch_val_height"
+                                android:layout_gravity="center"
+                                android:background="@drawable/button_vivid_bg"
+                                android:gravity="center"
+                                android:scaleType="fitCenter"
+                                android:text="@string/delay20"
+                                android:textColor="@color/text_color_delay"
+                                android:textSize="@dimen/delay_item_delay_text_size" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_inc_ch5"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_inc_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="0.1" />
+                </LinearLayout>
+
+                <!-- Clock wise - 270-->
+                <common.zhang.customer.VerticalSeekBarWrapper
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.1"
+                    android:gravity="center"
+                    android:thumb="@drawable/set_delay_seekbar_thumb">
+                    <common.zhang.customer.VerticalSeekBar
+                        android:id="@+id/id_sb_delay_ch5"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:splitTrack="false"
+                        eq_seekbar:seekBarRotation="CW270"
+                        eq_seekbar:eq_progress_background_color="@color/delay_seekbar_background_color"
+                        eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                        eq_seekbar:eq_progress_color="@color/delay_seekbar_progress_color"
+                        eq_seekbar:eq_progress_width="@dimen/set_delay_progress_width"
+                    />
+                </common.zhang.customer.VerticalSeekBarWrapper>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="2.2" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="0.22" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="1.5"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="2.2" />
+
+            <LinearLayout
+                android:id="@id/id_llyout_ch6"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="26.0"
+                android:background="@drawable/layoutc_delay_normal"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:tag="0">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="4.0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_delay_ch6"
+                            android:layout_width="@dimen/delay_item_delay_ch_name_width"
+                            android:layout_height="@dimen/delay_item_delay_ch_name_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/CH7"
+                            android:textColor="@color/delay_seekbar_name_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@id/id_llyout_delay_subinc_ch6"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_sub_ch6"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_sub_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="2.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_b_delay_show_ch6"
+                                android:layout_width="@dimen/delay_item_delay_ch_val_width"
+                                android:layout_height="@dimen/delay_item_delay_ch_val_height"
+                                android:layout_gravity="center"
+                                android:background="@drawable/button_vivid_bg"
+                                android:gravity="center"
+                                android:scaleType="fitCenter"
+                                android:text="@string/delay20"
+                                android:textColor="@color/text_color_delay"
+                                android:textSize="@dimen/delay_item_delay_text_size" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_inc_ch6"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_inc_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="0.1" />
+                </LinearLayout>
+
+                <!-- Clock wise - 270-->
+                <common.zhang.customer.VerticalSeekBarWrapper
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.1"
+                    android:gravity="center"
+                    android:thumb="@drawable/set_delay_seekbar_thumb">
+                    <common.zhang.customer.VerticalSeekBar
+                        android:id="@+id/id_sb_delay_ch6"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:splitTrack="false"
+                        eq_seekbar:seekBarRotation="CW270"
+                        eq_seekbar:eq_progress_background_color="@color/delay_seekbar_background_color"
+                        eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                        eq_seekbar:eq_progress_color="@color/delay_seekbar_progress_color"
+                        eq_seekbar:eq_progress_width="@dimen/set_delay_progress_width"
+                    />
+                </common.zhang.customer.VerticalSeekBarWrapper>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="4.4" />
+
+            <LinearLayout
+                android:id="@id/id_llyout_ch7"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="26.0"
+                android:background="@drawable/layoutc_delay_normal"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:tag="0">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="4.0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/id_tv_delay_ch7"
+                            android:layout_width="@dimen/delay_item_delay_ch_name_width"
+                            android:layout_height="@dimen/delay_item_delay_ch_name_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/CH8"
+                            android:textColor="@color/delay_seekbar_name_text_color"
+                            android:textSize="@dimen/filter_type_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@id/id_llyout_delay_subinc_ch7"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_sub_ch7"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_sub_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="2.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_b_delay_show_ch7"
+                                android:layout_width="@dimen/delay_item_delay_ch_val_width"
+                                android:layout_height="@dimen/delay_item_delay_ch_val_height"
+                                android:layout_gravity="center"
+                                android:background="@drawable/button_vivid_bg"
+                                android:gravity="center"
+                                android:scaleType="fitCenter"
+                                android:text="@string/delay20"
+                                android:textColor="@color/text_color_delay"
+                                android:textSize="@dimen/delay_item_delay_text_size" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@id/id_button_delay_inc_ch7"
+                                android:layout_width="@dimen/delay_item_button_incsub_size"
+                                android:layout_height="@dimen/delay_item_button_incsub_size"
+                                android:layout_gravity="center"
+                                android:background="@drawable/delay_inc_button"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="0.1" />
+                </LinearLayout>
+
+                <!-- Clock wise - 270-->
+                <common.zhang.customer.VerticalSeekBarWrapper
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.1"
+                    android:gravity="center"
+                    android:thumb="@drawable/set_delay_seekbar_thumb">
+                    <common.zhang.customer.VerticalSeekBar
+                    android:id="@+id/id_sb_delay_ch7"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:splitTrack="false"
+                    eq_seekbar:seekBarRotation="CW270"
+                    eq_seekbar:eq_progress_background_color="@color/delay_seekbar_background_color"
+                    eq_seekbar:eq_progress_bar_round="@dimen/equalizer_eq_progress_bar_round"
+                    eq_seekbar:eq_progress_color="@color/delay_seekbar_progress_color"
+                    eq_seekbar:eq_progress_width="@dimen/set_delay_progress_width"
+                    />
+                </common.zhang.customer.VerticalSeekBarWrapper>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="2.2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="60.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/group_button_vivid_bg"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/Unit"
+                    android:textColor="#ffffffff"
+                    android:textSize="16.0sp" />
+
+                <LinearLayout
+                    android:id="@id/id_ly_delay_unit_set"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/selunit_normal"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@id/id_b_delay_unit_set"
+                        android:layout_width="80.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:background="@drawable/group_button_vivid_bg"
+                        android:clickable="false"
+                        android:gravity="center"
+                        android:text="@string/MS"
+                        android:textColor="@color/color_Top_Bar_PageName"
+                        android:textSize="15.0sp" />
+
+                    <View
+                        android:layout_width="10.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0" />
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_b_delay_save"
+                    android:layout_width="80.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btn_save_selector"
+                    android:gravity="center"
+                    android:text="@string/Store"
+                    android:textColor="@color/color_Top_Bar_PageName"
+                    android:textSize="15.0sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="0.22"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:id="@id/id_llyout_unit_sel"
+            android:layout_width="300.0dip"
+            android:layout_height="30.0dip"
+            android:layout_gravity="center"
+            android:background="@drawable/delay_unit_ms"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@id/id_b_cm"
+                android:layout_width="100.0dip"
+                android:layout_height="28.0dip"
+                android:background="@drawable/button_vivid_bg"
+                android:text="@string/CM"
+                android:textColor="@color/delay_unit_text_color_normal"
+                android:textSize="15.0sp" />
+
+            <Button
+                android:id="@id/id_b_ms"
+                android:layout_width="100.0dip"
+                android:layout_height="28.0dip"
+                android:layout_marginLeft="0.0dip"
+                android:background="@drawable/button_vivid_bg"
+                android:text="@string/MS"
+                android:textColor="@color/delay_unit_text_color_press"
+                android:textSize="15.0sp" />
+
+            <Button
+                android:id="@id/id_b_inch"
+                android:layout_width="100.0dip"
+                android:layout_height="28.0dip"
+                android:layout_marginLeft="0.0dip"
+                android:background="@drawable/button_vivid_bg"
+                android:text="@string/Inch"
+                android:textColor="@color/delay_unit_text_color_normal"
+                android:textSize="15.0sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="0.3"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <Button
+        android:id="@id/id_b_encryption_delaysettings"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/encryption"
+        android:text="@string/HadEncryption"
+        android:textColor="@color/text_color_red"
+        android:textSize="35.0sp"
+        android:visibility="gone" />
+</RelativeLayout>

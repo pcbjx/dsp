@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#ffacb8c3" />
+        </shape>
+    </item>
+    <item android:left="2.0dip" android:top="2.0dip" android:right="2.0dip" android:bottom="2.0dip">
+        <shape android:shape="oval">
+            <solid android:color="#ffbdcad6" />
+        </shape>
+    </item>
+    <item android:left="3.0dip" android:top="3.0dip" android:right="3.0dip" android:bottom="3.0dip">
+        <shape android:shape="oval">
+            <solid android:color="#ffc3cfd9" />
+        </shape>
+    </item>
+    <item android:left="4.0dip" android:top="4.0dip" android:right="4.0dip" android:bottom="4.0dip">
+        <shape android:shape="oval">
+            <solid android:color="#ffcbd6df" />
+        </shape>
+    </item>
+    <item android:left="5.0dip" android:top="5.0dip" android:right="5.0dip" android:bottom="5.0dip">
+        <shape android:shape="oval">
+            <solid android:color="#ffd4dee5" />
+        </shape>
+    </item>
+    <item android:left="6.0dip" android:top="6.0dip" android:right="6.0dip" android:bottom="6.0dip">
+        <shape android:shape="oval">
+            <solid android:color="#ffdae2e8" />
+        </shape>
+    </item>
+    <item android:left="10.0dip" android:top="10.0dip" android:right="10.0dip" android:bottom="10.0dip">
+        <shape android:shape="oval">
+            <solid android:color="#ffced5dc" />
+        </shape>
+    </item>
+    <item android:left="12.0dip" android:top="12.0dip" android:right="12.0dip" android:bottom="12.0dip">
+        <shape android:shape="oval">
+            <solid android:color="#ffbcc4c9" />
+        </shape>
+    </item>
+    <item android:left="13.0dip" android:top="13.0dip" android:right="13.0dip" android:bottom="13.0dip">
+        <shape android:shape="oval">
+            <solid android:color="#ffb4bbc0" />
+        </shape>
+    </item>
+    <item android:left="14.0dip" android:top="14.0dip" android:right="14.0dip" android:bottom="14.0dip">
+        <shape android:shape="oval">
+            <solid android:color="#ffacb3b8" />
+        </shape>
+    </item>
+    <item android:left="15.0dip" android:top="15.0dip" android:right="15.0dip" android:bottom="15.0dip">
+        <shape android:shape="oval">
+            <stroke android:width="1.0dip" android:color="#fffcfcfc" />
+            <gradient android:startColor="#fff0f5f9" android:endColor="#ffcfd7dd" android:angle="270.0" />
+        </shape>
+    </item>
+</layer-list>

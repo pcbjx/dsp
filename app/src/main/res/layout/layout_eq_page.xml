@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="2.5"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@id/id_eq_eqfilter_page"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:gravity="center"
+            />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="0.11" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="4.0"
+            android:orientation="horizontal">
+
+            <include
+                layout="@layout/eq_scroll_page"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="0.11" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="0.4"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="2.0"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@id/id_tv_equalizer_eq_num"
+                    android:layout_width="60.0dip"
+                    android:layout_height="40.0dip"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="EQ1"
+                    android:textColor="@color/equalizer_eq_num"
+                    android:textSize="15.0sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="4.0" />
+
+            <Button
+                android:id="@id/id_b_eq_mode"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="2.0"
+                android:background="@drawable/btn_normal"
+                android:gravity="center"
+                android:text="@string/PEQ_MODE"
+                android:textColor="@color/eq_page_b_text_color_normal"
+                android:textSize="12.0sp"
+                android:visibility="invisible" />
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.5" />
+
+            <Button
+                android:id="@id/id_b_eq_reset"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="2.0"
+                android:background="@drawable/btn_channel_selector"
+                android:gravity="center"
+                android:text="@string/Equalizer_SetDefault"
+                android:textColor="@color/eq_page_b_text_color_normal"
+                android:textSize="12.0sp" />
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="0.21" />
+
+        <LinearLayout
+            android:id="@id/id_ly_equalizer_eq_mode"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.1" />
+
+                <TextView
+                    android:id="@id/id_tv_equalizer_bws"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.45"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/Equalizer_Q"
+                    android:textColor="@color/eq_page_val_item"
+                    android:textSize="13.0sp" />
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@id/id_tv_equalizer_bw"
+                        android:layout_width="55.0dip"
+                        android:layout_height="30.0dip"
+                        android:layout_gravity="center"
+                        android:background="@drawable/button_vivid_bg"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:textColor="@color/eq_page_val_color"
+                        android:textSize="14.0sp" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@id/id_sb_equalizer_bw"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.0"
+                    android:thumb="@drawable/set_delay_seekbar_thumb"
+ />
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.1" />
+
+                <TextView
+                    android:id="@id/id_tv_equalizer_Freq"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.45"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/Equalizer_Freq"
+                    android:textColor="@color/eq_page_val_item"
+                    android:textSize="13.0sp" />
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@id/id_tv_equalizer_freqs"
+                        android:layout_width="55.0dip"
+                        android:layout_height="30.0dip"
+                        android:layout_gravity="center"
+                        android:background="@drawable/button_vivid_bg"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:textColor="@color/eq_page_val_color"
+                        android:textSize="14.0sp" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@id/id_sb_equalizer_Freq"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.0"
+                    android:thumb="@drawable/set_delay_seekbar_thumb"
+                />
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.1" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="2.0"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="0.5" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5" />
+
+                <Button
+                    android:id="@id/id_b_eq_channel_ch0"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.0"
+                    android:background="@drawable/btn_normal"
+                    android:gravity="center"
+                    android:text="@string/CH1"
+                    android:textColor="@color/eq_page_b_text_color_normal"
+                    android:textSize="@dimen/eq_page_b_text_size" />
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0" />
+
+                <Button
+                    android:id="@id/id_b_eq_channel_ch1"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.0"
+                    android:background="@drawable/btn_normal"
+                    android:gravity="center"
+                    android:text="@string/CH2"
+                    android:textColor="@color/eq_page_b_text_color_normal"
+                    android:textSize="@dimen/eq_page_b_text_size" />
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0" />
+
+                <Button
+                    android:id="@id/id_b_eq_channel_ch2"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.0"
+                    android:background="@drawable/btn_normal"
+                    android:gravity="center"
+                    android:text="@string/CH3"
+                    android:textColor="@color/eq_page_b_text_color_normal"
+                    android:textSize="@dimen/eq_page_b_text_size" />
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0" />
+
+                <Button
+                    android:id="@id/id_b_eq_channel_ch3"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.0"
+                    android:background="@drawable/btn_normal"
+                    android:gravity="center"
+                    android:text="@string/CH4"
+                    android:textColor="@color/eq_page_b_text_color_normal"
+                    android:textSize="@dimen/eq_page_b_text_size" />
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="0.5" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5" />
+
+                <Button
+                    android:id="@id/id_b_eq_channel_ch4"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.0"
+                    android:background="@drawable/btn_normal"
+                    android:gravity="center"
+                    android:text="@string/CH5"
+                    android:textColor="@color/eq_page_b_text_color_normal"
+                    android:textSize="@dimen/eq_page_b_text_size" />
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0" />
+
+                <Button
+                    android:id="@id/id_b_eq_channel_ch5"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.0"
+                    android:background="@drawable/btn_normal"
+                    android:gravity="center"
+                    android:text="@string/CH6"
+                    android:textColor="@color/eq_page_b_text_color_normal"
+                    android:textSize="@dimen/eq_page_b_text_size" />
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0" />
+
+                <Button
+                    android:id="@id/id_b_eq_channel_ch6"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.0"
+                    android:background="@drawable/btn_normal"
+                    android:gravity="center"
+                    android:text="@string/CH7"
+                    android:textColor="@color/eq_page_b_text_color_normal"
+                    android:textSize="@dimen/eq_page_b_text_size" />
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0" />
+
+                <Button
+                    android:id="@id/id_b_eq_channel_ch7"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.0"
+                    android:background="@drawable/btn_normal"
+                    android:gravity="center"
+                    android:text="@string/CH8"
+                    android:textColor="@color/eq_page_b_text_color_normal"
+                    android:textSize="@dimen/eq_page_b_text_size" />
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@id/id_b_encryption_eqpage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+
+        android:text="@string/HadEncryption"
+        android:textColor="@color/text_color_red"
+        android:textSize="35.0sp"
+        android:visibility="gone" />
+</RelativeLayout>

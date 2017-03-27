@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="false" android:state_enabled="true" android:state_pressed="false">
+        <layer-list>
+            <item android:drawable="@drawable/timer_center_bg" />
+            <item android:left="15.0dip" android:top="15.0dip" android:right="15.0dip" android:bottom="15.0dip">
+                <shape android:shape="oval">
+                    <stroke android:width="1.0dip" android:color="#fffcfcfc" />
+                    <gradient android:startColor="#ffa7d3fa" android:endColor="#ff91c0e8" android:angle="270.0" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:state_enabled="true" android:state_pressed="true">
+        <layer-list>
+            <item android:drawable="@drawable/timer_center_bg" />
+            <item android:left="15.0dip" android:top="15.0dip" android:right="15.0dip" android:bottom="15.0dip">
+                <shape android:shape="oval">
+                    <stroke android:width="2.0dip" android:color="#fff8f640" />
+                    <gradient android:startColor="#ffa7d3fa" android:endColor="#ff91c0e8" android:angle="270.0" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:state_focused="true" android:state_enabled="true" android:state_pressed="false">
+        <layer-list>
+            <item android:drawable="@drawable/timer_center_bg" />
+            <item android:left="15.0dip" android:top="15.0dip" android:right="15.0dip" android:bottom="15.0dip">
+                <shape android:shape="oval">
+                    <stroke android:width="2.0dip" android:color="#fff8f640" />
+                    <gradient android:startColor="#ffa7d3fa" android:endColor="#ff91c0e8" android:angle="270.0" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

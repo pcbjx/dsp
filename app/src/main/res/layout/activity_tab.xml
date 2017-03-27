@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context="com.feasycom.s_port.TabActivity">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:layout_marginBottom="65dp">
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:id="@+id/communication"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/lightBlue"
+            android:button="@null"
+            android:drawableTop="@drawable/communication"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="@string/communication"
+            android:textColor="@color/text_color_blue"
+            android:textSize="@dimen/text_size_mid" />
+
+        <RadioButton
+            android:id="@+id/setting"
+
+            android:background="@color/lightBlue"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/setting"
+            android:textColor="@color/white"
+            android:paddingLeft="5dp"
+            android:textSize="@dimen/text_size_mid"
+            android:drawableTop="@drawable/setting2"/>
+
+        <RadioButton
+            android:id="@+id/about"
+            android:background="@color/lightBlue"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:textSize="@dimen/text_size_mid"
+            android:text="@string/about"
+            android:textColor="@color/white"
+            android:drawableTop="@drawable/about2"/>
+    </RadioGroup>
+
+</RelativeLayout>

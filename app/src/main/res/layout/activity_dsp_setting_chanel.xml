@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_bsp_setting_chanel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="sie.amplifier_conctroller.ui.dsp_setting_chanel">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+
+        android:orientation="vertical" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="10sp"
+        android:gravity="center_horizontal"
+        >
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            >
+            <common.zhang.customer.RotateButtom
+                android:id="@+id/temp_control1"
+                android:layout_width="@dimen/chanel_rotate_bt_width"
+                android:layout_height="@dimen/chanel_rotate_bt_hieght"
+                android:layout_marginRight="@dimen/chanel_rotate_bt_right"
+                android:layout_marginTop="@dimen/chanel_rotate_bt_top"
+                />
+
+            <common.zhang.customer.RotateButtom
+                android:id="@+id/temp_control2"
+                android:layout_width="@dimen/chanel_rotate_bt_width"
+                android:layout_height="@dimen/chanel_rotate_bt_hieght"
+                android:layout_marginRight="@dimen/chanel_rotate_bt_right"
+                android:layout_marginTop="@dimen/chanel_rotate_bt_top"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            >
+            <common.zhang.customer.RotateButtom
+                android:id="@+id/temp_contro3"
+                android:layout_width="@dimen/chanel_rotate_bt_width"
+                android:layout_height="@dimen/chanel_rotate_bt_hieght"
+                android:layout_marginRight="@dimen/chanel_rotate_bt_right"
+                android:layout_marginTop="@dimen/chanel_rotate_bt_top"
+                />
+
+            <common.zhang.customer.RotateButtom
+                android:id="@+id/temp_control4"
+                android:layout_width="@dimen/chanel_rotate_bt_width"
+                android:layout_height="@dimen/chanel_rotate_bt_hieght"
+                android:layout_marginRight="@dimen/chanel_rotate_bt_right"
+                android:layout_marginTop="@dimen/chanel_rotate_bt_top"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            >
+            <common.zhang.customer.RotateButtom
+                android:id="@+id/temp_contro5"
+                android:layout_width="@dimen/chanel_rotate_bt_width"
+                android:layout_height="@dimen/chanel_rotate_bt_hieght"
+                android:layout_marginRight="@dimen/chanel_rotate_bt_right"
+                android:layout_marginTop="@dimen/chanel_rotate_bt_top"
+                />
+
+            <common.zhang.customer.RotateButtom
+                android:id="@+id/temp_control6"
+                android:layout_width="@dimen/chanel_rotate_bt_width"
+                android:layout_height="@dimen/chanel_rotate_bt_hieght"
+                android:layout_marginRight="@dimen/chanel_rotate_bt_right"
+                android:layout_marginTop="@dimen/chanel_rotate_bt_top"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            >
+            <common.zhang.customer.RotateButtom
+                android:id="@+id/temp_contro7"
+                android:layout_width="@dimen/chanel_rotate_bt_width"
+                android:layout_height="@dimen/chanel_rotate_bt_hieght"
+                android:layout_marginRight="@dimen/chanel_rotate_bt_right"
+                android:layout_marginTop="@dimen/chanel_rotate_bt_top"
+                />
+
+            <common.zhang.customer.RotateButtom
+                android:id="@+id/temp_control8"
+                android:layout_width="@dimen/chanel_rotate_bt_width"
+                android:layout_height="@dimen/chanel_rotate_bt_hieght"
+                android:layout_marginRight="@dimen/chanel_rotate_bt_right"
+                android:layout_marginTop="@dimen/chanel_rotate_bt_top"
+                />
+        </TableRow>
+
+
+
+    </TableLayout>
+
+
+</LinearLayout>

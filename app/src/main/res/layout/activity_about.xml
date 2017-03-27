@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tv_str_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/text_color_blue"
+            android:text="@string/company" />
+
+        <TextView
+            android:text="@string/company_name"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/about_list_hight"
+            android:gravity="center_vertical"
+            android:id="@+id/tv_company"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="75dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tv_str_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/text_color_blue"
+            android:text="@string/tel" />
+
+        <TextView
+            android:text="0755-27924639"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/about_list_hight"
+            android:gravity="center_vertical"
+            android:id="@+id/tv_tel"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="75dp"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tv_str_web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/text_color_blue"
+            android:text="@string/web" />
+
+        <TextView
+            android:text="www.feasycom.com"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/about_list_hight"
+            android:gravity="center_vertical"
+            android:id="@+id/tv_web"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="75dp"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tv_str_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/text_color_blue"
+            android:text="@string/mail" />
+
+        <TextView
+            android:text="support@feasycom.com"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/about_list_hight"
+            android:gravity="center_vertical"
+            android:id="@+id/tv_mail"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="75dp"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tv_str_wc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/text_color_blue"
+            android:text="@string/wc" />
+
+        <TextView
+            android:text="Feasycom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/about_list_hight"
+            android:gravity="center_vertical"
+            android:id="@+id/tv_wc"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tv_str_wc"
+            android:layout_toEndOf="@+id/tv_str_wc"
+            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        >
+        <TextView
+            android:id="@+id/tv_str_about_app"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:text="@string/about_app" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tv_str_ver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/text_color_blue"
+            android:text="@string/version_app" />
+
+        <TextView
+            android:text="1.3"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/about_list_hight"
+            android:gravity="center_vertical"
+            android:id="@+id/tv_ver"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tv_str_ver"
+            android:layout_toEndOf="@+id/tv_str_ver"
+            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp"
+            />
+    </RelativeLayout>
+
+</LinearLayout>
