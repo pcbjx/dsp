@@ -66,7 +66,9 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
                 {
                     // 更新View
                     MyLog.i(TAG, "得到音量:"+DataStruct.main_vol);
-                    main_volue_r_bt.setpos(DataStruct.main_vol);
+                    //main_volue_r_bt.setpos(DataStruct.main_vol);
+                    main_volue_r_bt.setBarinit(0,60,DataStruct.main_vol);
+                    tv_bass_vol.setText(""+DataStruct.main_vol);
                     //isconnect = true;
                     break;
                 }
@@ -157,8 +159,13 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
         main_volue_r_bt.setOnTempChangeListener(new RotateButtom.OnTempChangeListener()
         {
             @Override
-            public void change(int temp) {
-                Toast.makeText(dsp_main.this, temp + "°", Toast.LENGTH_SHORT).show();
+            public void change(int pos) {
+                Toast.makeText(dsp_main.this, pos + "°", Toast.LENGTH_SHORT).show();
+                byte [] b_mainvolume ;
+                b_mainvolume = new byte[2];
+                b_mainvolume[0]= (byte)0x08;
+                b_mainvolume[1] = (byte) pos;
+                share.sie_write(b_mainvolume,2);
             }
         });
 

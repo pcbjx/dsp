@@ -202,7 +202,7 @@ public class Sie_app_data_share extends Application {
             case 0x01:
                 MyLog.v(TAG,"Input channel");
                 action = share.SIE_UI_ACTION_INPUTCHANNEL;
-                m_dateStruct.input_source = RcvDeviceData.DataBuf[DataStruct.DATA_START_POS]+1;
+                m_dateStruct.input_source = RcvDeviceData.DataBuf[DataStruct.DATA_START_POS+1];
                 break;
             case 0x02:
                 MyLog.v(TAG,"Output channel");
@@ -231,7 +231,7 @@ public class Sie_app_data_share extends Application {
             case 0x08:
                 MyLog.v(TAG,"SIE_UI_ACTION_MAINVOLUME");
                 action = share.SIE_UI_ACTION_MAINVOLUME;
-                m_dateStruct.main_vol = RcvDeviceData.DataBuf[DataStruct.DATA_START_POS]+1;
+                m_dateStruct.main_vol = RcvDeviceData.DataBuf[DataStruct.DATA_START_POS+1];
                 break;
             case 0x09:
                 MyLog.v(TAG,"SIE_UI_ACTION_CHANEL_VOLUME");
