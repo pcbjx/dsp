@@ -69,6 +69,7 @@ public class DataStruct
   public static final int GROUP_NAME = 0;
   public static int HEAD_DATA = 0xde;
   public static boolean HW_MUTE = false;
+  public static final int DATA_START_POS = 0x03;
   public static final int IAP_DSP_END_INFO = 60;
   public static final int IAP_DSP_PROGAM_INFO = 59;
   public static final int IAP_DSP_REQUEST_INFO = 58;
@@ -207,8 +208,8 @@ public class DataStruct
   public int blue_gain = 0;
   public int device_mode = 3;
   public int hi_mode = 0;
-  public int input_source = 3;
-  public int main_vol = 60;
+  public static int  input_source = 3;
+  public static int main_vol = 30;
   public int noisegate_t = 0;
   public int none4 = 0;
   public int none5 = 0;

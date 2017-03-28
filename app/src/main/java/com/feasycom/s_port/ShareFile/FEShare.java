@@ -99,6 +99,39 @@ public class FEShare implements Serializable {
     // 广播信息过滤
     private IntentFilter intentFilter;
     /**********************************************************/
+    private IntentFilter intentFilter_ui_main;
+    private IntentFilter intentFilter_ui_chanle;
+    private IntentFilter intentFilter_ui_setting;
+    private IntentFilter intentFilter_ui_delay;
+    private IntentFilter intentFilter_ui_fre;
+
+    public static final String SIE_UI_ACTION_INPUTCHANNEL =
+            "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_INPUTCHANNEL";
+    public static final String SIE_UI_ACTION_OUTPUTCHANNEL =
+            "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_OUTPUTCHANNEL";
+    public static final String SIE_UI_ACTION_EQ_PREPARE =
+            "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_EQ_PREPARE";
+    public static final String SIE_UI_ACTION_EQ_8 =
+            "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_EQ_8";
+    public static final String SIE_UI_ACTION_EQ_31 =
+            "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_EQ_31";
+    public static final String SIE_UI_ACTION_EQ_Bandwidth =
+            "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_EQ_Bandwidth";
+    public static final String SIE_UI_ACTION_CHANEL_DELAY =
+            "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_CHANEL_DELAY";
+    public static final String SIE_UI_ACTION_MAINVOLUME =
+            "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_MAINVOLUME";
+    public static final String SIE_UI_ACTION_CHANEL_VOLUME =
+            "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_CHANEL_VOLUME";
+    public static final String SIE_UI_ACTION_CHANLE_FRE =
+            "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_CHANLE_FRE";
+    public static final String SIE_UI_ACTION_DEEP_BASS =
+            "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_DEEP_BASS";
+    public static final String SIE_UI_ACTION_WIDESOUND =
+            "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_WIDESOUND";
+
+    public static final String SIE_UI_ACTION_non =
+            "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_non";
 
     private static class FEShareHolder{
         //单例对象实例
@@ -154,6 +187,48 @@ public class FEShare implements Serializable {
             intentFilter.addAction(BluetoothAdapter.ACTION_CONNECTION_STATE_CHANGED);
         }
         return intentFilter;
+    }
+
+    public IntentFilter getIntent_ui_mian_Filter(){
+        if (intentFilter_ui_main == null){
+            intentFilter_ui_main = new IntentFilter();
+            intentFilter_ui_main.addAction(SIE_UI_ACTION_MAINVOLUME);
+            intentFilter_ui_main.addAction(SIE_UI_ACTION_INPUTCHANNEL);
+
+        }
+        return intentFilter_ui_main;
+    }
+
+    public IntentFilter getIntent_ui_setting_Filter(){
+        if (intentFilter_ui_setting == null){
+            intentFilter_ui_setting = new IntentFilter();
+            intentFilter_ui_setting.addAction(SIE_UI_ACTION_EQ_8);
+            intentFilter_ui_setting.addAction(SIE_UI_ACTION_EQ_31);
+            intentFilter_ui_setting.addAction(SIE_UI_ACTION_EQ_Bandwidth);
+
+        }
+        return intentFilter_ui_setting;
+    }
+
+    public IntentFilter getIntent_ui_delay_Filter(){
+        if (intentFilter_ui_delay == null){
+            intentFilter_ui_delay = new IntentFilter();
+            intentFilter_ui_delay.addAction(SIE_UI_ACTION_EQ_8);
+            intentFilter_ui_delay.addAction(SIE_UI_ACTION_EQ_31);
+            intentFilter_ui_delay.addAction(SIE_UI_ACTION_EQ_Bandwidth);
+
+        }
+        return intentFilter_ui_delay;
+    }
+    public IntentFilter getIntent_ui_fq_dv_Filter(){
+        if (intentFilter_ui_fre == null){
+            intentFilter_ui_fre = new IntentFilter();
+            intentFilter_ui_fre.addAction(SIE_UI_ACTION_EQ_8);
+            intentFilter_ui_fre.addAction(SIE_UI_ACTION_EQ_31);
+            intentFilter_ui_fre.addAction(SIE_UI_ACTION_EQ_Bandwidth);
+
+        }
+        return intentFilter_ui_fre;
     }
 
     private void setupRunnable() {

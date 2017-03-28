@@ -417,4 +417,10 @@ public class RotateButtom extends View {
     {
         title = str;
     }
+
+    public void setpos(int pos)
+    {
+        rotateAngle = (float) ((pos - minTemp) * angleRate * 4.5);
+        invalidate();
+    }
 }

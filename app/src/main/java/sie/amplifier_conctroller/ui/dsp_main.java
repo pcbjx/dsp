@@ -24,6 +24,7 @@ import com.feasycom.s_port.model.MyLog;
 import common.zhang.customer.MyToolBar;
 import common.zhang.customer.MyToolBar.MyToolBarClickListener;
 import common.zhang.customer.RotateButtom;
+import sie.amplifier_conctroller.DataStruct.DataStruct;
 import sie.amplifier_conctroller.Sie_app_data_share;
 
 
@@ -64,8 +65,9 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
                 case 1:
                 {
                     // 更新View
-                    MyLog.i("连接", "成功");
-                    isconnect = true;
+                    MyLog.i(TAG, "得到音量:"+DataStruct.main_vol);
+                    main_volue_r_bt.setpos(DataStruct.main_vol);
+                    //isconnect = true;
                     break;
                 }
                 case 0:
@@ -102,7 +104,7 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
     {
         super.onDestroy();
         //解除广播接收器
-
+        unregisterReceiver(receiver);
     }
 
     // Activity出来时候，绑定广播接收器，监听蓝牙连接服务传过来的事件
@@ -110,7 +112,7 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
     protected void onResume()
     {
         super.onResume();
-        registerReceiver(receiver, share.getIntentFilter());
+        registerReceiver(receiver, share.getIntent_ui_mian_Filter());
     }
 
     /**
@@ -210,14 +212,14 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-                MyLog.i("comm蓝牙回调", String.valueOf(intent));
+
                 final String action = intent.getAction();
                 Message msg = new Message();
                 Bundle bundle = new Bundle();
-                if (BluetoothDevice.ACTION_ACL_CONNECTED.equals(action)) {
+                if (share.SIE_UI_ACTION_MAINVOLUME.equals(action)) {
                     // 连接成功
                         msg.what=1;
-                    } else if (BluetoothDevice.ACTION_ACL_DISCONNECTED.equals(action)) {
+                    } else if (share.SIE_UI_ACTION_INPUTCHANNEL.equals(action)) {
                     // 断开连接
                         msg.what=0;
                     } else if (BluetoothAdapter.ACTION_STATE_CHANGED.equals(action)) {

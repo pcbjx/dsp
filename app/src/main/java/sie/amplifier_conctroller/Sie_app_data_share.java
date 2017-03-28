@@ -1,28 +1,19 @@
 package sie.amplifier_conctroller;
 
 import android.app.Application;
-import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Message;
-import android.util.Log;
-import android.widget.Button;
-import android.widget.SeekBar;
-import android.widget.TextView;
 
-import com.feasycom.s_port.R;
 import com.feasycom.s_port.ShareFile.FEShare;
 import com.feasycom.s_port.model.MyLog;
 
-import java.io.IOException;
 import java.util.zip.CRC32;
 
-import common.zhang.customer.MyToolBar;
-import common.zhang.customer.RotateButtom;
 import sie.amplifier_conctroller.DataStruct.*;
+
 
 
 public class Sie_app_data_share extends Application {
@@ -129,78 +120,147 @@ public class Sie_app_data_share extends Application {
             }
         }
 
+    /*思翼协议格式
+        * head (2 BYTE)：DE 57
+        * data length (2 BYTE):data[2]*0xff+data3
+        * mode(1byte):0x04
+        * data:
+        * crc = 0xFF-sum(data)
+        * */
     public void ReceiveDataFromDevice(int paramInt1, int paramInt2)
     {
+        MyLog.v(TAG,"ReceiveDataFromDevice");
         if (U0HeadFlg == 0) {
             if ((paramInt1 == DataStruct.HEAD_DATA) && (U0HeadCnt == 0))
             {
-                U0HeadCnt += 1;
+                U0HeadCnt += 1;//sign find first head
                 U0DataCnt = 0;
-            }
-        }
-        do
-        {
-            do
-            {
-                do
-                {
-                    if ((paramInt1 == DataStruct.HEAD_DATA) && (U0HeadCnt == 1))
-                    {
-                        U0HeadCnt += 1;
-                        break;
-                    }
-                    if ((paramInt1 == DataStruct.HEAD_DATA) && (U0HeadCnt == 2))
-                    {
-                        U0HeadCnt += 1;
-                        break;
-                    }
-                    if ((paramInt1 == 0x57) && (U0HeadCnt == 3))
-                    {
-                        U0HeadFlg = 1;
-                        U0HeadCnt = 0;
-                        break;
-                    }
-                    U0HeadCnt = 0;
-                    break;
-                } while (U0HeadFlg != 1);
-                U0HeadCnt = 0;
-                RcvDeviceData.DataBuf[U0DataCnt] = paramInt1;
-                U0DataCnt += 1;
-            } while (U0DataCnt < RcvDeviceData.DataBuf[8] + RcvDeviceData.DataBuf[9] * 256 + 16 - 4);
-            RcvDeviceData.FrameType = RcvDeviceData.DataBuf[0];
-            RcvDeviceData.DeviceID = RcvDeviceData.DataBuf[1];
-            RcvDeviceData.UserID = RcvDeviceData.DataBuf[2];
-            RcvDeviceData.DataType = RcvDeviceData.DataBuf[3];
-            RcvDeviceData.ChannelID = RcvDeviceData.DataBuf[4];
-            RcvDeviceData.DataID = RcvDeviceData.DataBuf[5];
-            RcvDeviceData.PCFadeInFadeOutFlg = RcvDeviceData.DataBuf[6];
-            RcvDeviceData.PcCustom = RcvDeviceData.DataBuf[7];
-            RcvDeviceData.DataLen = (RcvDeviceData.DataBuf[8] + RcvDeviceData.DataBuf[9] * 256);
-            RcvDeviceData.CheckSum = RcvDeviceData.DataBuf[(RcvDeviceData.DataLen + 16 - 6)];
-            RcvDeviceData.FrameEnd = RcvDeviceData.DataBuf[(RcvDeviceData.DataLen + 16 - 5)];
-            U0HeadFlg = 0;
-            U0DataCnt = 0;
-        } while (RcvDeviceData.FrameEnd != 170);
-        int i = 0;
-        paramInt1 = 0;
-        for (;;)
-        {
-            if (paramInt1 >= RcvDeviceData.DataLen + 16 - 6)
-            {
-                if (i != RcvDeviceData.CheckSum) {
-                    break;
-                }
-
-                //PcConnectFlg = 1;
-                //PcConnectCnt = 0;
-                //ComType = paramInt2;
-                //ProcessRcvData();
-
                 return;
             }
-            i ^= RcvDeviceData.DataBuf[paramInt1];
-            paramInt1 += 1;
+            if ((paramInt1 == 0x57) && (U0HeadCnt == 1))
+            {
+                U0HeadFlg = 1;//sign find full head
+                U0HeadCnt = 0;
+            }
+            U0HeadCnt = 0;
+            //丢弃协议头以前的数据
+            return;
         }
+
+        if (U0HeadFlg==1) {
+            RcvDeviceData.DataBuf[U0DataCnt] = paramInt1;
+            U0DataCnt += 1;//U0DateCnt 表示找到头以后的有效数据、包括长度，mode+data+check sum的计算
+            if (U0DataCnt == 2)//记录长度
+            {
+                RcvDeviceData.DataLen = (RcvDeviceData.DataBuf[0]*0xff + RcvDeviceData.DataBuf[1]);
+            }else if (U0DataCnt >2 ){
+                if (U0DataCnt >= RcvDeviceData.DataLen+4) {
+                    //理论接完了，清楚标记
+                    U0HeadFlg = 0;
+
+                    RcvDeviceData.CheckSum = RcvDeviceData.DataBuf[(U0DataCnt-1)];
+                    RcvDeviceData.DataType = RcvDeviceData.DataBuf[2];//mode
+                    RcvDeviceData.DataID = RcvDeviceData.DataBuf[3];//para0
+                    U0DataCnt = 0;
+
+                    byte sum = 0;
+                    int i = 0;
+                    for (;;)
+                    {
+                        if (i >= RcvDeviceData.DataLen)
+                        {
+                            int tmp = 255 -sum;
+                            if (tmp != RcvDeviceData.CheckSum) {
+                                //非法数据
+                                MyLog.e(TAG,"error command");
+
+                            }else
+                            {
+                                MyLog.v(TAG,"find command");
+                                ProcessRcvData();
+
+                            }
+
+                            return;
+                        }
+                        sum = (byte) (sum + RcvDeviceData.DataBuf[3+i]);//数据区
+                        MyLog.v(TAG, String.format("%02x ", RcvDeviceData.DataBuf[3 + i]));
+                        i += 1;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    private void ProcessRcvData()
+    {
+        String action = share.SIE_UI_ACTION_non;
+        switch (RcvDeviceData.DataID)
+        {
+            case 0x01:
+                MyLog.v(TAG,"Input channel");
+                action = share.SIE_UI_ACTION_INPUTCHANNEL;
+                m_dateStruct.input_source = RcvDeviceData.DataBuf[DataStruct.DATA_START_POS]+1;
+                break;
+            case 0x02:
+                MyLog.v(TAG,"Output channel");
+                action = share.SIE_UI_ACTION_OUTPUTCHANNEL;
+                break;
+            case 0x03:
+                MyLog.v(TAG,"EQ PRE");
+                action = share.SIE_UI_ACTION_EQ_PREPARE;
+                break;
+            case 0x04:
+                MyLog.v(TAG,"8 EQ");
+                action = share.SIE_UI_ACTION_EQ_8;
+                break;
+            case 0x05:
+                MyLog.v(TAG,"32 EQ");
+                action = share.SIE_UI_ACTION_EQ_31;
+                break;
+            case 0x06:
+                MyLog.v(TAG,"EQ Bandwidth");
+                action = share.SIE_UI_ACTION_EQ_Bandwidth;
+                break;
+            case 0x07:
+                MyLog.v(TAG,"SIE_UI_ACTION_CHANEL_DELAY");
+                action = share.SIE_UI_ACTION_CHANEL_DELAY;
+                break;
+            case 0x08:
+                MyLog.v(TAG,"SIE_UI_ACTION_MAINVOLUME");
+                action = share.SIE_UI_ACTION_MAINVOLUME;
+                m_dateStruct.main_vol = RcvDeviceData.DataBuf[DataStruct.DATA_START_POS]+1;
+                break;
+            case 0x09:
+                MyLog.v(TAG,"SIE_UI_ACTION_CHANEL_VOLUME");
+                action = share.SIE_UI_ACTION_CHANEL_VOLUME;
+                break;
+            case 0x0a:
+                MyLog.v(TAG,"SIE_UI_ACTION_CHANLE_FRE");
+                action = share.SIE_UI_ACTION_CHANLE_FRE;
+                break;
+            case 0x0b:
+                MyLog.v(TAG,"SIE_UI_ACTION_DEEP_BASS");
+                action = share.SIE_UI_ACTION_DEEP_BASS;
+                break;
+            case 0x0c:
+                MyLog.v(TAG,"SIE_UI_ACTION_WIDESOUND");
+                action = share.SIE_UI_ACTION_WIDESOUND;
+                break;
+            case 0x40:
+                MyLog.v(TAG,"EQ Bandwidth");
+                action = share.SIE_UI_ACTION_INPUTCHANNEL;
+                break;
+            default:
+                break;
+
+        }
+
+        Intent intent = new Intent(action);
+        intent.putExtra("msg", "hello receiver.");
+        sendBroadcast(intent);
     }
 
     @Override
