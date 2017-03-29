@@ -198,6 +198,23 @@ public class MyToolBar extends RelativeLayout {
 	}
 
 	/*
+	 * 设置自定义toolbar的左右两边按钮的字符
+	 */
+	public void setToolBarleftBtnText(String lefttxt) {
+
+		leftBtn.setText(lefttxt);
+
+	}
+	/*
+	 * 设置自定义toolbar的左右两边按钮的字符
+	 */
+	public void setToolBarRightBtnText(String righttxt) {
+
+		rightBtn.setText(righttxt);
+
+	}
+
+	/*
 	 * 设置自定义的toolbar是否显示标题，默认是有标题的
 	 */
 	public void setToolBarTitleVisible(int title_id, boolean flag) {

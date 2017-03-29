@@ -57,7 +57,8 @@ public class Sie_app_data_share extends Application {
         public void run() {
 
             if (share.isSPP) {
-                MyLog.i("连接", "1");
+                readData();
+                /*MyLog.i("连接", "1");
                 if (share.connect(share.device)) {
                     MyLog.i("连接", "2");
                     //连接成功
@@ -68,7 +69,7 @@ public class Sie_app_data_share extends Application {
                     //goBackToDo();
                 }
                 //停止搜索
-                share.stopSearch();
+                share.stopSearch();*/
             }
 
         }

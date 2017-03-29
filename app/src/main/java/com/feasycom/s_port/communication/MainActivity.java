@@ -200,6 +200,9 @@ public class MainActivity extends AppCompatActivity {
                         }
                         return;
                     }
+                }else
+                {
+
                 }
         runOnUiThread(new Runnable() {
             @Override

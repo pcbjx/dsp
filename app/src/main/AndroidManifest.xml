@@ -36,9 +36,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <!--<activity android:name="sie.amplifier_conctroller.ui.dsp_main">-->
+        <activity android:name="sie.amplifier_conctroller.ui.dsp_main">
 
-             <activity android:name=".TabActivity">
+             <!--<activity android:name=".TabActivity">-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,8 +46,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".communication.MainActivity" />
-         <activity android:name="sie.amplifier_conctroller.ui.dsp_main"/>
-        <!--<activity android:name=".TabActivity" />-->
+         <!--<activity android:name="sie.amplifier_conctroller.ui.dsp_main"/>-->
+        <activity android:name=".TabActivity" />
         <activity android:name=".setting.SettingActivity" />
         <activity android:name=".about.AboutActivity" />
         <activity

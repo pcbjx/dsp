@@ -1,15 +1,18 @@
 package sie.amplifier_conctroller.ui;
 
+import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -39,6 +42,8 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
 
     private FEShare share = FEShare.getInstance();
 
+    Sie_app_data_share sie_data_share;
+
     private boolean isconnect = false;
     private MyToolBar myToolBar;// 自定义toolbar
 
@@ -62,6 +67,27 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
             switch (msg.what)
             {
                 // 判断发送的消息
+                case 0:
+                {
+                    // 更新View
+                    MyLog.i(TAG, "状态："+msg.arg1);
+
+                    isconnect = false;
+                    if (msg.arg1 == share.CONNECTED) {
+                        myToolBar.setToolBarRightBtnText("About");
+                        isconnect = true;
+                    }
+                    if (msg.arg1 == share.CONNECTING) {
+                        myToolBar.setToolBarRightBtnText("Connecting");
+                        isconnect = false;
+                    }
+                    if (msg.arg1 == share.DIS_CONNECT) {
+                        myToolBar.setToolBarRightBtnText("Disconnect");
+                        isconnect = false;
+                    }
+
+                    break;
+                }
                 case 1:
                 {
                     // 更新View
@@ -72,7 +98,7 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
                     //isconnect = true;
                     break;
                 }
-                case 0:
+                case 2:
                 {
                     // 更新View
                     MyLog.i("连接", "失败");
@@ -93,11 +119,9 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dsp_main);
 
-        Sie_app_data_share sie_data_share = (Sie_app_data_share)getApplication();
+        sie_data_share = (Sie_app_data_share)getApplication();
 
         init();
-        sie_data_share.startrev();
-
     }
 
 
@@ -126,6 +150,7 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
      */
     private void init()
     {
+
         titile_init();
 
         tv_bass_vol = (TextView) findViewById(R.id.vol_tips);
@@ -169,6 +194,12 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
             }
         });
 
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                share.auto_connect_bt();
+            }
+        }).start();
 
 
     }
@@ -227,16 +258,27 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
                     // 连接成功
                         msg.what=1;
                     } else if (share.SIE_UI_ACTION_INPUTCHANNEL.equals(action)) {
+                        msg.what=2;
+                    }else if (share.SIE_UI_ACTION_BT_CHANGE.equals(action)) {
                     // 断开连接
+                        MyLog.i(TAG, "蓝牙状态");
+
                         msg.what=0;
+                        msg.arg1 =intent.getExtras().getInt("bt_status");
+
                     } else if (BluetoothAdapter.ACTION_STATE_CHANGED.equals(action)) {
                         if (intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, -1) == BluetoothAdapter.STATE_OFF) {
                             MyLog.i("蓝牙", "关闭");
                             msg.what=0;
+                        }
+                    } else if (BluetoothDevice.ACTION_ACL_CONNECTED.equals(action)) {
+                        MyLog.v(TAG,"蓝牙连接");
+                        sie_data_share.startrev();
+                    } else if (BluetoothDevice.ACTION_ACL_CONNECTED.equals(action)) {
+                        MyLog.v(TAG,"蓝牙断开连接");
                     }
-                }
 
-            myHandler.sendMessage(msg);
+                myHandler.sendMessage(msg);
 
             }
 
