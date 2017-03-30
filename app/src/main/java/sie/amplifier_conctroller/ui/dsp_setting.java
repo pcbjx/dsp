@@ -7,6 +7,8 @@ import android.widget.TabHost;
 import android.widget.Toast;
 
 import com.feasycom.s_port.R;
+import com.feasycom.s_port.ShareFile.FEShare;
+import com.feasycom.s_port.about.AboutActivity;
 
 import common.zhang.customer.MyToolBar;
 import common.zhang.customer.MyToolBar.MyToolBarClickListener;
@@ -14,6 +16,8 @@ import common.zhang.customer.MyToolBar.MyToolBarClickListener;
 
 
 public class dsp_setting  extends TabActivity {
+
+    private FEShare share = FEShare.getInstance();
 
 
     static AnimationTabHost mTabHost;
@@ -76,6 +80,8 @@ public class dsp_setting  extends TabActivity {
         // 设置是否显示中间标题，默认的是显示
         myToolBar.setToolBarTitleVisible(R.string.title_setting_main,true);
 
+        myToolBar.updateRightButton(share.connect_state);
+
         /*
 		 * toolbar的点击事件处理
 		 */
@@ -83,7 +89,15 @@ public class dsp_setting  extends TabActivity {
 
             @Override
             public void rightBtnClick() {// 右边按钮点击事件
-                Toast.makeText(dsp_setting.this, "连接蓝牙", Toast.LENGTH_SHORT).show();
+                if((share.connect_state==2))//未连接跳转
+                {
+                    final Intent deviceIntent = new Intent(dsp_setting.this, com.feasycom.s_port.TabActivity.class);
+                    startActivity(deviceIntent);
+                }else if ((share.connect_state==1))
+                {
+                    final Intent deviceIntent = new Intent(dsp_setting.this, AboutActivity.class);
+                    startActivity(deviceIntent);
+                }
             }
 
             @Override

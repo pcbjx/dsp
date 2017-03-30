@@ -397,7 +397,8 @@
     <string name="ResetEQ">Whether the reset all EQ？</string>
 
     <!-- titile string-->
-    <string name="title_main">main</string>
+    <string name="title_main">Main</string>
+    <string name="title_about">About</string>
     <string name="title_setting_main">Setting</string>
     <string name="title_setting_chanel">Chanel</string>
     <string name="title_setting_delay">Delay</string>

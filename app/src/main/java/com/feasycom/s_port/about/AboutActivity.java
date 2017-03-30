@@ -12,7 +12,12 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.feasycom.s_port.R;
+import com.feasycom.s_port.ShareFile.FEShare;
+import com.feasycom.s_port.TabActivity;
 import com.feasycom.s_port.model.MyLog;
+
+import common.zhang.customer.MyToolBar;
+import sie.amplifier_conctroller.ui.dsp_main;
 
 
 /**
@@ -22,6 +27,8 @@ import com.feasycom.s_port.model.MyLog;
 public class AboutActivity extends AppCompatActivity {
     private Context aboutActivity = this;
     private TextView tv_tel, tv_mail, tv_web;
+    private MyToolBar myToolBar;// 自定义toolbar
+    private FEShare share = FEShare.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +42,44 @@ public class AboutActivity extends AppCompatActivity {
         tv_mail = (TextView) findViewById(R.id.tv_mail);
         tv_mail.setOnClickListener(new MyClickListener());
 
+        titile_init();
+
+    }
+
+
+    /**
+     * @Title: titile_init
+     * @Description: TODO(初始化UI控件)
+     * @param
+     * @return void
+     * @throws
+     *
+     */
+    public void titile_init()
+    {
+        myToolBar = (MyToolBar) findViewById(R.id.myToolBar);
+        // 设置左边右边的按钮是否显示
+        myToolBar.setToolBarBtnVisiable(true, false);
+        // 设置是否显示中间标题，默认的是显示
+        myToolBar.setToolBarTitleVisible(R.string.title_main,true);
+        myToolBar.updateRightButton(share.connect_state);
+
+        /*
+		 * toolbar的点击事件处理
+		 */
+        myToolBar.setOnMyToolBarClickListener(new MyToolBar.MyToolBarClickListener() {
+
+            @Override
+            public void rightBtnClick() {// 右边按钮点击事件
+
+            }
+
+            @Override
+            public void leftBtnClick() {// 左边按钮点击事件
+                //Toast.makeText(dsp_main.this, "返回", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
     }
 
     class MyClickListener implements View.OnClickListener {
@@ -60,7 +105,7 @@ public class AboutActivity extends AppCompatActivity {
                     break;
                 }
                 case R.id.tv_web:{
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.feasycom.com/" + getResources().getText(R.string.web_language)));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sintegrate.tmall.com/" + getResources().getText(R.string.web_language)));
                     startActivity(intent);
                     break;
                 }

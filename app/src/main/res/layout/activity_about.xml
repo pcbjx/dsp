@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
+
+    <common.zhang.customer.MyToolBar
+        android:id="@+id/myToolBar"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        custom:leftButtonBackground="@null"
+        custom:leftButtonText="@string/BtnBack"
+        custom:leftButtonTextColor="#0000ff"
+        custom:leftButtonTextSize="12sp"
+        custom:rightButtonBackground="@null"
+        custom:rightButtonText="@string/disConnect"
+        custom:rightButtonTextColor="#0000ff"
+        custom:rightButtonTextSize="8sp"
+        custom:textTitle="MyTitle"
+        custom:titleTextColor="#A10000"
+        custom:titleTextSize="12sp" >
+    </common.zhang.customer.MyToolBar>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -48,7 +66,7 @@
             android:text="@string/tel" />
 
         <TextView
-            android:text="0755-27924639"
+            android:text="400-777-6806"
             android:layout_width="match_parent"
             android:layout_height="@dimen/about_list_hight"
             android:gravity="center_vertical"
@@ -74,7 +92,7 @@
             android:text="@string/web" />
 
         <TextView
-            android:text="www.feasycom.com"
+            android:text="http://www.gzxinsiyi.com/"
             android:layout_width="match_parent"
             android:layout_height="@dimen/about_list_hight"
             android:gravity="center_vertical"
@@ -100,7 +118,7 @@
             android:text="@string/mail" />
 
         <TextView
-            android:text="support@feasycom.com"
+            android:text="sales@sielectronic.com"
             android:layout_width="match_parent"
             android:layout_height="@dimen/about_list_hight"
             android:gravity="center_vertical"
@@ -126,7 +144,7 @@
             android:text="@string/wc" />
 
         <TextView
-            android:text="Feasycom"
+            android:text="gzxinsiyi"
             android:layout_width="match_parent"
             android:layout_height="@dimen/about_list_hight"
             android:gravity="center_vertical"

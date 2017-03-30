@@ -57,7 +57,7 @@
     //关于
     <string name="about">关于</string>
     <string name="company">公司</string>
-    <string name="company_name">深圳市飞易通科技有限公司</string>
+    <string name="company_name">广州思翼电子科技有限公司</string>
     <string name="tel">电话</string>
     <string name="web">网址</string>
     <string name="mail">邮件</string>
@@ -74,4 +74,13 @@
     <string name="updated_at">上次更新于%1$s前</string>
     <string name="updated_just_now">刚刚更新</string>
     <string name="time_error">时间有问题</string>
+
+    <!-- titile string-->
+    <string name="title_main">主页</string>
+    <string name="title_about">关于</string>
+    <string name="title_setting_main">设置</string>
+    <string name="title_setting_chanel">频道</string>
+    <string name="title_setting_delay">延时</string>
+    <string name="title_setting_fred">分频器</string>
+    <string name="title_activity_dsp_setting_fq_dv">分频器1</string>
 </resources>

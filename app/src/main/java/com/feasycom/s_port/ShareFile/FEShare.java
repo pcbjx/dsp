@@ -82,7 +82,7 @@ public class FEShare implements Serializable {
 
     //蓝牙
     public BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-    public int connect_state = BluetoothProfile.STATE_DISCONNECTED;
+
     public BluetoothSocket socket;
     public BluetoothDevice device;
     public InputStream inputStream;
@@ -102,6 +102,8 @@ public class FEShare implements Serializable {
     public static int  CONNECTING = 0;
     public static int  CONNECTED = 1;
     public static int  DIS_CONNECT = 2;
+
+    public static int  connect_state = DIS_CONNECT;
 
 
 
@@ -313,26 +315,25 @@ public class FEShare implements Serializable {
      * @throws IOException
      */
     private boolean SPPConnect() {
-//        device = bluetoothAdapter.getRemoteDevice(address);
         try {
             MyLog.i("initSocket", "------0");
             sendBtStatus(CONNECTING);
+            connect_state = CONNECTING;
             initSocket();
             MyLog.i("initSocket", "------2");
-//            connectingAddr = address;
             sleep(100);
             try {
                 socket.connect();
-//                connectedAddr = connectingAddr;
-//                connectingAddr = null;
                 MyLog.i("连接设备", "成功");
                 sendBtStatus(CONNECTED);
+                connect_state = CONNECTED;
 
                 sleep(100);
                 return true;
             } catch (IOException e) {
                 MyLog.i("连接设备", "失败");
                 sendBtStatus(DIS_CONNECT);
+                connect_state = DIS_CONNECT;
                 sleep(100);
                 return false;
             }
@@ -505,9 +506,9 @@ public class FEShare implements Serializable {
 
             final String action = intent.getAction();
             if (BluetoothDevice.ACTION_ACL_CONNECTED.equals(action)) {
-                connect_state = BluetoothProfile.STATE_CONNECTED;
+                //connect_state = BluetoothProfile.STATE_CONNECTED;
             } else if (BluetoothDevice.ACTION_ACL_DISCONNECTED.equals(action)) {
-                connect_state = BluetoothProfile.STATE_DISCONNECTED;
+                //connect_state = BluetoothProfile.STATE_DISCONNECTED;
             } else if (BluetoothAdapter.ACTION_DISCOVERY_STARTED.equals(action)) {
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
             } else if (autoConect && (BluetoothDevice.ACTION_FOUND.equals(action))) {
@@ -585,6 +586,14 @@ public class FEShare implements Serializable {
     }
 
     public boolean auto_connect_bt() {
+
+        if(socket!=null)
+        {
+            if(socket.isConnected())
+            return true;
+        }
+
+
         autoConect = true;
         if (bluetoothAdapter == null) return false;
         // 先停止搜索

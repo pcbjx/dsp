@@ -11,11 +11,14 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.feasycom.s_port.R;
+import com.feasycom.s_port.ShareFile.FEShare;
 
 /*
  * 自定义ToolBar，继承自RelativeLayout
  **/
 public class MyToolBar extends RelativeLayout {
+
+	private FEShare share = FEShare.getInstance();
 
 	private Button leftBtn, rightBtn; // 左边和右边的按钮
 	private TextView tvTitle; // 中间的标题
@@ -103,7 +106,8 @@ public class MyToolBar extends RelativeLayout {
 		 */
 		leftBtn.setText(leftBtnText);
 		leftBtn.setTextColor(leftBtnTextColor);
-		leftBtn.setBackground(leftBtnBackground);
+		//leftBtn.setBackground(leftBtnBackground);
+		leftBtn.setBackgroundColor(getResources().getColor(R.color.red));
 
 		leftBtn.setTextSize(leftBtnTextSize);
 		/*
@@ -111,7 +115,8 @@ public class MyToolBar extends RelativeLayout {
 		 */
 		rightBtn.setText(rightBtnText);
 		rightBtn.setTextColor(rightBtnTextColor);
-		rightBtn.setBackground(rightBtnBackground);
+		//rightBtn.setBackground(rightBtnBackground);
+		rightBtn.setBackgroundColor(getResources().getColor(R.color.red));
 		rightBtn.setTextSize(rightBtnTextSize);
 		// 设置自定义toolbar的背景色
 		setBackgroundColor(Color.WHITE);
@@ -158,6 +163,7 @@ public class MyToolBar extends RelativeLayout {
 		});
 	}
 
+
 	/*
 	 * 定义接口
 	 */
@@ -200,18 +206,33 @@ public class MyToolBar extends RelativeLayout {
 	/*
 	 * 设置自定义toolbar的左右两边按钮的字符
 	 */
-	public void setToolBarleftBtnText(String lefttxt) {
+	public void setToolBarleftBtnText(String lefttxt_id) {
 
-		leftBtn.setText(lefttxt);
+		leftBtn.setText(lefttxt_id);
 
 	}
 	/*
 	 * 设置自定义toolbar的左右两边按钮的字符
 	 */
-	public void setToolBarRightBtnText(String righttxt) {
+	public void setToolBarRightBtnText(int righttxt_id) {
 
-		rightBtn.setText(righttxt);
+		rightBtn.setText(righttxt_id);
 
+	}
+
+
+	public void updateRightButton(int bt_status)
+	{
+
+		if (bt_status== share.CONNECTED) {
+			setToolBarRightBtnText(R.string.about);
+		}
+		if (bt_status == share.CONNECTING) {
+			setToolBarRightBtnText(R.string.connecting);
+		}
+		if (bt_status == share.DIS_CONNECT) {
+			setToolBarRightBtnText(R.string.disConnect);
+		}
 	}
 
 	/*

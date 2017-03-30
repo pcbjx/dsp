@@ -1,20 +1,23 @@
 package sie.amplifier_conctroller.ui;
 
-import android.Manifest;
+
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.ActivityCompat;
+
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +25,7 @@ import android.widget.Toast;
 import com.feasycom.s_port.R;
 import com.feasycom.s_port.ShareFile.FEShare;
 import com.feasycom.s_port.TabActivity;
+import com.feasycom.s_port.about.AboutActivity;
 import com.feasycom.s_port.model.MyLog;
 
 import common.zhang.customer.MyToolBar;
@@ -42,6 +46,7 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
 
     private FEShare share = FEShare.getInstance();
 
+    int UserGroup = 1;
     Sie_app_data_share sie_data_share;
 
     private boolean isconnect = false;
@@ -49,6 +54,10 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
 
     TextView connect_state;
     TextView tv_bass_vol;
+
+    private ImageView[] B_UGbg = new ImageView[6];
+    private Button[] B_UserGroup = new Button[6];
+
     Button bt_vol_setting;
     RotateButtom main_volue_r_bt;
     SeekBar bass_seekbar;
@@ -71,19 +80,11 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
                 {
                     // 更新View
                     MyLog.i(TAG, "状态："+msg.arg1);
-
                     isconnect = false;
-                    if (msg.arg1 == share.CONNECTED) {
-                        myToolBar.setToolBarRightBtnText("About");
+                    myToolBar.updateRightButton(msg.arg1);
+                    if (msg.arg1 == 1)
+                    {
                         isconnect = true;
-                    }
-                    if (msg.arg1 == share.CONNECTING) {
-                        myToolBar.setToolBarRightBtnText("Connecting");
-                        isconnect = false;
-                    }
-                    if (msg.arg1 == share.DIS_CONNECT) {
-                        myToolBar.setToolBarRightBtnText("Disconnect");
-                        isconnect = false;
                     }
 
                     break;
@@ -141,6 +142,7 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
         registerReceiver(receiver, share.getIntent_ui_mian_Filter());
     }
 
+
     /**
      * @Title: init
      * @Description: TODO(初始化UI控件)
@@ -150,23 +152,17 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
      */
     private void init()
     {
-
         titile_init();
 
         tv_bass_vol = (TextView) findViewById(R.id.vol_tips);
-
         bass_seekbar = (SeekBar) findViewById(R.id.seekBar_bass_volume);
         bass_seekbar.setOnSeekBarChangeListener(this);
         bass_seekbar.setMax(60);
         bass_seekbar.setProgress(10);
-
         bt_vol_setting = (Button)findViewById(R.id.bt_setting);
         bt_vol_setting.setOnClickListener(this);
-
         share.context = this;
         share.init();
-
-
 
         if (!share.bluetoothAdapter.isEnabled()) {
             Intent turnOn = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
@@ -174,8 +170,8 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
             Toast.makeText(getApplicationContext(), getResources().getText(R.string.on)
                     , Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(getApplicationContext(), getResources().getText(R.string.bt_turned_on),
-                    Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), getResources().getText(R.string.bt_turned_on),
+                  //  Toast.LENGTH_SHORT).show();
         }
 
         main_volue_r_bt = (RotateButtom)findViewById(R.id.main_volume);
@@ -194,6 +190,25 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
             }
         });
 
+        B_UserGroup[0] = ((Button)findViewById(R.id.id_b_1));
+        B_UserGroup[1] = ((Button)findViewById(R.id.id_b_2));
+        B_UserGroup[2] = ((Button)findViewById(R.id.id_b_3));
+        B_UserGroup[3] = ((Button)findViewById(R.id.id_b_4));
+        B_UserGroup[4] = ((Button)findViewById(R.id.id_b_5));
+        B_UserGroup[5] = ((Button)findViewById(R.id.id_b_6));
+
+
+        for (int i = 0;i<6;i++)
+        {
+            //B_UserGroup[i].setOnClickListener(groupBtClickistener);
+            if(i>2)//前三个为机器固话，不许修改
+            {
+                B_UserGroup[i].setOnLongClickListener(groupBtonLongClicklistener);
+            }
+            B_UserGroup[i].setOnClickListener(groupBtClickistener);
+
+        }
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -201,8 +216,92 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
             }
         }).start();
 
+    }
+
+    View.OnClickListener groupBtClickistener  = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            int id = v.getId();
+
+            FlashUserGroupNoSel();
+            for (int j = 0;j<6;j++)
+            {
+                if(id == B_UserGroup[j].getId())
+                {
+                    UserGroup = j;
+                    Log.v(TAG,"Group click:"+UserGroup);
+                    FlashUserGroupSel();
+                }
+            }
+        }
+    };
+
+    View.OnLongClickListener groupBtonLongClicklistener = new View.OnLongClickListener()
+    {
+        @Override
+        public boolean onLongClick(View v) {
+            int id = v.getId();
+
+            FlashUserGroupNoSel();
+            for (int j = 0;j<6;j++)
+            {
+                if(id == B_UserGroup[j].getId())
+                {
+
+                    UserGroup = j;
+                    Log.v(TAG,"Group long click:"+UserGroup);
+                    FlashUserGroupSel();
+                }
+            }
+
+            return true;
+        }
+    };
+
+
+    void FlashUserGroupNoSel()
+    {
+        B_UserGroup[0].setBackgroundResource(R.drawable.use_group_1_normal);
+        B_UserGroup[1].setBackgroundResource(R.drawable.use_group_2_normal);
+        B_UserGroup[2].setBackgroundResource(R.drawable.use_group_3_normal);
+        B_UserGroup[3].setBackgroundResource(R.drawable.use_group_4_normal);
+        B_UserGroup[4].setBackgroundResource(R.drawable.use_group_5_normal);
+        B_UserGroup[5].setBackgroundResource(R.drawable.use_group_6_normal);
 
     }
+
+    void FlashUserGroupSel()
+    {
+        FlashUserGroupNoSel();
+        switch (UserGroup)
+        {
+            case 0:
+                B_UserGroup[UserGroup].setBackgroundResource(R.drawable.use_group_1_press);
+                break;
+            case 1:
+                B_UserGroup[UserGroup].setBackgroundResource(R.drawable.use_group_2_press);
+                break;
+            case 2:
+                B_UserGroup[UserGroup].setBackgroundResource(R.drawable.use_group_3_press);
+                break;
+            case 3:
+                B_UserGroup[UserGroup].setBackgroundResource(R.drawable.use_group_4_press);
+                break;
+            case 4:
+                B_UserGroup[UserGroup].setBackgroundResource(R.drawable.use_group_6_press);
+                break;
+            case 5:
+                B_UserGroup[UserGroup].setBackgroundResource(R.drawable.use_group_6_press);
+                break;
+
+            default:
+                break;
+
+
+        }
+
+    }
+
 
     /**
      * @Title: titile_init
@@ -220,6 +319,8 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
         // 设置是否显示中间标题，默认的是显示
         myToolBar.setToolBarTitleVisible(R.string.title_main,true);
 
+        myToolBar.updateRightButton(share.connect_state);
+
         /*
 		 * toolbar的点击事件处理
 		 */
@@ -227,22 +328,21 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
 
             @Override
             public void rightBtnClick() {// 右边按钮点击事件
-                if(!isconnect)
+                if((share.connect_state==2))//未连接跳转
                 {
-                    Toast.makeText(dsp_main.this, "菜单", Toast.LENGTH_SHORT).show();
                     final Intent deviceIntent = new Intent(dsp_main.this, TabActivity.class);
                     startActivity(deviceIntent);
-                }else
+                }else if ((share.connect_state==1))
                 {
-
+                    final Intent deviceIntent = new Intent(dsp_main.this, AboutActivity.class);
+                    startActivity(deviceIntent);
                 }
 
             }
 
             @Override
             public void leftBtnClick() {// 左边按钮点击事件
-                Toast.makeText(dsp_main.this, "返回", Toast.LENGTH_SHORT).show();
-
+                //Toast.makeText(dsp_main.this, "返回", Toast.LENGTH_SHORT).show();
             }
         });
     }
