@@ -106,8 +106,8 @@ public class MyToolBar extends RelativeLayout {
 		 */
 		leftBtn.setText(leftBtnText);
 		leftBtn.setTextColor(leftBtnTextColor);
-		//leftBtn.setBackground(leftBtnBackground);
-		leftBtn.setBackgroundColor(getResources().getColor(R.color.red));
+		leftBtn.setBackground(leftBtnBackground);
+		//leftBtn.setBackgroundColor(getResources().getColor(R.color.red));
 
 		leftBtn.setTextSize(leftBtnTextSize);
 		/*
@@ -115,8 +115,8 @@ public class MyToolBar extends RelativeLayout {
 		 */
 		rightBtn.setText(rightBtnText);
 		rightBtn.setTextColor(rightBtnTextColor);
-		//rightBtn.setBackground(rightBtnBackground);
-		rightBtn.setBackgroundColor(getResources().getColor(R.color.red));
+		rightBtn.setBackground(rightBtnBackground);
+		//rightBtn.setBackgroundColor(getResources().getColor(R.color.red));
 		rightBtn.setTextSize(rightBtnTextSize);
 		// 设置自定义toolbar的背景色
 		setBackgroundColor(Color.WHITE);
@@ -225,13 +225,13 @@ public class MyToolBar extends RelativeLayout {
 	{
 
 		if (bt_status== share.CONNECTED) {
-			setToolBarRightBtnText(R.string.about);
+			setToolBarRightBtnText(R.string.setting);
 		}
 		if (bt_status == share.CONNECTING) {
 			setToolBarRightBtnText(R.string.connecting);
 		}
 		if (bt_status == share.DIS_CONNECT) {
-			setToolBarRightBtnText(R.string.disConnect);
+			setToolBarRightBtnText(R.string.ST_BT_DISCONNECT);
 		}
 	}
 

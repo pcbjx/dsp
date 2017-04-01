@@ -14,6 +14,7 @@ import java.util.zip.CRC32;
 
 import sie.amplifier_conctroller.DataStruct.*;
 
+import static sie.amplifier_conctroller.DataStruct.DataStruct.EQList;
 
 
 public class Sie_app_data_share extends Application {
@@ -218,16 +219,25 @@ public class Sie_app_data_share extends Application {
                 action = share.SIE_UI_ACTION_EQ_8;
                 break;
             case 0x05:
-                MyLog.v(TAG,"32 EQ");
+                MyLog.v(TAG,"31 EQ");
                 action = share.SIE_UI_ACTION_EQ_31;
+                for (int i = 0;i<31;i++)
+                {
+                    DataStruct.EQList.InEQ[i].level = RcvDeviceData.DataBuf[DataStruct.DATA_START_POS+1+i];
+                }
                 break;
             case 0x06:
                 MyLog.v(TAG,"EQ Bandwidth");
                 action = share.SIE_UI_ACTION_EQ_Bandwidth;
+
+                DataStruct.EQList.InQ_value = RcvDeviceData.DataBuf[DataStruct.DATA_START_POS+1]*255;
+                DataStruct.EQList.InQ_value += RcvDeviceData.DataBuf[DataStruct.DATA_START_POS+2];
+
                 break;
             case 0x07:
                 MyLog.v(TAG,"SIE_UI_ACTION_CHANEL_DELAY");
                 action = share.SIE_UI_ACTION_CHANEL_DELAY;
+                //DataStruct.DataStructBuf.IN_CH[0].delay =
                 break;
             case 0x08:
                 MyLog.v(TAG,"SIE_UI_ACTION_MAINVOLUME");

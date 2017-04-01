@@ -8,36 +8,107 @@
     <common.zhang.customer.MyToolBar
         android:id="@+id/myToolBar"
         android:layout_width="fill_parent"
-        android:layout_height="45dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
         custom:leftButtonBackground="@null"
         custom:leftButtonText="@string/BtnBack"
         custom:leftButtonTextColor="#0000ff"
-        custom:leftButtonTextSize="12sp"
+        custom:leftButtonTextSize="10sp"
         custom:rightButtonBackground="@null"
-        custom:rightButtonText="@string/disConnect"
+        custom:rightButtonText="@string/ST_BT_DISCONNECT"
         custom:rightButtonTextColor="#0000ff"
         custom:rightButtonTextSize="8sp"
         custom:textTitle="MyTitle"
         custom:titleTextColor="#A10000"
-        custom:titleTextSize="12sp" >
+        custom:titleTextSize="10sp" >
     </common.zhang.customer.MyToolBar>
 
     <LinearLayout
         android:orientation="vertical"
-
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="8"
         android:layout_gravity="center_horizontal"
         >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:layout_height="match_parent"></View>
+            <Button
+                android:id="@+id/input_src_channel1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_highset_selector"
+                android:textAllCaps="false"
+                android:textColor="@color/text_color_hightset_normal"
+                android:textSize="10.0sp"
+                android:text="@string/AUX"
+                android:layout_gravity="center_horizontal"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="0.1"
+                android:layout_height="match_parent"></View>
+            <Button
+                android:id="@+id/input_src_channel2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_highset_selector"
+                android:textAllCaps="false"
+                android:textColor="@color/text_color_hightset_normal"
+                android:textSize="10.0sp"
+                android:text="@string/Digit"
+                android:layout_gravity="center_horizontal"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="0.1"
+                android:layout_height="match_parent"></View>
+            <Button
+                android:id="@+id/input_src_channel3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_highset_selector"
+                android:textAllCaps="false"
+                android:textColor="@color/text_color_hightset_normal"
+                android:textSize="10.0sp"
+                android:text="@string/Bluetooth"
+                android:layout_gravity="center_horizontal"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="0.1"
+                android:layout_height="match_parent"></View>
+            <Button
+                android:id="@+id/input_src_channel4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_highset_selector"
+                android:textAllCaps="false"
+                android:textColor="@color/text_color_hightset_normal"
+                android:textSize="10.0sp"
+                android:text="@string/ADC"
+                android:layout_gravity="center_horizontal"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:layout_height="match_parent"></View>
 
-
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/id_llyout_mainvol"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="190sp"
+            android:layout_height="0dp"
+            android:layout_weight="3.5"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
             >
@@ -45,13 +116,13 @@
                 android:id="@+id/main_volume"
                 android:layout_width="@dimen/main_vl_rotate_bt_width"
                 android:layout_height="@dimen/main_vl_rotate_bt_hieght"
-                android:layout_marginRight="@dimen/main_vl_rotate_bt_right"
-                android:layout_marginTop="@dimen/main_vl_rotate_bt_top"
+
                 />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="38sp"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
             android:gravity="center_horizontal">
             <TextView
                 android:text="@string/MSUB_VAL"
@@ -76,7 +147,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40sp"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
             android:gravity="center_horizontal">
 
             <SeekBar
@@ -84,13 +156,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="50sp"
-                android:layout_marginRight="50sp"/>
+                android:layout_marginRight="50sp"
+                style="@style/Widget.AppCompat.SeekBar" />
 
         </LinearLayout>
         <LinearLayout
             android:id="@id/id_inputsel_memony"
             android:layout_width="fill_parent"
-            android:layout_height="180dip"
+            android:layout_height="0dp"
+            android:layout_weight="3.5"
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical">
@@ -384,23 +458,53 @@
             </LinearLayout>
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:layout_gravity="center"
+            android:orientation="vertical" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:orientation="vertical" />
+            <Button
+                android:text="@string/HighSettings"
+                android:id="@+id/bt_setting"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:background="@drawable/btn_highset_selector"
+                android:textAllCaps="false"
+                android:textColor="@color/text_color_hightset_normal"
+                android:textSize="18.0sp"
+                android:layout_gravity="center_horizontal"/>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:orientation="vertical" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:layout_gravity="center"
+            android:orientation="vertical" />
+
+
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:layout_gravity="center"
-        android:orientation="vertical" />
-    <Button
-        android:text="@string/setting"
-        android:id="@+id/bt_setting"
-        android:layout_width="250sp"
-        android:layout_height="60sp"
-        android:layout_marginBottom="20sp"
-        android:background="@drawable/btn_highset_selector"
-        android:textAllCaps="false"
-        android:textColor="@color/text_color_hightset_normal"
-        android:textSize="18.0sp"
-        android:layout_gravity="center_horizontal"/>
+
 
 </LinearLayout>

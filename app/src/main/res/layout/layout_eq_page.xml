@@ -195,8 +195,8 @@
                     android:layout_height="fill_parent"
                     android:layout_gravity="center"
                     android:layout_weight="3.0"
-                    android:thumb="@drawable/set_delay_seekbar_thumb"
- />
+                    android:thumb="@drawable/seekbar_thumb"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete" />
 
                 <View
                     android:layout_width="0.0dip"

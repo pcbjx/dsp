@@ -103,6 +103,7 @@ public class FEShare implements Serializable {
     public static int  CONNECTED = 1;
     public static int  DIS_CONNECT = 2;
 
+
     public static int  connect_state = DIS_CONNECT;
 
 
@@ -486,18 +487,17 @@ public class FEShare implements Serializable {
 
         System.arraycopy(b, 0, send_frame, 5, len);
 
-
         int sum = 0;
         for (int i = 0; i < len; i++) {
             sum += b[i];
         }
         send_frame[len + 5] = (byte) (0xff - sum & 0xff);
         MyLog.v(TAG, "send crc:" + send_frame[len + 5]);
-
-
         MyLog.v(TAG, "send len:" + send_frame.length);
         return write(send_frame, 0, len + 6);
     }
+
+
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)

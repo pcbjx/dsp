@@ -47,6 +47,8 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
     private FEShare share = FEShare.getInstance();
 
     int UserGroup = 1;
+    int InputSRC = 1;
+
     Sie_app_data_share sie_data_share;
 
     private boolean isconnect = false;
@@ -57,6 +59,8 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
 
     private ImageView[] B_UGbg = new ImageView[6];
     private Button[] B_UserGroup = new Button[6];
+    private Button[] B_InputSrcChanel = new Button[6];
+
 
     Button bt_vol_setting;
     RotateButtom main_volue_r_bt;
@@ -197,6 +201,11 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
         B_UserGroup[4] = ((Button)findViewById(R.id.id_b_5));
         B_UserGroup[5] = ((Button)findViewById(R.id.id_b_6));
 
+        B_InputSrcChanel[0] = ((Button)findViewById(R.id.input_src_channel1));
+        B_InputSrcChanel[1] = ((Button)findViewById(R.id.input_src_channel2));
+        B_InputSrcChanel[2] = ((Button)findViewById(R.id.input_src_channel3));
+        B_InputSrcChanel[3] = ((Button)findViewById(R.id.input_src_channel4));
+
 
         for (int i = 0;i<6;i++)
         {
@@ -208,6 +217,11 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
             B_UserGroup[i].setOnClickListener(groupBtClickistener);
 
         }
+        for (int i = 0;i<4;i++)
+        {
+            B_InputSrcChanel[i].setOnClickListener(InputSrcBtClickistener);
+        }
+
 
         new Thread(new Runnable() {
             @Override
@@ -217,6 +231,25 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
         }).start();
 
     }
+
+
+    View.OnClickListener InputSrcBtClickistener  = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            int id = v.getId();
+
+            FlashInputSrcNoSel();
+            for (int j = 0;j<4;j++)
+            {
+                if(id == B_InputSrcChanel[j].getId())
+                {
+                    InputSRC = j;
+                    Log.v(TAG,"Group click:"+InputSRC);
+                    FlashInputSrcSel();
+                }
+            }
+        }
+    };
 
     View.OnClickListener groupBtClickistener  = new View.OnClickListener() {
         @Override
@@ -292,6 +325,42 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
                 break;
             case 5:
                 B_UserGroup[UserGroup].setBackgroundResource(R.drawable.use_group_6_press);
+                break;
+
+            default:
+                break;
+
+
+        }
+
+    }
+
+
+    void FlashInputSrcNoSel()
+    {
+        B_InputSrcChanel[0].setBackgroundResource(R.drawable.use_group_1_normal);
+        B_InputSrcChanel[1].setBackgroundResource(R.drawable.use_group_2_normal);
+        B_InputSrcChanel[2].setBackgroundResource(R.drawable.use_group_3_normal);
+        B_InputSrcChanel[3].setBackgroundResource(R.drawable.use_group_4_normal);
+
+    }
+
+    void FlashInputSrcSel()
+    {
+        FlashUserGroupNoSel();
+        switch (InputSRC)
+        {
+            case 0:
+                B_InputSrcChanel[InputSRC].setBackgroundResource(R.drawable.use_group_1_press);
+                break;
+            case 1:
+                B_InputSrcChanel[InputSRC].setBackgroundResource(R.drawable.use_group_2_press);
+                break;
+            case 2:
+                B_InputSrcChanel[InputSRC].setBackgroundResource(R.drawable.use_group_3_press);
+                break;
+            case 3:
+                B_InputSrcChanel[InputSRC].setBackgroundResource(R.drawable.use_group_4_press);
                 break;
 
             default:

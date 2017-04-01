@@ -34,6 +34,8 @@ public class DataStruct
   public static final int DELAY_SETTINGS_TIMES = 384;
   public static final int DEVICE_ID_INFO = 21;
   public static final String DSP_MACHINE_NAME = "B8";
+  public static int curEqstyle = 0;
+  public static DataStruct_EQ_List EQList = new DataStruct_EQ_List();
   public static DataStruct_IOS DataStructBuf;
   public static DataStruct_IOS DataStructDefault = new DataStruct_IOS();
   public static DataStruct_IOS DataStructStore;

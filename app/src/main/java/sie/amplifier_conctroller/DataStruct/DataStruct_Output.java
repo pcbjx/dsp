@@ -2,7 +2,6 @@ package sie.amplifier_conctroller.DataStruct;
 
 public class DataStruct_Output
 {
-  public DataStruct_EQ[] EQ = new DataStruct_EQ[31];
   public int IN1_Vol;
   public int IN2_Vol;
   public int IN3_Vol;

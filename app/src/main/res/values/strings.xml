@@ -188,6 +188,7 @@
     <string name="MainValume">MainValume</string>
     <string name="Valume">Valume</string>
     <string name="AUX">AUX</string>
+    <string name="ADC">ADC</string>
     <string name="Digit">S/PDIF</string>
     <string name="Hi_Level">Hi.Level</string>
     <string name="Buletooth">Buletooth</string>

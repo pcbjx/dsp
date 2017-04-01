@@ -2,7 +2,7 @@ package sie.amplifier_conctroller.DataStruct;
 
 public class DataStruct_Input
 {
-  public DataStruct_EQ[] EQ = new DataStruct_EQ[9];
+
   public int Valume;
   public int cliplim;
   public int comp_swi;

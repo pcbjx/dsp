@@ -2,11 +2,7 @@ package sie.amplifier_conctroller.DataStruct;
 
 public class DataStruct_EQ
 {
-  public int bw;
-  public int freq;
   public int level;
-  public int shf_db;
-  public int type;
 }
 
 
