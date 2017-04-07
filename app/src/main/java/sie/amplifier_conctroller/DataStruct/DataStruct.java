@@ -15,44 +15,22 @@ public class DataStruct
   public static boolean B_LinkDAll = false;
   public static boolean B_SETOUT_NAME = false;
   public static final String BoardCast_FlashEQUI = "BoardCast_FlashEQUI";
-  public static final int Button_Link_GNULL = 255;
-  public static final int Button_Link_Linked = 3;
-  public static final int Button_Link_Linking = 2;
-  public static final int Button_Link_Normal = 0;
-  public static final int Button_Link_WillLink = 1;
-  public static final int CH6_LPF_HZ_INFO = 50;
+
   public static boolean CHS_BT_CONNECTED = false;
-  public static final int CMD_LENGHT = 16;
-  public static final int CUR_PASSWORD_DATA = 18;
-  public static final int CUR_PROGRAM_INFO = 52;
+
   public static final int Ch6_LPF_F_INFO = 51;
   public static final String Copyright = "KP 2016";
   public static int CurProID = 0;
-  public static final int DATAID0x77 = 119;
-  public static final int DATA_ACK = 83;
+
   public static int DELAY_SENDREC_COS = 0;
   public static final int DELAY_SETTINGS_TIMES = 384;
   public static final int DEVICE_ID_INFO = 21;
   public static final String DSP_MACHINE_NAME = "B8";
   public static int curEqstyle = 0;
   public static DataStruct_EQ_List EQList = new DataStruct_EQ_List();
-  public static DataStruct_IOS DataStructBuf;
-  public static DataStruct_IOS DataStructDefault = new DataStruct_IOS();
-  public static DataStruct_IOS DataStructStore;
+
   public static int DecipheringFlag = 0;
-  public static final int EFF = 2;
-  public static final int EFFSET = 7;
-  public static final int EFF_CH_EQ_MAX = 8;
-  public static final int EFF_Echo_ID = 9;
-  public static final int EFF_GROUP_NAME = 1;
-  public static final int EFF_ID_MAX = 11;
-  public static final int EFF_LEN = 96;
-  public static final int EFF_MAX_VAL_INFO = 36;
-  public static final int EFF_MIN_EN_INFO = 48;
-  public static final int EFF_MIN_VAL_INFO = 37;
-  public static final int EFF_NAME_ID = 11;
-  public static final int EFF_REV_ID = 10;
-  public static final boolean ENCRYPTION = true;
+
   public static final float[] EQ_BW;
   public static final int EQ_BW_MAX = 295;
   public static final int[] EQ_FREQ;
@@ -225,6 +203,15 @@ public class DataStruct
   public int out7_spk_type;
   public int out8_spk_type;
   public int[] out_led = new int[15];
+  public static DataStruct_sieProtocol sieProtocol = new DataStruct_sieProtocol();
+  public static byte otherCMD = 0;
+  //channel
+  public static boolean [] chanelMute = new boolean[] { false,false,false,false,false,false ,false,false};
+  public static byte [] chanelLastVolume = new byte[] { 10,10,10,10,10,10 ,10,10};
+  public static byte polar[] = new byte[]{0,0,0,0,0,0,0,0};
+  public static final byte max_channel = 8;
+  //eq
+  public static byte [] cur_eq = new  byte[31];
   
   static
   {
@@ -255,8 +242,6 @@ public class DataStruct
     Input_Sbuf = new int[112];
     Output_Sbuf = (int[][])Array.newInstance(Integer.TYPE, new int[] { 8, 296 });
     SDF_sbuf = new int[50];
-    DataStructBuf = new DataStruct_IOS();
-    DataStructStore = new DataStruct_IOS();
   }
   
   public DataStruct()

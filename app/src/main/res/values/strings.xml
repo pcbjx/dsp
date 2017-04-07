@@ -80,6 +80,7 @@
     <string name="title_activity_dsp_main">dsp_main</string>
     <string name="sie_dsp">SIE_DSP</string>
     <string name="vol">volume:</string>
+    <string name="mavol">volume:</string>
     <string name="title_activity_dsp_setting">dsp_setting</string>
     <string name="connet_status">Not connected</string>
     <string name="title_activity_dsp_setting_delay">dsp_setting_delay</string>
@@ -405,5 +406,6 @@
     <string name="title_setting_delay">Delay</string>
     <string name="title_setting_fred">Frequency divider</string>
     <string name="title_activity_dsp_setting_fq_dv">dsp_setting_fq_dv</string>
+    <string name="save_cur_data_tips">Data had saved!</string>
 
 </resources>

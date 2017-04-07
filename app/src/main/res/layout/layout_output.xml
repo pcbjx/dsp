@@ -1109,6 +1109,378 @@
         android:layout_height="0.0dip"
         android:layout_weight="0.1" />
 
+    <LinearLayout
+        android:id="@id/id_llyout_output_ch6_ch7"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_gravity="center"
+        android:layout_weight="1.0"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.1" />
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_weight="5.0"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="6.1"
+                android:orientation="vertical">
+
+                <common.zhang.customer.RotateButtom
+                    android:id="@+id/id_sb_output_ch6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:thumb="@drawable/mcl_seekbar_thumb"
+                    />
+
+                <LinearLayout
+                    android:id="@id/id_llyout_output_valume_ch6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@id/id_b_output_valsub_ch6"
+                        android:layout_width="@dimen/output_valume_height"
+                        android:layout_height="@dimen/output_valume_height"
+                        android:background="@drawable/output_valume_sub"
+                        android:scaleType="fitCenter"
+                        android:textColor="@color/text_color_white"
+                        android:textSize="15.0sp"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@id/id_b_output_val_ch6"
+                        android:layout_width="@dimen/output_valume_height"
+                        android:layout_height="@dimen/output_valume_height"
+                        android:background="@drawable/button_vivid_bg"
+                        android:gravity="center"
+                        android:scaleType="fitCenter"
+                        android:singleLine="true"
+                        android:text="@string/dB60"
+                        android:textAllCaps="false"
+                        android:textColor="@color/output_channel_valume_text_color"
+                        android:textSize="@dimen/output_valume_tv_size" />
+
+                    <Button
+                        android:id="@id/id_b_output_valinc_ch6"
+                        android:layout_width="@dimen/output_valume_height"
+                        android:layout_height="@dimen/output_valume_height"
+                        android:background="@drawable/output_valume_inc"
+                        android:scaleType="fitCenter"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@id/id_b_output_ch6"
+                    android:layout_width="@dimen/output_channel_name_width"
+                    android:layout_height="@dimen/output_channel_name_height"
+                    android:layout_below="@id/id_llyout_output_valume_ch6"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/button_vivid_bg"
+                    android:scaleType="fitCenter"
+                    android:text="@string/CH5"
+                    android:textColor="@color/output_channel_name_text_color"
+                    android:textSize="@dimen/output_channel_name_size" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@id/id_llyout_pm_ch6"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@id/id_b_output_polar_ch6"
+                        android:layout_width="@dimen/output_p_mute_button_width"
+                        android:layout_height="@dimen/output_p_mute_button_height"
+                        android:layout_gravity="center"
+                        android:background="@drawable/output_polar_p"
+                        android:gravity="center"
+                        android:scaleType="fitCenter"
+                        android:text="@string/Polar_P"
+                        android:textColor="@color/output_polar_text_color"
+                        android:textSize="@dimen/output_p_textsize" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="1.0dip"
+                        android:layout_height="@dimen/output_p_mute_button_height"
+                        android:layout_gravity="center"
+                        android:background="@color/output_mid_polar_mute_color"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@id/id_b_output_mute_ch6"
+                        android:layout_width="@dimen/output_p_mute_button_width"
+                        android:layout_height="@dimen/output_p_mute_button_height"
+                        android:layout_gravity="center"
+                        android:background="@drawable/output_mute_on"
+                        android:gravity="center"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.31" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.12"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_b_output_name_ch6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button_vivid_bg"
+                    android:gravity="center"
+                    android:scaleType="fitCenter"
+                    android:textColor="@color/text_color_output_name"
+                    android:textSize="@dimen/output_name_text_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_weight="3.0"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@id/id_d_channel_link"
+                android:layout_width="60.0dip"
+                android:layout_height="25.0dip"
+                android:layout_gravity="center"
+                android:background="@drawable/channel_set_normal"
+                android:gravity="center"
+                android:text="@string/Link"
+                android:textColor="@color/output_linkc_color"
+                android:textSize="12.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_weight="5.0"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="6.1"
+                android:orientation="vertical">
+
+                <common.zhang.customer.RotateButtom
+                    android:id="@+id/id_sb_output_ch7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:thumb="@drawable/mcl_seekbar_thumb"
+                    />
+
+                <LinearLayout
+                    android:id="@id/id_llyout_output_valume_ch7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@id/id_b_output_valsub_ch7"
+                        android:layout_width="@dimen/output_valume_height"
+                        android:layout_height="@dimen/output_valume_height"
+                        android:background="@drawable/output_valume_sub"
+                        android:scaleType="fitCenter"
+                        android:textColor="@color/text_color_white"
+                        android:textSize="15.0sp"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@id/id_b_output_val_ch7"
+                        android:layout_width="@dimen/output_valume_height"
+                        android:layout_height="@dimen/output_valume_height"
+                        android:background="@drawable/button_vivid_bg"
+                        android:gravity="center"
+                        android:scaleType="fitCenter"
+                        android:singleLine="true"
+                        android:text="@string/dB60"
+                        android:textAllCaps="false"
+                        android:textColor="@color/output_channel_valume_text_color"
+                        android:textSize="@dimen/output_valume_tv_size" />
+
+                    <Button
+                        android:id="@id/id_b_output_valinc_ch7"
+                        android:layout_width="@dimen/output_valume_height"
+                        android:layout_height="@dimen/output_valume_height"
+                        android:background="@drawable/output_valume_inc"
+                        android:scaleType="fitCenter"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@id/id_b_output_ch7"
+                    android:layout_width="@dimen/output_channel_name_width"
+                    android:layout_height="@dimen/output_channel_name_height"
+                    android:layout_below="@id/id_llyout_output_valume_ch7"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/button_vivid_bg"
+                    android:scaleType="fitCenter"
+                    android:text="@string/CH6"
+                    android:textColor="@color/output_channel_name_text_color"
+                    android:textSize="@dimen/output_channel_name_size" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@id/id_llyout_pm_ch7"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@id/id_b_output_polar_ch7"
+                        android:layout_width="@dimen/output_p_mute_button_width"
+                        android:layout_height="@dimen/output_p_mute_button_height"
+                        android:layout_gravity="center"
+                        android:background="@drawable/output_polar_p"
+                        android:gravity="center"
+                        android:scaleType="fitCenter"
+                        android:text="@string/Polar_P"
+                        android:textColor="@color/output_polar_text_color"
+                        android:textSize="@dimen/output_p_textsize" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="1.0dip"
+                        android:layout_height="@dimen/output_p_mute_button_height"
+                        android:layout_gravity="center"
+                        android:background="@color/output_mid_polar_mute_color"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@id/id_b_output_mute_ch7"
+                        android:layout_width="@dimen/output_p_mute_button_width"
+                        android:layout_height="@dimen/output_p_mute_button_height"
+                        android:layout_gravity="center"
+                        android:background="@drawable/output_mute_on"
+                        android:gravity="center"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="0.31" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_weight="1.12"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/id_b_output_name_ch7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button_vivid_bg"
+                    android:gravity="center"
+                    android:scaleType="fitCenter"
+                    android:textColor="@color/text_color_output_name"
+                    android:textSize="@dimen/output_name_text_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.1" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="0.1" />
+
 
 
     <LinearLayout

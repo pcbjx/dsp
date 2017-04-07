@@ -79,7 +79,7 @@
     <string name="title_main">主页</string>
     <string name="title_about">关于</string>
     <string name="title_setting_main">设置</string>
-    <string name="title_setting_chanel">频道</string>
+    <string name="title_setting_chanel">通道</string>
     <string name="title_setting_delay">延时</string>
     <string name="title_setting_fred">分频器</string>
     <string name="title_activity_dsp_setting_fq_dv">分频器1</string>
@@ -391,4 +391,5 @@
     <string name="ResetEQ">是否重置所有均衡？</string>
     <string name="sie_dsp">思翼功放</string>
     <string name="text_stauts"></string>
+    <string name="save_cur_data_tips">已保存</string>
 </resources>

@@ -28,6 +28,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
+import sie.amplifier_conctroller.DataStruct.DataStruct;
+
 /**
  * Created by yumingyue on 2017/1/5.
  */
@@ -141,6 +143,8 @@ public class FEShare implements Serializable {
             "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_DEEP_BASS";
     public static final String SIE_UI_ACTION_WIDESOUND =
             "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_WIDESOUND";
+    public static final String SIE_UI_ACTION_OTHER =
+            "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_OTHER";
 
     public static final String SIE_UI_ACTION_non =
             "sie.amplifier_conctroller.ui.action.SIE_UI_ACTION_non";
@@ -618,6 +622,7 @@ public class FEShare implements Serializable {
                         this.device = device;
                         if (connect(this.device)) {
                             MyLog.v(TAG, "连接成功");
+
                             autoConect = false;
                             return true;
                         } else {

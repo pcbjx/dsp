@@ -14,7 +14,6 @@ import android.os.Handler;
 import android.os.Message;
 
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -72,11 +71,84 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
     //蓝牙特征值
     private static BluetoothGattCharacteristic target_chara = null;
     private Handler mhandler = new Handler();
+
+    private void flashUIFromProtocol(int sieProtocolValue)
+    {
+
+        if (sieProtocolValue == DataStruct.sieProtocol.prtc_inputChanel)
+        {
+            InputSRC  = DataStruct.input_source-1;
+            FlashInputSrcSel();
+        }
+        if (sieProtocolValue == DataStruct.sieProtocol.prtc_outputChanel)
+        {
+
+        }
+        if (sieProtocolValue == DataStruct.sieProtocol.prtc_eq_32_preStyle)
+        {
+
+        }
+        if (sieProtocolValue == DataStruct.sieProtocol.prtc_eq8)
+        {
+
+        }
+        if (sieProtocolValue == DataStruct.sieProtocol.prtc_eq32)
+        {
+
+        }
+
+        if (sieProtocolValue == DataStruct.sieProtocol.prtc_eqBandWidth)
+        {
+
+        }
+        if (sieProtocolValue == DataStruct.sieProtocol.prtc_delay)
+        {
+
+        }
+        if (sieProtocolValue == DataStruct.sieProtocol.prtc_mainVolume)
+        {
+            MyLog.i(TAG, "得到音量:"+DataStruct.main_vol);
+
+            main_volue_r_bt.setBarinit(0,60,DataStruct.main_vol);
+            tv_bass_vol.setText(""+DataStruct.main_vol);
+        }
+        if (sieProtocolValue == DataStruct.sieProtocol.prtc_chanleVolume)
+        {
+
+        }
+        if (sieProtocolValue == DataStruct.sieProtocol.prtc_chanleFreFilter)
+        {
+
+        }
+        if (sieProtocolValue == DataStruct.sieProtocol.prtc_deepBass)
+        {
+
+        }
+        if (sieProtocolValue == DataStruct.sieProtocol.prtc_wideSoud)
+        {
+
+        }
+        if (sieProtocolValue == DataStruct.sieProtocol.prtc_other)
+        {
+            byte otherCmd = DataStruct.otherCMD;
+
+            switch (otherCmd)
+            {
+
+            }
+        }
+
+    }
+
     private Handler myHandler = new Handler()
     {
         // 2.重写消息处理函数
         public void handleMessage(Message msg)
         {
+            int sieProtocolValueWhat = msg.what;
+            int sieProtocolValue = msg.arg1;
+
+
             switch (msg.what)
             {
                 // 判断发送的消息
@@ -86,32 +158,31 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
                     MyLog.i(TAG, "状态："+msg.arg1);
                     isconnect = false;
                     myToolBar.updateRightButton(msg.arg1);
+
                     if (msg.arg1 == 1)
                     {
                         isconnect = true;
+                        DataStruct.otherCMD = 0;
+                        sie_data_share.sendSieData(DataStruct.sieProtocol.prtc_other);
                     }
 
                     break;
                 }
                 case 1:
                 {
-                    // 更新View
-                    MyLog.i(TAG, "得到音量:"+DataStruct.main_vol);
-                    //main_volue_r_bt.setpos(DataStruct.main_vol);
-                    main_volue_r_bt.setBarinit(0,60,DataStruct.main_vol);
-                    tv_bass_vol.setText(""+DataStruct.main_vol);
-                    //isconnect = true;
+                    flashUIFromProtocol(msg.arg1);
                     break;
                 }
                 case 2:
                 {
                     // 更新View
-                    MyLog.i("连接", "失败");
+                    //MyLog.i("连接", "失败");
                     isconnect = false;
                     break;
                 }
 
             }
+
             super.handleMessage(msg);
         }
 
@@ -179,19 +250,17 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
         }
 
         main_volue_r_bt = (RotateButtom)findViewById(R.id.main_volume);
-        main_volue_r_bt.set_titile("Main Volume");
-        main_volue_r_bt.setBarinit(0,60,10);
+        main_volue_r_bt.set_titile(getResources().getText(R.string.MainValume).toString());
+        main_volue_r_bt.setBarinit(0,60,DataStruct.main_vol);
         main_volue_r_bt.setOnTempChangeListener(new RotateButtom.OnTempChangeListener()
         {
             @Override
-            public void change(int pos) {
-                Toast.makeText(dsp_main.this, pos + "°", Toast.LENGTH_SHORT).show();
-                byte [] b_mainvolume ;
-                b_mainvolume = new byte[2];
-                b_mainvolume[0]= (byte)0x08;
-                b_mainvolume[1] = (byte) pos;
-                share.sie_write(b_mainvolume,2);
+            public void change(View v, int temp) {
+
+                DataStruct.main_vol = temp;
+                sie_data_share.sendSieData(DataStruct.sieProtocol.prtc_mainVolume);
             }
+
         });
 
         B_UserGroup[0] = ((Button)findViewById(R.id.id_b_1));
@@ -245,6 +314,8 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
                 {
                     InputSRC = j;
                     Log.v(TAG,"Group click:"+InputSRC);
+                    DataStruct.input_source = InputSRC +1;
+                    sie_data_share.sendSieData(DataStruct.sieProtocol.prtc_inputChanel);
                     FlashInputSrcSel();
                 }
             }
@@ -257,12 +328,21 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
             int id = v.getId();
 
             FlashUserGroupNoSel();
-            for (int j = 0;j<6;j++)
+            for (byte j = 0;j<6;j++)
             {
                 if(id == B_UserGroup[j].getId())
                 {
                     UserGroup = j;
                     Log.v(TAG,"Group click:"+UserGroup);
+                    if (j<3)
+                    {
+                        DataStruct.otherCMD = (byte)(0x11+j) ;
+                    }else
+                    {
+                        DataStruct.otherCMD = (byte)(0x21+j-3) ;
+                    }
+
+                    sie_data_share.sendSieData(DataStruct.sieProtocol.prtc_other);
                     FlashUserGroupSel();
                 }
             }
@@ -283,7 +363,17 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
 
                     UserGroup = j;
                     Log.v(TAG,"Group long click:"+UserGroup);
+
+                    if (j>=3)
+                    {
+                        DataStruct.otherCMD = (byte)(0x31+j-3) ;
+                    }
+
+                    sie_data_share.sendSieData(DataStruct.sieProtocol.prtc_other);
                     FlashUserGroupSel();
+
+                    Toast.makeText(getApplicationContext(), getResources().getText(R.string.save_cur_data_tips)
+                            , Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -347,7 +437,7 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
 
     void FlashInputSrcSel()
     {
-        FlashUserGroupNoSel();
+        FlashInputSrcNoSel();
         switch (InputSRC)
         {
             case 0:
@@ -426,12 +516,22 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
                 if (share.SIE_UI_ACTION_MAINVOLUME.equals(action)) {
                     // 连接成功
                         msg.what=1;
+                        msg.arg1=DataStruct.sieProtocol.prtc_mainVolume;
                     } else if (share.SIE_UI_ACTION_INPUTCHANNEL.equals(action)) {
-                        msg.what=2;
-                    }else if (share.SIE_UI_ACTION_BT_CHANGE.equals(action)) {
-                    // 断开连接
+                        msg.what=1;
+                        msg.arg1=DataStruct.sieProtocol.prtc_inputChanel;
+                    }
+                    else if (share.SIE_UI_ACTION_DEEP_BASS.equals(action)) {
+                        msg.what=1;
+                        msg.arg1=DataStruct.sieProtocol.prtc_deepBass;
+                    }
+                    else if (share.SIE_UI_ACTION_OTHER.equals(action)) {
+                        msg.what=1;
+                        msg.arg1=DataStruct.sieProtocol.prtc_other;
+                    }
+                    else if (share.SIE_UI_ACTION_BT_CHANGE.equals(action)) {
+                        // 断开连接
                         MyLog.i(TAG, "蓝牙状态");
-
                         msg.what=0;
                         msg.arg1 =intent.getExtras().getInt("bt_status");
 

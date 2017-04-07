@@ -59,18 +59,6 @@ public class Sie_app_data_share extends Application {
 
             if (share.isSPP) {
                 readData();
-                /*MyLog.i("连接", "1");
-                if (share.connect(share.device)) {
-                    MyLog.i("连接", "2");
-                    //连接成功
-                    readData();
-                } else {
-                    MyLog.i("连接", "3");
-                    //连接失败
-                    //goBackToDo();
-                }
-                //停止搜索
-                share.stopSearch();*/
             }
 
         }
@@ -98,13 +86,15 @@ public class Sie_app_data_share extends Application {
                                 int j = share.inputStream.read(arrayOfByte);
                                 reCRC.update(arrayOfByte, 0, j);
                                 String strBuf = new String(arrayOfByte, 0, j);
-                                MyLog.v(TAG,"read data:"+String.format("%s",strBuf));
+                                MyLog.v(TAG,"read data:");
+
                                 if (j <= 0) {
                                     continue;
                                 }
                                 i = 0;
                                 while (i < j)
                                 {
+                                    MyLog.v(TAG, String.format("%02x ", arrayOfByte[i]));
                                     ReceiveDataFromDevice(arrayOfByte[i] & 0xFF, 1);
                                     i += 1;
                                 }
@@ -229,10 +219,8 @@ public class Sie_app_data_share extends Application {
             case 0x06:
                 MyLog.v(TAG,"EQ Bandwidth");
                 action = share.SIE_UI_ACTION_EQ_Bandwidth;
-
                 DataStruct.EQList.InQ_value = RcvDeviceData.DataBuf[DataStruct.DATA_START_POS+1]*255;
                 DataStruct.EQList.InQ_value += RcvDeviceData.DataBuf[DataStruct.DATA_START_POS+2];
-
                 break;
             case 0x07:
                 MyLog.v(TAG,"SIE_UI_ACTION_CHANEL_DELAY");
@@ -247,6 +235,12 @@ public class Sie_app_data_share extends Application {
             case 0x09:
                 MyLog.v(TAG,"SIE_UI_ACTION_CHANEL_VOLUME");
                 action = share.SIE_UI_ACTION_CHANEL_VOLUME;
+                for (int i = 0;i<DataStruct.max_channel;i++)
+                {
+                    m_dateStruct.chanelLastVolume[i] = (byte) ((RcvDeviceData.DataBuf[DataStruct.DATA_START_POS+1+i])&0x7f);//拿掉最高位
+                    m_dateStruct.polar[i] = (byte)  ((RcvDeviceData.DataBuf[DataStruct.DATA_START_POS+1+i])>>7);//取最高位
+                }
+
                 break;
             case 0x0a:
                 MyLog.v(TAG,"SIE_UI_ACTION_CHANLE_FRE");
@@ -272,6 +266,71 @@ public class Sie_app_data_share extends Application {
         Intent intent = new Intent(action);
         intent.putExtra("msg", "hello receiver.");
         sendBroadcast(intent);
+    }
+
+    public int sendSieData(byte protocol)
+    {
+        byte []sendbuf;
+        switch (protocol)
+        {
+            case 0x01 :
+                sendbuf = new byte[]{DataStruct.sieProtocol.prtc_inputChanel,(byte)0x00};
+                sendbuf[1] = (byte) DataStruct.input_source;
+                share.sie_write(sendbuf,sendbuf.length);
+                break;
+            case 0x02 :
+                break;
+            case 0x03 :
+                break;
+            case 0x04 :
+                break;
+            case 0x05 :
+                break;
+            case 0x06 :
+                break;
+            case 0x07 :
+                break;
+            case 0x08 :
+                sendbuf = new byte[]{DataStruct.sieProtocol.prtc_mainVolume,(byte)0x00};
+                sendbuf[1] = (byte) DataStruct.main_vol;
+                share.sie_write(sendbuf,sendbuf.length);
+                break;
+            case 0x09 :
+                sendbuf = new byte[DataStruct.max_channel+1];
+                sendbuf[0] =  DataStruct.sieProtocol.prtc_chanleVolume;
+                for (int i=0;i<DataStruct.max_channel;i++)
+                {
+                    if(!(DataStruct.chanelMute[i]))
+                    {
+                        byte tmp = (byte)(DataStruct.polar[i]<<7);
+                        sendbuf[i+1] =(byte) (DataStruct.chanelLastVolume[i]+tmp);
+                    }
+                    else
+                    {
+                        sendbuf[i+1] = 0;
+                    }
+                }
+
+                share.sie_write(sendbuf,sendbuf.length);
+                break;
+            case 0x0a :
+                break;
+            case 0x0b :
+                break;
+            case 0x0c :
+                break;
+            case 0x40 :
+                sendbuf = new byte[]{(byte)0x40,(byte)0x00};
+                sendbuf[1] = DataStruct.otherCMD;
+                share.sie_write(sendbuf,sendbuf.length);
+                break;
+            default:
+                break;
+        }
+
+
+        return 0;
+
     }
 
     @Override

@@ -35,13 +35,13 @@ public class dsp_setting  extends TabActivity {
 
         mTabHost = (AnimationTabHost) getTabHost();
 
-        mTabHost.addTab(mTabHost.newTabSpec("Tab1").setIndicator("延时", getResources().getDrawable(android.R.drawable.ic_menu_add))
+        mTabHost.addTab(mTabHost.newTabSpec("Tab1").setIndicator(getResources().getText(R.string.title_setting_delay).toString(), getResources().getDrawable(android.R.drawable.ic_menu_add))
                 .setContent(new Intent(this, dsp_setting_delay.class)));
-        mTabHost.addTab(mTabHost.newTabSpec("Tab2").setIndicator("设置", getResources().getDrawable(android.R.drawable.ic_menu_add))
+        mTabHost.addTab(mTabHost.newTabSpec("Tab2").setIndicator(getResources().getText(R.string.title_setting_main).toString(), getResources().getDrawable(android.R.drawable.ic_menu_add))
                 .setContent(new Intent(this, dsp_setting_main.class)));
-        mTabHost.addTab(mTabHost.newTabSpec("Tab3").setIndicator("通道", getResources().getDrawable(android.R.drawable.ic_menu_add))
+        mTabHost.addTab(mTabHost.newTabSpec("Tab3").setIndicator(getResources().getText(R.string.title_setting_chanel).toString(), getResources().getDrawable(android.R.drawable.ic_menu_add))
                 .setContent(new Intent(this, dsp_setting_chanel.class)));
-        mTabHost.addTab(mTabHost.newTabSpec("Tab4").setIndicator("分频器", getResources().getDrawable(android.R.drawable.ic_menu_add))
+        mTabHost.addTab(mTabHost.newTabSpec("Tab4").setIndicator(getResources().getText(R.string.title_setting_fred).toString(), getResources().getDrawable(android.R.drawable.ic_menu_add))
                 .setContent(new Intent(this, dsp_setting_fq_dv.class)));
 
 
@@ -111,4 +111,13 @@ public class dsp_setting  extends TabActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

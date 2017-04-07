@@ -18,6 +18,7 @@ import com.feasycom.s_port.ShareFile.FEShare;
 import com.feasycom.s_port.model.MyLog;
 import com.github.mikephil.charting.charts.LineChart;
 
+import common.zhang.customer.VerticalSeekBar;
 import sie.amplifier_conctroller.DataStruct.DataStruct;
 import sie.amplifier_conctroller.Sie_app_data_share;
 
@@ -31,12 +32,57 @@ public class dsp_setting_main extends Activity {
     Sie_app_data_share sie_data_share;
     private FEShare share = FEShare.getInstance();
 
+    VerticalSeekBar [] verticalSeekBarsList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_eq_page);
 
         sie_data_share = (Sie_app_data_share)getApplication();
+    }
+
+    private void init_eq()
+    {
+        verticalSeekBarsList = new VerticalSeekBar[31];
+        verticalSeekBarsList[0]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_1);
+        verticalSeekBarsList[1]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_2);
+        verticalSeekBarsList[2]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_3);
+        verticalSeekBarsList[3]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_4);
+        verticalSeekBarsList[4]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_5);
+        verticalSeekBarsList[5]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_6);
+        verticalSeekBarsList[6]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_7);
+        verticalSeekBarsList[7]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_8);
+        verticalSeekBarsList[8]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_9);
+        verticalSeekBarsList[9]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_10);
+        verticalSeekBarsList[10]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_11);
+        verticalSeekBarsList[11]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_12);
+        verticalSeekBarsList[12]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_13);
+        verticalSeekBarsList[13]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_14);
+        verticalSeekBarsList[14]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_15);
+        verticalSeekBarsList[15]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_16);
+        verticalSeekBarsList[16]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_17);
+        verticalSeekBarsList[17]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_18);
+        verticalSeekBarsList[18]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_19);
+        verticalSeekBarsList[19]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_20);
+        verticalSeekBarsList[20]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_21);
+        verticalSeekBarsList[21]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_22);
+        verticalSeekBarsList[22]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_23);
+        verticalSeekBarsList[23]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_24);
+        verticalSeekBarsList[24]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_25);
+        verticalSeekBarsList[25]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_26);
+        verticalSeekBarsList[26]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_27);
+        verticalSeekBarsList[27]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_28);
+        verticalSeekBarsList[28]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_29);
+        verticalSeekBarsList[29]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_30);
+        verticalSeekBarsList[30]= (VerticalSeekBar) findViewById(R.id.id_mvs_equalizer_one_31);
+
+        for (int i = 0;i<31;i++)
+        {
+           // verticalSeekBarsList[i].setProgress();
+        }
+
+
     }
 
 

@@ -295,6 +295,8 @@ public class RotateButtom extends View {
 
                 IncreaseAngle(angleIncreased);
                 currentAngle = angle;
+
+                onTempChangeListener.change(this,temperature);
                 invalidate();
                 break;
 
@@ -305,7 +307,7 @@ public class RotateButtom extends View {
                     rotateAngle = (float) ((temperature - minTemp) * angleRate * 4.5);
                     invalidate();
                     // 回调温度改变监听
-                    onTempChangeListener.change(temperature);
+                    onTempChangeListener.change(this,temperature);
                     isDown = false;
                     isMove = false;
                 }
@@ -400,7 +402,7 @@ public class RotateButtom extends View {
          *
          * @param temp 温度
          */
-        void change(int temp);
+        void change(View v,int temp);
     }
 
     public int dp2px(float dp) {
