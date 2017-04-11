@@ -14,6 +14,7 @@ import android.widget.Button;
 
 import com.feasycom.s_port.R;
 import com.feasycom.s_port.ShareFile.FEShare;
+import com.feasycom.s_port.TabActivity;
 import com.feasycom.s_port.model.MyLog;
 
 import common.zhang.customer.RotateButtom;
@@ -22,6 +23,7 @@ import sie.amplifier_conctroller.Sie_app_data_share;
 
 public class dsp_setting_chanel extends Activity {
 
+    final String TAG = dsp_setting_chanel.class.getSimpleName();
     Button [] chanelBtMuteList;
     Button [] polarBtList;
     RotateButtom [] chanel_r_bt_list;
@@ -153,22 +155,37 @@ public class dsp_setting_chanel extends Activity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onDestroy() {
+    protected void onDestroy()
+    {
         super.onDestroy();
+        //解除广播接收器
+        unregisterReceiver(receiver);
     }
 
-
+    // Activity出来时候，绑定广播接收器，监听蓝牙连接服务传过来的事件
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        registerReceiver(receiver, share.getIntent_ui_chanel_Filter());
+    }
     private void flashUIFromProtocol(int sieProtocolValue)
     {
 
         if (sieProtocolValue == DataStruct.sieProtocol.prtc_chanleVolume)
         {
+            for (int i =0;i<8;i++)
+            {
+                chanel_r_bt_list[i].setBarinit(0,60,DataStruct.chanelLastVolume[i]);
+                if (DataStruct.polar[i]==0)
+                {
+                    polarBtList[i].setText(R.string.Polar_P);
+                }else
+                {
+                    polarBtList[i].setText(R.string.Polar_N);
+                }
 
+            }
         }
 
     }
@@ -200,6 +217,7 @@ public class dsp_setting_chanel extends Activity {
             final String action = intent.getAction();
             Message msg = new Message();
             Bundle bundle = new Bundle();
+            MyLog.v(TAG,"chanel");
             if (share.SIE_UI_ACTION_CHANEL_VOLUME.equals(action)) {
                 // 连接成功
                 msg.what=1;
@@ -211,4 +229,6 @@ public class dsp_setting_chanel extends Activity {
         }
 
     };
+
+
 }

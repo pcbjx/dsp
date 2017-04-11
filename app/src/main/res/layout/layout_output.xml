@@ -48,7 +48,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <Button
                         android:id="@id/id_b_output_valsub_ch0"
@@ -92,7 +93,8 @@
                     android:scaleType="fitCenter"
                     android:text="@string/CH1"
                     android:textColor="@color/output_channel_name_text_color"
-                    android:textSize="@dimen/output_channel_name_size" />
+                    android:textSize="@dimen/output_channel_name_size"
+                    android:visibility="gone"/>
             </RelativeLayout>
 
             <LinearLayout
@@ -240,7 +242,8 @@
                         android:text="@string/dB60"
                         android:textAllCaps="false"
                         android:textColor="@color/output_channel_valume_text_color"
-                        android:textSize="@dimen/output_valume_tv_size" />
+                        android:textSize="@dimen/output_valume_tv_size"
+                        android:visibility="gone"/>
 
                     <Button
                         android:id="@id/id_b_output_valinc_ch1"
@@ -261,7 +264,8 @@
                     android:scaleType="fitCenter"
                     android:text="@string/CH2"
                     android:textColor="@color/output_channel_name_text_color"
-                    android:textSize="@dimen/output_channel_name_size" />
+                    android:textSize="@dimen/output_channel_name_size"
+                    android:visibility="gone"/>
             </RelativeLayout>
 
             <LinearLayout
@@ -428,7 +432,8 @@
                         android:text="@string/dB60"
                         android:textAllCaps="false"
                         android:textColor="@color/output_channel_valume_text_color"
-                        android:textSize="@dimen/output_valume_tv_size" />
+                        android:textSize="@dimen/output_valume_tv_size"
+                        android:visibility="gone"/>
 
                     <Button
                         android:id="@id/id_b_output_valinc_ch2"
@@ -449,7 +454,8 @@
                     android:scaleType="fitCenter"
                     android:text="@string/CH3"
                     android:textColor="@color/output_channel_name_text_color"
-                    android:textSize="@dimen/output_channel_name_size" />
+                    android:textSize="@dimen/output_channel_name_size"
+                    android:visibility="gone"/>
             </RelativeLayout>
 
             <LinearLayout
@@ -612,7 +618,8 @@
                         android:text="@string/dB60"
                         android:textAllCaps="false"
                         android:textColor="@color/output_channel_valume_text_color"
-                        android:textSize="@dimen/output_valume_tv_size" />
+                        android:textSize="@dimen/output_valume_tv_size"
+                        android:visibility="gone"/>
 
                     <Button
                         android:id="@id/id_b_output_valinc_ch3"
@@ -632,6 +639,7 @@
                     android:background="@drawable/button_vivid_bg"
                     android:scaleType="fitCenter"
                     android:text="@string/CH4"
+                    android:visibility="gone"
                     android:textColor="@color/output_channel_name_text_color"
                     android:textSize="@dimen/output_channel_name_size" />
             </RelativeLayout>
@@ -800,7 +808,8 @@
                         android:text="@string/dB60"
                         android:textAllCaps="false"
                         android:textColor="@color/output_channel_valume_text_color"
-                        android:textSize="@dimen/output_valume_tv_size" />
+                        android:textSize="@dimen/output_valume_tv_size"
+                        android:visibility="gone"/>
 
                     <Button
                         android:id="@id/id_b_output_valinc_ch4"
@@ -821,7 +830,8 @@
                     android:scaleType="fitCenter"
                     android:text="@string/CH5"
                     android:textColor="@color/output_channel_name_text_color"
-                    android:textSize="@dimen/output_channel_name_size" />
+                    android:textSize="@dimen/output_channel_name_size"
+                    android:visibility="gone"/>
             </RelativeLayout>
 
             <LinearLayout
@@ -984,7 +994,8 @@
                         android:text="@string/dB60"
                         android:textAllCaps="false"
                         android:textColor="@color/output_channel_valume_text_color"
-                        android:textSize="@dimen/output_valume_tv_size" />
+                        android:textSize="@dimen/output_valume_tv_size"
+                        android:visibility="gone"/>
 
                     <Button
                         android:id="@id/id_b_output_valinc_ch5"
@@ -1005,7 +1016,8 @@
                     android:scaleType="fitCenter"
                     android:text="@string/CH6"
                     android:textColor="@color/output_channel_name_text_color"
-                    android:textSize="@dimen/output_channel_name_size" />
+                    android:textSize="@dimen/output_channel_name_size"
+                    android:visibility="gone"/>
             </RelativeLayout>
 
             <LinearLayout
@@ -1172,7 +1184,8 @@
                         android:text="@string/dB60"
                         android:textAllCaps="false"
                         android:textColor="@color/output_channel_valume_text_color"
-                        android:textSize="@dimen/output_valume_tv_size" />
+                        android:textSize="@dimen/output_valume_tv_size"
+                        android:visibility="gone"/>
 
                     <Button
                         android:id="@id/id_b_output_valinc_ch6"
@@ -1193,7 +1206,8 @@
                     android:scaleType="fitCenter"
                     android:text="@string/CH5"
                     android:textColor="@color/output_channel_name_text_color"
-                    android:textSize="@dimen/output_channel_name_size" />
+                    android:textSize="@dimen/output_channel_name_size"
+                    android:visibility="gone"/>
             </RelativeLayout>
 
             <LinearLayout
@@ -1356,7 +1370,8 @@
                         android:text="@string/dB60"
                         android:textAllCaps="false"
                         android:textColor="@color/output_channel_valume_text_color"
-                        android:textSize="@dimen/output_valume_tv_size" />
+                        android:textSize="@dimen/output_valume_tv_size"
+                        android:visibility="gone"/>
 
                     <Button
                         android:id="@id/id_b_output_valinc_ch7"
@@ -1377,7 +1392,8 @@
                     android:scaleType="fitCenter"
                     android:text="@string/CH6"
                     android:textColor="@color/output_channel_name_text_color"
-                    android:textSize="@dimen/output_channel_name_size" />
+                    android:textSize="@dimen/output_channel_name_size"
+                    android:visibility="gone"/>
             </RelativeLayout>
 
             <LinearLayout

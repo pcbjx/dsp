@@ -70,7 +70,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/equalizer_gain_color"
                 android:textSize="@dimen/equalizer_gain_text_size"
-                android:text="500Hz"/>
+                />
 
             <Button
                 android:id="@id/id_tv_q_equalizer_one_1"
@@ -83,7 +83,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/equalizer_q_color"
                 android:textSize="@dimen/equalizer_q_text_size"
-                android:text="-2.2dB"/>
+                />
 
             <Button
                 android:id="@id/id_tv_freq_equalizer_one_1"
@@ -96,7 +96,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/equalizer_freq_color"
                 android:textSize="@dimen/equalizer_freq_text_size"
-                android:text="2.515"/>
+                />
 
             <LinearLayout
                 android:id="@id/id_ly_reset_eqg_one_1"

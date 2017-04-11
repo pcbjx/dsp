@@ -5,9 +5,11 @@ import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Message;
 
 import com.feasycom.s_port.ShareFile.FEShare;
+import com.feasycom.s_port.ShareFile.FileClass;
 import com.feasycom.s_port.model.MyLog;
 
 import java.util.zip.CRC32;
@@ -19,6 +21,8 @@ import static sie.amplifier_conctroller.DataStruct.DataStruct.EQList;
 
 public class Sie_app_data_share extends Application {
     final  String TAG = "Sie_app_data_share";
+
+    FileClass siefile;
 
     private static Sie_app_data_share instance = null;
     public DataStruct m_dateStruct;
@@ -211,9 +215,9 @@ public class Sie_app_data_share extends Application {
             case 0x05:
                 MyLog.v(TAG,"31 EQ");
                 action = share.SIE_UI_ACTION_EQ_31;
-                for (int i = 0;i<31;i++)
+                for (int i = 0;i<DataStruct.eqMax;i++)
                 {
-                    DataStruct.EQList.InEQ[i].level = RcvDeviceData.DataBuf[DataStruct.DATA_START_POS+1+i];
+                    DataStruct.cur_eq[i] = (byte) RcvDeviceData.DataBuf[DataStruct.DATA_START_POS+1+i];
                 }
                 break;
             case 0x06:
@@ -285,8 +289,20 @@ public class Sie_app_data_share extends Application {
             case 0x04 :
                 break;
             case 0x05 :
+                sendbuf = new  byte[DataStruct.eqMax+1];
+                sendbuf[0] = DataStruct.sieProtocol.prtc_eq32;
+                for (int i=0;i<31;i++)
+                {
+                    sendbuf[i+1] = DataStruct.cur_eq[i];
+                }
+                share.sie_write(sendbuf,sendbuf.length);
                 break;
             case 0x06 :
+                sendbuf = new byte[3];
+                sendbuf[0] = DataStruct.sieProtocol.prtc_eqBandWidth;
+                sendbuf[1] = (byte) (DataStruct.curQValue >> 8 &0xff);
+                sendbuf[2] = (byte) (DataStruct.curQValue &0xff);
+                share.sie_write(sendbuf,sendbuf.length);
                 break;
             case 0x07 :
                 break;

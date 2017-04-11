@@ -255,6 +255,15 @@ public class FEShare implements Serializable {
         return intentFilter_ui_fre;
     }
 
+    public IntentFilter getIntent_ui_chanel_Filter() {
+        if (intentFilter_ui_chanle == null) {
+            intentFilter_ui_chanle = new IntentFilter();
+            intentFilter_ui_chanle.addAction(SIE_UI_ACTION_CHANEL_VOLUME);
+
+        }
+        return intentFilter_ui_chanle;
+    }
+
     private void setupRunnable() {
         if (stopSPPScanRunnable == null) {
             stopSPPScanRunnable = new Runnable() {

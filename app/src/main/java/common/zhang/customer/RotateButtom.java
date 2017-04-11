@@ -19,7 +19,7 @@ import com.feasycom.s_port.R;
 
 /**
  * 旋钮控件
- * Created by yangle on 2016/11/29.
+ *
  * Change  by zhang on 2017-3-14
  */
 public class RotateButtom extends View {
@@ -126,7 +126,9 @@ public class RotateButtom extends View {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         // 控件宽、高
-        width = height = Math.min(h, w);
+       //width = height = Math.min(h, w);
+        width = w;
+        height = h;
         // 刻度盘半径
         dialRadius = width / 2 - dp2px(20);
         // 圆弧半径
@@ -192,18 +194,18 @@ public class RotateButtom extends View {
 
         // 绘制标题
         float titleWidth = titlePaint.measureText(title);
-        canvas.drawText(title, (width - titleWidth) / 2, dialRadius * 2 + dp2px(30), titlePaint);
+        canvas.drawText(title, (width - titleWidth) / 2, dialRadius * 2 + dp2px(2), titlePaint);
 
         // 绘制最小温度标识
         // 最小温度如果小于10，显示为0x
         String minTempFlag = minTemp < 10 ? "0" + minTemp : minTemp + "";
         float tempFlagWidth = titlePaint.measureText(maxTemp + "");
         canvas.rotate(55, width / 2, height / 2);
-        canvas.drawText(minTempFlag, (width - tempFlagWidth) / 2, height + dp2px(5), tempFlagPaint);
+        canvas.drawText(minTempFlag, (width - tempFlagWidth) / 2, height + dp2px(8), tempFlagPaint);
 
         // 绘制最大温度标识
         canvas.rotate(-105, width / 2, height / 2);
-        canvas.drawText(maxTemp + "", (width - tempFlagWidth) / 2, height + dp2px(5), tempFlagPaint);
+        canvas.drawText(maxTemp + "", (width - tempFlagWidth) / 2, height + dp2px(8), tempFlagPaint);
         canvas.restore();
     }
 
@@ -224,7 +226,7 @@ public class RotateButtom extends View {
         Rect rect_shawdow = new Rect(width / 2-dialRadius,
                         height/ 2-dialRadius,width / 2+dialRadius,height/ 2+dialRadius);
 
-        canvas.drawBitmap(buttonImageShadow,null,rect_shawdow,buttonPaint);
+       // canvas.drawBitmap(buttonImageShadow,null,rect_shawdow,buttonPaint);
 
         Matrix matrix = new Matrix();
         float w_scale = ((width/2)/(float)buttonWidth);
@@ -244,7 +246,7 @@ public class RotateButtom extends View {
 
         //设置抗锯齿
         canvas.setDrawFilter(paintFlagsDrawFilter);
-        canvas.drawBitmap(buttonImage, matrix, buttonPaint);
+        //canvas.drawBitmap(buttonImage, matrix, buttonPaint);
     }
 
     /**

@@ -32,7 +32,7 @@
             android:layout_width="fill_parent"
             android:layout_height="0.0dip"
             android:layout_gravity="center"
-            android:layout_weight="2.5"
+            android:layout_weight="4"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -152,7 +152,7 @@
             android:layout_width="fill_parent"
             android:layout_height="0.0dip"
             android:layout_gravity="center"
-            android:layout_weight="1.5"
+            android:layout_weight="0.5"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -160,7 +160,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="0.0dip"
                 android:layout_gravity="center"
-                android:layout_weight="0.5"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -206,10 +206,10 @@
                     android:id="@id/id_sb_equalizer_bw"
                     android:layout_width="0.0dip"
                     android:layout_height="fill_parent"
-                    android:layout_gravity="center"
                     android:layout_weight="3.0"
-                    android:thumb="@drawable/seekbar_thumb"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete" />
+                    android:thumb="@drawable/set_delay_seekbar_thumb"
+                    style="?android:attr/seekBarStyle"
+                    />
 
                 <View
                     android:layout_width="0.0dip"
@@ -224,6 +224,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="0.5"
                 android:gravity="center"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <View
@@ -270,6 +271,7 @@
                     android:layout_height="fill_parent"
                     android:layout_gravity="center"
                     android:layout_weight="3.0"
+                    android:visibility="gone"
                     android:thumb="@drawable/set_delay_seekbar_thumb"
                 />
 

@@ -212,6 +212,10 @@ public class DataStruct
   public static final byte max_channel = 8;
   //eq
   public static byte [] cur_eq = new  byte[31];
+  public static final byte  eqMax = 31;
+  public static int curQValue = 150;
+  public static final int  QMax = 415;
+  public static final int  QMin = 25;
   
   static
   {

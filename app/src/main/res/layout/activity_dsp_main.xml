@@ -157,7 +157,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="50sp"
                 android:layout_marginRight="50sp"
-                style="@style/Widget.AppCompat.SeekBar" />
+                style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+                android:thumb="@drawable/set_delay_seekbar_thumb" />
 
         </LinearLayout>
         <LinearLayout
