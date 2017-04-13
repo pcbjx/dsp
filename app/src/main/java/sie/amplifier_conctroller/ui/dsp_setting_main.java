@@ -1,6 +1,8 @@
 package sie.amplifier_conctroller.ui;
 
 
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -14,11 +16,14 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.feasycom.s_port.R;
 
@@ -40,11 +45,14 @@ import com.github.mikephil.charting.listener.OnChartGestureListener;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.Utils;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import common.zhang.customer.VerticalSeekBar;
 import sie.amplifier_conctroller.DataStruct.DataStruct;
 import sie.amplifier_conctroller.Sie_app_data_share;
+
+import static sie.amplifier_conctroller.DataStruct.DataStruct.curUserEqData;
 
 public class dsp_setting_main extends Activity  implements OnChartGestureListener ,OnChartValueSelectedListener{
 
@@ -62,6 +70,7 @@ public class dsp_setting_main extends Activity  implements OnChartGestureListene
     Button[] btid_tv_freq_equalizerList;
     SeekBar seekBarQvalue;
     Button buttonrest;
+    Button []buttonUserEqList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +81,7 @@ public class dsp_setting_main extends Activity  implements OnChartGestureListene
 
         init_eq();
         init_Chart();
+        flashUserdataButton_normal();
     }
 
         @Override
@@ -447,6 +457,74 @@ public class dsp_setting_main extends Activity  implements OnChartGestureListene
             btid_tv_freq_equalizerList[i].setOnClickListener(onClickListenertTv_freq_equalizer);
         }
 
+        buttonUserEqList = new Button [8];
+        buttonUserEqList[0] = (Button)findViewById(R.id.id_b_eq_channel_ch0);
+        buttonUserEqList[1] = (Button)findViewById(R.id.id_b_eq_channel_ch1);
+        buttonUserEqList[2] = (Button)findViewById(R.id.id_b_eq_channel_ch2);
+        buttonUserEqList[3] = (Button)findViewById(R.id.id_b_eq_channel_ch3);
+        buttonUserEqList[4] = (Button)findViewById(R.id.id_b_eq_channel_ch4);
+        buttonUserEqList[5] = (Button)findViewById(R.id.id_b_eq_channel_ch5);
+        buttonUserEqList[6] = (Button)findViewById(R.id.id_b_eq_channel_ch6);
+        buttonUserEqList[7] = (Button)findViewById(R.id.id_b_eq_channel_ch7);
+
+
+
+
+        for (int i = 0;i < DataStruct.userEqMax ;i++)
+        {
+            buttonUserEqList[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    for (int j = 0;j < DataStruct.userEqMax ;j++)
+                    {
+
+                        if (buttonUserEqList[j].getId() == v.getId())
+                        {
+                            if (getUserdata(DataStruct.cur_eq,j))
+                            {
+                                curUserEqData = j;
+                                flashUserdataButton_press();
+                                for (int n = 0;n <DataStruct.eqMax;n++)
+                                {
+                                    updateEqSeekBar(n);
+                                }
+                                sie_data_share.sendSieData(DataStruct.sieProtocol.prtc_eq32);
+                            }else
+                            {
+                                Toast.makeText(dsp_setting_main.this, getResources().getText(R.string.HoldSave), Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    }
+                }
+            });
+            buttonUserEqList[i].setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    for (int j = 0;j < DataStruct.userEqMax ;j++)
+                    {
+                        if (buttonUserEqList[j].getId() == v.getId())
+                        {
+                            curUserEqData = j;
+                            flashUserdataButton_press();
+                            if (setUserdata(DataStruct.cur_eq,j))
+                            {
+                                for (int n = 0;n <DataStruct.eqMax;n++)
+                                {
+                                    updateEqSeekBar(n);
+                                }
+                                sie_data_share.sendSieData(DataStruct.sieProtocol.prtc_eq32);
+                            }
+
+                        }
+                    }
+                    return true;
+                }
+            });
+        }
+
+
+
         buttonrest = (Button)findViewById(R.id.id_b_eq_reset);
         buttonrest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -458,6 +536,58 @@ public class dsp_setting_main extends Activity  implements OnChartGestureListene
 
     }
 
+    private void flashUserdataButton_normal()
+    {
+        for (int i =0 ; i<DataStruct.userEqMax;i++)
+        {
+            buttonUserEqList[i].setBackgroundResource(R.drawable.btn_normal);
+        }
+
+    }
+
+    private void flashUserdataButton_press()
+    {
+        flashUserdataButton_normal();
+        buttonUserEqList[curUserEqData].setBackgroundResource(R.drawable.btn_press);
+
+    }
+
+
+
+    private boolean getUserdata(byte []data, int index)
+    {
+        sieFile = new FileClass();
+        String eqFileName = "SieEqData";
+
+        try {
+            sieFile.readFileToByte(eqFileName+index,data);
+            MyLog.v(TAG,"here");
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    private boolean setUserdata(byte []data, int index)
+    {
+        sieFile = new FileClass();
+        String eqFileName = "SieEqData";
+
+        try {
+            //data =  sieFile.readFileToByte(eqFileName+index);
+            sieFile.writeSDFile(eqFileName+index,data);
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+       // return false;
+    }
+
+
+
+
     public void resetQq()
     {
         for (int i = 0 ;i<DataStruct.eqMax;i++)
@@ -465,6 +595,7 @@ public class dsp_setting_main extends Activity  implements OnChartGestureListene
             DataStruct.cur_eq[i] = 12;
             updateEqSeekBar(i);
         }
+        flashUserdataButton_normal();
 
         sie_data_share.sendSieData(DataStruct.sieProtocol.prtc_eq32);
     }
@@ -496,6 +627,7 @@ public class dsp_setting_main extends Activity  implements OnChartGestureListene
                 {
                     DataStruct.cur_eq[i] = (byte) progress;
                     updateEqSeekBar(i);
+
                     sie_data_share.sendSieData(DataStruct.sieProtocol.prtc_eq32);
                 }
             }
@@ -503,7 +635,7 @@ public class dsp_setting_main extends Activity  implements OnChartGestureListene
 
         @Override
         public void onStartTrackingTouch(SeekBar seekBar) {
-
+            flashUserdataButton_normal();
         }
 
         @Override
@@ -539,6 +671,7 @@ public class dsp_setting_main extends Activity  implements OnChartGestureListene
         updateEqGain(i);
         verticalSeekBarsList[i].setProgress(DataStruct.cur_eq[i]);
         setsieData(i,DataStruct.cur_eq[i]);
+
     }
     private void flashUIFromProtocol(int sieProtocolValue)
     {

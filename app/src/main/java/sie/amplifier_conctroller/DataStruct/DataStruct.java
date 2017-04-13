@@ -203,19 +203,35 @@ public class DataStruct
   public int out7_spk_type;
   public int out8_spk_type;
   public int[] out_led = new int[15];
+
+
+
   public static DataStruct_sieProtocol sieProtocol = new DataStruct_sieProtocol();
   public static byte otherCMD = 0;
   //channel
+  public static final byte max_channel = 8;
   public static boolean [] chanelMute = new boolean[] { false,false,false,false,false,false ,false,false};
   public static byte [] chanelLastVolume = new byte[] { 10,10,10,10,10,10 ,10,10};
   public static byte polar[] = new byte[]{0,0,0,0,0,0,0,0};
-  public static final byte max_channel = 8;
+
   //eq
   public static byte [] cur_eq = new  byte[31];
   public static final byte  eqMax = 31;
   public static int curQValue = 150;
   public static final int  QMax = 415;
   public static final int  QMin = 25;
+  public static final int userEqMax = 8;
+  public static int curUserEqData = 0;
+
+  //delay
+  public static int [] delay = new int[max_channel];
+  public static final int delayMax = 10000;
+
+  //fre div
+  public static byte curFreDiv = 0;
+  public static int [] freDivHight = new int[max_channel];
+  public static int [] freDivLow = new int[max_channel];
+
   
   static
   {

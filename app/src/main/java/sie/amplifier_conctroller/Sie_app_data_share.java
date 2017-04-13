@@ -229,6 +229,12 @@ public class Sie_app_data_share extends Application {
             case 0x07:
                 MyLog.v(TAG,"SIE_UI_ACTION_CHANEL_DELAY");
                 action = share.SIE_UI_ACTION_CHANEL_DELAY;
+
+                for (int i = 0;i<DataStruct.max_channel;i++)
+                {
+
+                    m_dateStruct.delay[i] = (byte) ((RcvDeviceData.DataBuf[DataStruct.DATA_START_POS+1+i*2]>>8)&0xff)+((RcvDeviceData.DataBuf[DataStruct.DATA_START_POS+1+1+i*2])&0xff);//高位
+                }
                 //DataStruct.DataStructBuf.IN_CH[0].delay =
                 break;
             case 0x08:
@@ -305,6 +311,14 @@ public class Sie_app_data_share extends Application {
                 share.sie_write(sendbuf,sendbuf.length);
                 break;
             case 0x07 :
+                sendbuf = new byte[DataStruct.max_channel*2+1];
+                sendbuf[0] = DataStruct.sieProtocol.prtc_delay;
+                for (int i = 0; i < DataStruct.max_channel;i++)
+                {
+                    sendbuf[i*2+1] = (byte) ((DataStruct.delay[i]>>8)&0xff);
+                    sendbuf[i*2+1+1] = (byte) ((DataStruct.delay[i])&0xff);
+                }
+                share.sie_write(sendbuf,sendbuf.length);
                 break;
             case 0x08 :
                 sendbuf = new byte[]{DataStruct.sieProtocol.prtc_mainVolume,(byte)0x00};

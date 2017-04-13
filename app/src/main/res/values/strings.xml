@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">BTComm</string>
+    <string name="app_name">B2 Audio</string>
     <string name="ok">OK</string>
     <string name="web_language">siteLanguage=2</string>
     <string name="action_settings">Setting</string>
@@ -148,6 +148,7 @@
     <string name="Set">Settings</string>
     <string name="Help">Help</string>
     <string name="Save">Save</string>
+    <string name="HoldSave">Hold On and Save</string>
     <string name="delete">Delete</string>
     <string name="opt_Store">This operation will cover this group of data!?</string>
     <string name="opt_delete">This operation will delete this group of data!?</string>
@@ -244,8 +245,9 @@
     <string name="Sound_EFF6">Effect 6</string>
     <string name="SetOutputDelay">Set Output Delay</string>
     <string name="SetDelay">Set Delay</string>
-    <string name="CM">Millisecond</string>
-    <string name="MS">Centimeter</string>
+    <string name="MS">Millisecond</string>
+    <string name="CM">Centimeter</string>
+    <string name="uS">μS</string>
     <string name="Inch">Inch</string>
     <string name="Unit">Unit：</string>
     <string name="XOver">XOver</string>
@@ -397,6 +399,7 @@
     <string name="EQ_Gain">dB</string>
     <string name="ResetEQT">Reset all EQ</string>
     <string name="ResetEQ">Whether the reset all EQ？</string>
+
 
     <!-- titile string-->
     <string name="title_main">Main</string>

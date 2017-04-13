@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">思翼功放</string>
+    <string name="app_name">B2 Audio</string>
     <string name="ok">确定</string>
     <string name="web_language">siteLanguage=1</string>
     <string name="action_settings">设置</string>
@@ -240,6 +240,7 @@
     <string name="SetDelay">延时</string>
     <string name="CM">厘米</string>
     <string name="MS">毫秒</string>
+    <string name="uS">微秒</string>
     <string name="Inch">英寸</string>
     <string name="Unit">单位：</string>
     <string name="XOver">分频器</string>
@@ -392,4 +393,11 @@
     <string name="sie_dsp">思翼功放</string>
     <string name="text_stauts"></string>
     <string name="save_cur_data_tips">已保存</string>
+    <string name="title_activity_bsp_setting_chanel">通道</string>
+    <string name="title_activity_dsp_setting">高级设置</string>
+    <string name="title_activity_dsp_setting_delay">延时</string>
+    <string name="title_activity_dsp_setting_main">设置</string>
+    <string name="title_activity_dsp_main">主页</string>
+    <string name="vol">音量</string>
+    <string name="HoldSave">长按保存</string>
 </resources>

@@ -7,7 +7,9 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TabLayout;
 
 import com.feasycom.s_port.model.MyLog;
 
@@ -114,16 +116,18 @@ public class FileClass {
         is.read(b);
         return b;
     }
-    public static byte[] readFileToByte(String filePath) throws IOException{
+    public static byte[] readFileToByte(String filePath,byte [] outdata) throws IOException{
         if (filePath == null || filePath.length()<1) return null;
-        String fileName = URLDecoder.decode(filePath,"UTF-8");
-        fileName = fileName.replace("file:","");
-        MyLog.i("更改后文件地址",fileName);
-        File file = new File(fileName, "");
-            FileInputStream is = new FileInputStream(fileName);
-            long fileLength = file.length();
-            byte[] b = new byte[(int) fileLength];
-            is.read(b);
+        String fileName = filePath;//URLDecoder.decode(filePath,"UTF-8");
+        File file = new File(getSettingPath(),
+                fileName);
+
+        MyLog.i("更改后文件地址",file.getPath());
+        FileInputStream is = new FileInputStream(file);
+        long fileLength = file.length();
+        byte[] b = new byte[(int) fileLength];
+        is.read(b);
+        System.arraycopy(b,0,outdata,0,(int)fileLength);
             return b;
     }
 

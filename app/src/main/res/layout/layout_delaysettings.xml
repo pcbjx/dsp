@@ -108,7 +108,7 @@
 
                             <Button
                                 android:id="@id/id_b_delay_show_ch0"
-                                android:layout_width="@dimen/delay_item_delay_ch_val_width"
+                                android:layout_width="78dp"
                                 android:layout_height="@dimen/delay_item_delay_ch_val_height"
                                 android:layout_gravity="center"
                                 android:background="@drawable/button_vivid_bg"

@@ -13,14 +13,14 @@
         custom:leftButtonBackground="@null"
         custom:leftButtonText="@string/BtnBack"
         custom:leftButtonTextColor="#0000ff"
-        custom:leftButtonTextSize="10sp"
+        custom:leftButtonTextSize="8sp"
         custom:rightButtonBackground="@null"
         custom:rightButtonText="@string/ST_BT_DISCONNECT"
         custom:rightButtonTextColor="#0000ff"
         custom:rightButtonTextSize="8sp"
         custom:textTitle="MyTitle"
         custom:titleTextColor="#A10000"
-        custom:titleTextSize="10sp" >
+        custom:titleTextSize="8sp" >
     </common.zhang.customer.MyToolBar>
 
     <LinearLayout

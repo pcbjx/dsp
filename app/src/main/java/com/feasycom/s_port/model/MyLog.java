@@ -25,4 +25,13 @@ public class MyLog {
     public static void v(String tag, String msg){
         if (isEnableLog) Log.v(tag,msg);
     }
+    public static void hexString (String tag, byte [] data,int len){
+        if (isEnableLog)
+        {
+            for (int i =0;i<len;i++)
+            {
+                v(tag,""+String.format("%02d",data[i]));
+            }
+        }
+    }
 }

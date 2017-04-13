@@ -118,6 +118,7 @@ public class MyToolBar extends RelativeLayout {
 		rightBtn.setBackground(rightBtnBackground);
 		//rightBtn.setBackgroundColor(getResources().getColor(R.color.red));
 		rightBtn.setTextSize(rightBtnTextSize);
+
 		// 设置自定义toolbar的背景色
 		setBackgroundColor(Color.WHITE);
 
@@ -235,9 +236,17 @@ public class MyToolBar extends RelativeLayout {
 		}
 	}
 
+	@Override
+	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+		super.onSizeChanged(w, h, oldw, oldh);
+		leftBtnTextSize = h ;
+		rightBtnTextSize = h ;
+
+	}
+
 	/*
-	 * 设置自定义的toolbar是否显示标题，默认是有标题的
-	 */
+         * 设置自定义的toolbar是否显示标题，默认是有标题的
+         */
 	public void setToolBarTitleVisible(int title_id, boolean flag) {
 		if (flag) {
 			tvTitle.setText(title_id);

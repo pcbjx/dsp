@@ -60,7 +60,7 @@ public class dsp_setting  extends TabActivity {
                     // 设置是否显示中间标题，默认的是显示
                     myToolBar.setToolBarTitleVisible(R.string.title_setting_chanel,true);
                 }
-                if (tabId.equals("Tab3")) {
+                if (tabId.equals("Tab4")) {
                     // 设置是否显示中间标题，默认的是显示
                     myToolBar.setToolBarTitleVisible(R.string.title_setting_fred,true);
                 }
