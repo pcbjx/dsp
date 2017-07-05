@@ -102,7 +102,7 @@ public class dsp_setting  extends TabActivity {
 
             @Override
             public void leftBtnClick() {// 左边按钮点击事件
-                Toast.makeText(dsp_setting.this, "返回", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(dsp_setting.this, "返回", Toast.LENGTH_SHORT).show();
                 final Intent intent = new Intent(dsp_setting.this,
                         dsp_main.class);
                 startActivity(intent);

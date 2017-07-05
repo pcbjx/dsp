@@ -505,8 +505,10 @@ public class FEShare implements Serializable {
             sum += b[i];
         }
         send_frame[len + 5] = (byte) (0xff - sum & 0xff);
-        MyLog.v(TAG, "send crc:" + send_frame[len + 5]);
-        MyLog.v(TAG, "send len:" + send_frame.length);
+
+        MyLog.v(TAG,"send_frame: "+MyLog.byte2hex(send_frame));
+       // MyLog.v(TAG, "send crc:" + Integer.toHexString(send_frame[len + 5]&0xff));
+        //MyLog.v(TAG, "send len:" + send_frame.length);
         return write(send_frame, 0, len + 6);
     }
 

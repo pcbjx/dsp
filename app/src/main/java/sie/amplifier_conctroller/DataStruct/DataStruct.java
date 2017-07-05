@@ -176,7 +176,7 @@ public class DataStruct
   public int INC2;
   public int INC3;
   public DataStruct_Input[] IN_CH = new DataStruct_Input[1];
-  public int MainvolMuteFlg = 1;
+  public static int MainvolMuteFlg = 1;
   public DataStruct_Output[] OUT_CH = new DataStruct_Output[8];
   public int PCFadeInFadeOutFlg;
   public int PcCustom;
@@ -210,6 +210,7 @@ public class DataStruct
   public static byte otherCMD = 0;
   //channel
   public static final byte max_channel = 8;
+  //public static boolean [] chanelMute = new boolean[] { true,true,true,true,true,true ,true,true};
   public static boolean [] chanelMute = new boolean[] { false,false,false,false,false,false ,false,false};
   public static byte [] chanelLastVolume = new byte[] { 10,10,10,10,10,10 ,10,10};
   public static byte polar[] = new byte[]{0,0,0,0,0,0,0,0};
@@ -228,9 +229,12 @@ public class DataStruct
   public static final int delayMax = 10000;
 
   //fre div
-  public static byte curFreDiv = 0;
+  public static int curFreDiv = 0;
   public static int [] freDivHight = new int[max_channel];
   public static int [] freDivLow = new int[max_channel];
+
+  //out put mode
+  public static int Output_mode = 0;
 
   
   static
@@ -247,7 +251,7 @@ public class DataStruct
     EncryptionFlag = 33;
     DecipheringFlag = 32;
     DELAY_SENDREC_COS = 0;
-    HW_MUTE = true;
+    HW_MUTE = false;
     MUTE_IN_SYSTEM = true;
     MainVlaumeFromSystem = true;
     LinkMODE = 1;

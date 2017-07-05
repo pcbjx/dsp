@@ -1439,6 +1439,7 @@
             android:layout_height="0.0dip"
             android:layout_gravity="center"
             android:layout_weight="1.5"
+            android:visibility="gone"
             android:orientation="horizontal">
 
             <LinearLayout

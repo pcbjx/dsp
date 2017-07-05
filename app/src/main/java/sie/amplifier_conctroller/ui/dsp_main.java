@@ -47,6 +47,7 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
 
     int UserGroup = 1;
     int InputSRC = 1;
+    int Outout_mode= 1;
 
     Sie_app_data_share sie_data_share;
 
@@ -59,12 +60,15 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
     private ImageView[] B_UGbg = new ImageView[6];
     private Button[] B_UserGroup = new Button[6];
     private Button[] B_InputSrcChanel = new Button[6];
+    private Button[] B_Output_mode = new Button[2];
 
-
+    private Button bt_Hw_mute;
     Button bt_vol_setting;
     RotateButtom main_volue_r_bt;
     SeekBar bass_seekbar;
     Button bt_titile_right;
+
+    Button bt_getData;
 
 
     private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics = new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
@@ -249,6 +253,25 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
                   //  Toast.LENGTH_SHORT).show();
         }
 
+        bt_Hw_mute = (Button)findViewById(R.id.bt_Output_Mute);
+        bt_Hw_mute.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (DataStruct.HW_MUTE)
+                {
+                    DataStruct.HW_MUTE = false;
+                    bt_Hw_mute.setBackgroundResource(R.drawable.btn_normal);
+                }else
+                {
+                    DataStruct.HW_MUTE = true;
+                    bt_Hw_mute.setBackgroundResource(R.drawable.btn_press);
+                }
+
+                sie_data_share.sendSieData(DataStruct.sieProtocol.prtc_mainVolume);
+
+            }
+        });
+
         main_volue_r_bt = (RotateButtom)findViewById(R.id.main_volume);
         main_volue_r_bt.set_titile(getResources().getText(R.string.MainValume).toString());
         main_volue_r_bt.setBarinit(0,60,DataStruct.main_vol);
@@ -275,6 +298,9 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
         B_InputSrcChanel[2] = ((Button)findViewById(R.id.input_src_channel3));
         B_InputSrcChanel[3] = ((Button)findViewById(R.id.input_src_channel4));
 
+        B_Output_mode[0] = (Button)findViewById(R.id.bt_Output_channel1);
+        B_Output_mode[1] = (Button)findViewById(R.id.bt_Output_channel2);
+
 
         for (int i = 0;i<6;i++)
         {
@@ -286,10 +312,39 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
             B_UserGroup[i].setOnClickListener(groupBtClickistener);
 
         }
+
+        if(DataStruct.otherCMD>=0x11&&DataStruct.otherCMD<0x21)
+        {
+            UserGroup = DataStruct.otherCMD - 0x11;
+        }else
+        if(DataStruct.otherCMD>=0x21&&DataStruct.otherCMD<0x30)
+        {
+            UserGroup = DataStruct.otherCMD - 0x21+3;
+        }
+        FlashUserGroupSel();
+
         for (int i = 0;i<4;i++)
         {
             B_InputSrcChanel[i].setOnClickListener(InputSrcBtClickistener);
         }
+        InputSRC = DataStruct.input_source - 1;
+        FlashInputSrcSel();
+
+        for (int i = 0;i<2;i++)
+        {
+            B_Output_mode[i].setOnClickListener(Output_mode_BtClickistener);
+        }
+        Outout_mode = DataStruct.Output_mode - 1;
+        FlashOutputSel();
+
+        bt_getData = (Button)findViewById(R.id.bt_get_data_test);
+        bt_getData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DataStruct.otherCMD = 0;
+                sie_data_share.sendSieData(DataStruct.sieProtocol.prtc_other);
+            }
+        });
 
 
         new Thread(new Runnable() {
@@ -321,6 +376,29 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
             }
         }
     };
+
+    View.OnClickListener Output_mode_BtClickistener  = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            int id = v.getId();
+
+            FlashOutputNoSel();
+            for (int j = 0;j<2;j++)
+            {
+                if(id == B_Output_mode[j].getId())
+                {
+                    Outout_mode = j;
+                    Log.v(TAG,"Outout_mode click:"+Outout_mode);
+                    DataStruct.Output_mode = Outout_mode +1;
+                    sie_data_share.sendSieData(DataStruct.sieProtocol.prtc_outputChanel);
+                    FlashOutputSel();
+                }
+            }
+        }
+    };
+
+
+
 
     View.OnClickListener groupBtClickistener  = new View.OnClickListener() {
         @Override
@@ -411,7 +489,7 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
                 B_UserGroup[UserGroup].setBackgroundResource(R.drawable.use_group_4_press);
                 break;
             case 4:
-                B_UserGroup[UserGroup].setBackgroundResource(R.drawable.use_group_6_press);
+                B_UserGroup[UserGroup].setBackgroundResource(R.drawable.use_group_5_press);
                 break;
             case 5:
                 B_UserGroup[UserGroup].setBackgroundResource(R.drawable.use_group_6_press);
@@ -428,10 +506,10 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
 
     void FlashInputSrcNoSel()
     {
-        B_InputSrcChanel[0].setBackgroundResource(R.drawable.use_group_1_normal);
-        B_InputSrcChanel[1].setBackgroundResource(R.drawable.use_group_2_normal);
-        B_InputSrcChanel[2].setBackgroundResource(R.drawable.use_group_3_normal);
-        B_InputSrcChanel[3].setBackgroundResource(R.drawable.use_group_4_normal);
+        B_InputSrcChanel[0].setBackgroundResource(R.drawable.btn_normal);
+        B_InputSrcChanel[1].setBackgroundResource(R.drawable.btn_normal);
+        B_InputSrcChanel[2].setBackgroundResource(R.drawable.btn_normal);
+        B_InputSrcChanel[3].setBackgroundResource(R.drawable.btn_normal);
 
     }
 
@@ -441,16 +519,42 @@ public class dsp_main extends Activity implements View.OnClickListener,  OnSeekB
         switch (InputSRC)
         {
             case 0:
-                B_InputSrcChanel[InputSRC].setBackgroundResource(R.drawable.use_group_1_press);
+                B_InputSrcChanel[InputSRC].setBackgroundResource(R.drawable.btn_press);
                 break;
             case 1:
-                B_InputSrcChanel[InputSRC].setBackgroundResource(R.drawable.use_group_2_press);
+                B_InputSrcChanel[InputSRC].setBackgroundResource(R.drawable.btn_press);
                 break;
             case 2:
-                B_InputSrcChanel[InputSRC].setBackgroundResource(R.drawable.use_group_3_press);
+                B_InputSrcChanel[InputSRC].setBackgroundResource(R.drawable.btn_press);
                 break;
             case 3:
-                B_InputSrcChanel[InputSRC].setBackgroundResource(R.drawable.use_group_4_press);
+                B_InputSrcChanel[InputSRC].setBackgroundResource(R.drawable.btn_press);
+                break;
+
+            default:
+                break;
+
+
+        }
+
+    }
+
+    void FlashOutputNoSel()
+    {
+        B_Output_mode[0].setBackgroundResource(R.drawable.btn_normal);
+        B_Output_mode[1].setBackgroundResource(R.drawable.btn_normal);
+    }
+
+    void FlashOutputSel()
+    {
+        FlashOutputNoSel();
+        switch (Outout_mode)
+        {
+            case 0:
+                B_Output_mode[Outout_mode].setBackgroundResource(R.drawable.btn_press);
+                break;
+            case 1:
+                B_Output_mode[Outout_mode].setBackgroundResource(R.drawable.btn_press);
                 break;
 
             default:

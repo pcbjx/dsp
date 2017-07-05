@@ -207,6 +207,8 @@
                     android:layout_width="0.0dip"
                     android:layout_height="fill_parent"
                     android:layout_weight="3.0"
+                    android:maxWidth="30dp"
+                    android:maxHeight="30dp"
                     android:thumb="@drawable/set_delay_seekbar_thumb"
                     style="?android:attr/seekBarStyle"
                     />

@@ -61,7 +61,7 @@ public class AboutActivity extends AppCompatActivity {
         // 设置左边右边的按钮是否显示
         myToolBar.setToolBarBtnVisiable(true, false);
         // 设置是否显示中间标题，默认的是显示
-        myToolBar.setToolBarTitleVisible(R.string.title_main,true);
+        myToolBar.setToolBarTitleVisible(R.string.about_app,true);
         myToolBar.updateRightButton(share.connect_state);
 
         /*
@@ -105,7 +105,7 @@ public class AboutActivity extends AppCompatActivity {
                     break;
                 }
                 case R.id.tv_web:{
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sintegrate.tmall.com/" + getResources().getText(R.string.web_language)));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://shop148988314.taobao.com/?spm=a1z10.1-c.0.0.jiW9jf" + getResources().getText(R.string.web_language)));
                     startActivity(intent);
                     break;
                 }

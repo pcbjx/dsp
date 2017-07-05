@@ -12,14 +12,14 @@
         custom:leftButtonBackground="@null"
         custom:leftButtonText="@string/BtnBack"
         custom:leftButtonTextColor="#0000ff"
-        custom:leftButtonTextSize="12sp"
+        custom:leftButtonTextSize="8sp"
         custom:rightButtonBackground="@null"
         custom:rightButtonText="@string/disConnect"
         custom:rightButtonTextColor="#0000ff"
         custom:rightButtonTextSize="8sp"
         custom:textTitle="MyTitle"
         custom:titleTextColor="#A10000"
-        custom:titleTextSize="12sp" >
+        custom:titleTextSize="8sp" >
     </common.zhang.customer.MyToolBar>
 
     <RelativeLayout
@@ -66,7 +66,7 @@
             android:text="@string/tel" />
 
         <TextView
-            android:text="400-777-6806"
+            android:text="020-82350480"
             android:layout_width="match_parent"
             android:layout_height="@dimen/about_list_hight"
             android:gravity="center_vertical"
@@ -92,14 +92,15 @@
             android:text="@string/web" />
 
         <TextView
-            android:text="http://www.gzxinsiyi.com/"
+            android:text="www.gzxinsiyi.com"
             android:layout_width="match_parent"
             android:layout_height="@dimen/about_list_hight"
             android:gravity="center_vertical"
             android:id="@+id/tv_web"
-            android:layout_alignParentTop="true"
             android:paddingLeft="75dp"
-            />
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -118,7 +119,7 @@
             android:text="@string/mail" />
 
         <TextView
-            android:text="sales@sielectronic.com"
+            android:text="659620728@qq.com"
             android:layout_width="match_parent"
             android:layout_height="@dimen/about_list_hight"
             android:gravity="center_vertical"

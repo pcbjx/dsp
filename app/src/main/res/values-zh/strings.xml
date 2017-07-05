@@ -173,6 +173,7 @@
     <string name="DataProtection">数据保护</string>
     <string name="Decrypt">解除密码</string>
     <string name="HighSettings">高级设置</string>
+    <string name="GetDate">获取数据</string>
     <string name="BackTOMain">返回主页</string>
     <string name="FREQ_ALL">全频模式</string>
     <string name="FREQ_TWO">二分频</string>
@@ -400,4 +401,6 @@
     <string name="title_activity_dsp_main">主页</string>
     <string name="vol">音量</string>
     <string name="HoldSave">长按保存</string>
+
+    <string name="Mute">静音</string>
 </resources>

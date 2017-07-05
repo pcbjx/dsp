@@ -58,7 +58,7 @@
     //关于
     <string name="about">About</string>
     <string name="company">Company</string>
-    <string name="company_name">Shenzhen Feasycom Technology Co.,Ltd.</string>
+    <string name="company_name">Sintegrate Technology Co.,Ltd.</string>
     <string name="tel">Tel</string>
     <string name="web">Website</string>
     <string name="mail">E-mail</string>
@@ -179,16 +179,21 @@
     <string name="DataProtection">Data Protection</string>
     <string name="Decrypt">Decrypt</string>
     <string name="HighSettings">Advanced settings</string>
+    <string name="GetDate">Get Data</string>
     <string name="BackTOMain">Back</string>
     <string name="FREQ_ALL">1-Way</string>
     <string name="FREQ_TWO">2-Way</string>
     <string name="MSUB_VAL">Bass volume</string>
     <string name="MSUB_SetCh">Please set the bass channel first</string>
     <string name="SignalInput">Signal Input</string>
+    <string name="Output4.0">4.0</string>
+    <string name="Output4.1">4.1</string>
+    <string name="Mute">Mute</string>
     <string name="InputSelect">Input Select</string>
     <string name="Memory">ReCall</string>
     <string name="MainValume">MainValume</string>
     <string name="Valume">Valume</string>
+    <string name="CD">CD</string>
     <string name="AUX">AUX</string>
     <string name="ADC">ADC</string>
     <string name="Digit">S/PDIF</string>

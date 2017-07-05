@@ -29,6 +29,7 @@ public class dsp_setting_fq_dv extends AppCompatActivity {
     private FEShare share = FEShare.getInstance();
     Sie_app_data_share sie_data_share;
 
+
     Button [] buttonsFreLowList;
     Button [] buttonsFreHightList;
 
@@ -41,10 +42,12 @@ public class dsp_setting_fq_dv extends AppCompatActivity {
     int curSeekbarProgress = 0;
     TextView tvFreq;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_xover);
+        sie_data_share = (Sie_app_data_share)getApplication();
         initfq();
     }
 
@@ -139,11 +142,16 @@ public class dsp_setting_fq_dv extends AppCompatActivity {
                     {
                         if (v.getId()==buttonsFreHightList[j].getId())
                         {
-                            MyLog.v(TAG,"show?");
+                            MyLog.v(TAG,"show");
                             curSeekbarProgress = DataStruct.freDivHight[j];
+                            seekBarInDialog.setProgress(curSeekbarProgress);
+                            DataStruct.curFreDiv = j;
                             dialogFrq.show();
+
+                            MyLog.v(TAG,"show end");
                         }
                     }
+
                 }
             });
             buttonsFreLowList[i].setOnClickListener(new View.OnClickListener() {
@@ -154,12 +162,22 @@ public class dsp_setting_fq_dv extends AppCompatActivity {
                         if (v.getId()==buttonsFreLowList[j].getId())
                         {
                             MyLog.v(TAG,"show?");
+                            curSeekbarProgress = DataStruct.freDivLow[j];
+                            seekBarInDialog.setProgress(curSeekbarProgress);
+                            DataStruct.curFreDiv =10 + j;
                             dialogFrq.show();
                         }
                     }
                 }
             });
+
+            DataStruct.curFreDiv = i;
+            updateCurFreDv();
+            DataStruct.curFreDiv = i+10;
+            updateCurFreDv();
         }
+
+        DataStruct.curFreDiv = 0;
 
         dialogFrq = new Dialog(this);
         dialogView = ((LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE)).inflate(R.layout.layout_user_data_dialog, (ViewGroup)findViewById(R.id.LinearLayout_userdata_dialog));
@@ -178,6 +196,13 @@ public class dsp_setting_fq_dv extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 curSeekbarProgress = progress;
                 tvFreq.setText(""+curSeekbarProgress+"Hz");
+                if (DataStruct.curFreDiv<10&&DataStruct.curFreDiv>=0)
+                {
+                    DataStruct.freDivHight[DataStruct.curFreDiv] = curSeekbarProgress;
+                }else if(DataStruct.curFreDiv>=10)
+                {
+                    DataStruct.freDivLow[DataStruct.curFreDiv-10] = curSeekbarProgress;
+                }
             }
 
             @Override
@@ -211,11 +236,23 @@ public class dsp_setting_fq_dv extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dialogFrq.cancel();
+                updateCurFreDv();
+                sie_data_share.sendSieData(DataStruct.sieProtocol.prtc_chanleFreFilter);
 
             }
         });
 
 
+    }
+
+    void updateCurFreDv()
+    {
+        if (DataStruct.curFreDiv<10)
+        {
+            buttonsFreHightList[DataStruct.curFreDiv].setText(String.format("%d"+"Hz",DataStruct.freDivHight[DataStruct.curFreDiv]));
+        }else if(DataStruct.curFreDiv>=10){
+            buttonsFreLowList[DataStruct.curFreDiv-10].setText(String.format("%d"+"Hz",DataStruct.freDivLow[DataStruct.curFreDiv-10]));
+        }
     }
 
     void updateDialog()

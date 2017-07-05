@@ -57,7 +57,7 @@ public class dsp_setting_chanel extends Activity {
         for (int i = 0;i<DataStruct.max_channel;i++)
         {
             chanel_r_bt_list[i].set_titile(getResources().getText(R.string.title_setting_chanel).toString()+i);
-            chanel_r_bt_list[i].setBarinit(0,60,DataStruct.chanelLastVolume[i]);
+            chanel_r_bt_list[i].setBarinit(0,45,DataStruct.chanelLastVolume[i]);
             chanel_r_bt_list[i].setOnTempChangeListener(new RotateButtom.OnTempChangeListener()
             {
                 @Override
@@ -109,6 +109,14 @@ public class dsp_setting_chanel extends Activity {
                     }
                 }
             });
+
+            if (DataStruct.chanelMute[i])
+            {
+                chanelBtMuteList[i].setBackgroundResource(R.drawable.output_mute_off);
+            }else
+            {
+                chanelBtMuteList[i].setBackgroundResource(R.drawable.output_mute_on);
+            }
         }
 
         polarBtList = new Button[DataStruct.max_channel];
@@ -149,6 +157,14 @@ public class dsp_setting_chanel extends Activity {
                     }
                 }
             });
+
+            if (DataStruct.polar[i]==0)
+            {
+                polarBtList[i].setText(R.string.Polar_P);
+            }else
+            {
+                polarBtList[i].setText(R.string.Polar_N);
+            }
         }
 
 

@@ -37,6 +37,8 @@
                 android:layout_width="match_parent"
                 android:max="10000"
                 android:layout_height="match_parent"
+                android:maxHeight="30dp"
+                android:maxWidth="30dp"
                 android:id="@+id/progress_in_dialog"/>
         </LinearLayout>
         <LinearLayout

@@ -90,7 +90,7 @@ public class Sie_app_data_share extends Application {
                                 int j = share.inputStream.read(arrayOfByte);
                                 reCRC.update(arrayOfByte, 0, j);
                                 String strBuf = new String(arrayOfByte, 0, j);
-                                MyLog.v(TAG,"read data:");
+                               // MyLog.v(TAG,"read data:");
 
                                 if (j <= 0) {
                                     continue;
@@ -98,7 +98,8 @@ public class Sie_app_data_share extends Application {
                                 i = 0;
                                 while (i < j)
                                 {
-                                    MyLog.v(TAG, String.format("%02x ", arrayOfByte[i]));
+                                    MyLog.v(TAG,MyLog.byte2hex(arrayOfByte));
+                                    //MyLog.v(TAG,""+arrayOfByte);
                                     ReceiveDataFromDevice(arrayOfByte[i] & 0xFF, 1);
                                     i += 1;
                                 }
@@ -125,7 +126,7 @@ public class Sie_app_data_share extends Application {
         * */
     public void ReceiveDataFromDevice(int paramInt1, int paramInt2)
     {
-        MyLog.v(TAG,"ReceiveDataFromDevice");
+       // MyLog.v(TAG,"ReceiveDataFromDevice");
         if (U0HeadFlg == 0) {
             if ((paramInt1 == DataStruct.HEAD_DATA) && (U0HeadCnt == 0))
             {
@@ -180,7 +181,7 @@ public class Sie_app_data_share extends Application {
                             return;
                         }
                         sum = (byte) (sum + RcvDeviceData.DataBuf[3+i]);//数据区
-                        MyLog.v(TAG, String.format("%02x ", RcvDeviceData.DataBuf[3 + i]));
+                        MyLog.v(TAG, String.format("%c ", RcvDeviceData.DataBuf[3 + i]));
                         i += 1;
                     }
                 }
@@ -193,6 +194,8 @@ public class Sie_app_data_share extends Application {
     private void ProcessRcvData()
     {
         String action = share.SIE_UI_ACTION_non;
+
+        MyLog.v(TAG,MyLog.int2hex(RcvDeviceData.DataBuf));
         switch (RcvDeviceData.DataID)
         {
             case 0x01:
@@ -289,6 +292,9 @@ public class Sie_app_data_share extends Application {
                 share.sie_write(sendbuf,sendbuf.length);
                 break;
             case 0x02 :
+                sendbuf = new byte[]{DataStruct.sieProtocol.prtc_outputChanel,(byte)0x00};
+                sendbuf[1] = (byte) DataStruct.Output_mode;
+                share.sie_write(sendbuf,sendbuf.length);
                 break;
             case 0x03 :
                 break;
@@ -322,7 +328,14 @@ public class Sie_app_data_share extends Application {
                 break;
             case 0x08 :
                 sendbuf = new byte[]{DataStruct.sieProtocol.prtc_mainVolume,(byte)0x00};
-                sendbuf[1] = (byte) DataStruct.main_vol;
+                if (DataStruct.HW_MUTE)
+                {
+                    sendbuf[1] = 0;
+                }else
+                {
+                    sendbuf[1] = (byte) DataStruct.main_vol;
+                }
+
                 share.sie_write(sendbuf,sendbuf.length);
                 break;
             case 0x09 :
@@ -344,6 +357,23 @@ public class Sie_app_data_share extends Application {
                 share.sie_write(sendbuf,sendbuf.length);
                 break;
             case 0x0a :
+                sendbuf = new byte[4+1];
+                sendbuf[0] = DataStruct.sieProtocol.prtc_chanleFreFilter;
+                if (DataStruct.curFreDiv<10)
+                {
+                    sendbuf[1] = (byte) DataStruct.curFreDiv;
+                    sendbuf[2] = 0;
+                    sendbuf[3] = (byte) ((DataStruct.freDivHight[DataStruct.curFreDiv] >>8)&0xff);
+                    sendbuf[4] = (byte) ((DataStruct.freDivHight[DataStruct.curFreDiv] )&0xff);
+                }else if (DataStruct.curFreDiv>=10)
+                {
+                    sendbuf[1] = (byte) (DataStruct.curFreDiv - 10);
+                    sendbuf[2] = 1;
+                    sendbuf[3] = (byte) ((DataStruct.freDivLow[DataStruct.curFreDiv-10] >>8)&0xff);
+                    sendbuf[4] = (byte) ((DataStruct.freDivLow[DataStruct.curFreDiv-10] )&0xff);
+                }
+
+                share.sie_write(sendbuf,sendbuf.length);
                 break;
             case 0x0b :
                 break;
