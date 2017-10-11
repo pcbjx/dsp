@@ -361,13 +361,30 @@ public class Sie_app_data_share extends Application {
                 sendbuf[0] = DataStruct.sieProtocol.prtc_chanleFreFilter;
                 if (DataStruct.curFreDiv<10)
                 {
-                    sendbuf[1] = (byte) DataStruct.curFreDiv;
+                    if (DataStruct.curFreDiv == 0||DataStruct.curFreDiv==1)//前左前右
+                    {
+                        sendbuf[1] = (byte) 0;
+                    }else if (DataStruct.curFreDiv == 2||DataStruct.curFreDiv==3)//后左后右
+                    {
+                        sendbuf[1] = (byte) 2;
+                    }else
+                    {
+                        return 0;
+                    }
+
                     sendbuf[2] = 0;
                     sendbuf[3] = (byte) ((DataStruct.freDivHight[DataStruct.curFreDiv] >>8)&0xff);
                     sendbuf[4] = (byte) ((DataStruct.freDivHight[DataStruct.curFreDiv] )&0xff);
                 }else if (DataStruct.curFreDiv>=10)
                 {
-                    sendbuf[1] = (byte) (DataStruct.curFreDiv - 10);
+                    if (DataStruct.curFreDiv == 14||DataStruct.curFreDiv==15)//前左前右
+                    {
+                        sendbuf[1] = (byte) (6);
+                    }else
+                    {
+                        return 0;
+                    }
+
                     sendbuf[2] = 1;
                     sendbuf[3] = (byte) ((DataStruct.freDivLow[DataStruct.curFreDiv-10] >>8)&0xff);
                     sendbuf[4] = (byte) ((DataStruct.freDivLow[DataStruct.curFreDiv-10] )&0xff);

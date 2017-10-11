@@ -4,10 +4,23 @@
     android:layout_height="fill_parent"
     android:orientation="vertical">
 
+    <Button
+        android:id="@id/id_b_encryption_xover"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/encryption"
+        android:text="@string/HadEncryption"
+        android:textColor="@color/text_color_red"
+        android:textSize="35.0sp"
+        android:visibility="gone" />
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/id_b_encryption_xover"
+        android:layout_toEndOf="@+id/id_b_encryption_xover">
 
         <View
             android:layout_width="fill_parent"
@@ -107,6 +120,7 @@
 
                         <TextView
                             android:id="@id/id_tv_low_pass_ch0"
+                            android:visibility="gone"
                             android:layout_width="@dimen/xover_hlpass_text_width"
                             android:layout_height="@dimen/xover_hlpass_text_height"
                             android:layout_gravity="center"
@@ -242,6 +256,7 @@
 
                         <Button
                             android:id="@id/id_b_lp_freq_ch0"
+                            android:visibility="gone"
                             android:layout_width="@dimen/filter_button_width"
                             android:layout_height="@dimen/filter_type_freq_button_height"
                             android:background="@drawable/xover_show_freq"
@@ -339,6 +354,7 @@
 
                         <TextView
                             android:id="@id/id_tv_low_pass_ch1"
+                            android:visibility="gone"
                             android:layout_width="@dimen/xover_hlpass_text_width"
                             android:layout_height="@dimen/xover_hlpass_text_height"
                             android:layout_gravity="center"
@@ -474,6 +490,7 @@
 
                         <Button
                             android:id="@id/id_b_lp_freq_ch1"
+                            android:visibility="gone"
                             android:layout_width="@dimen/filter_button_width"
                             android:layout_height="@dimen/filter_type_freq_button_height"
                             android:background="@drawable/xover_show_freq"
@@ -580,6 +597,7 @@
 
                         <TextView
                             android:id="@id/id_tv_low_pass_ch2"
+                            android:visibility="gone"
                             android:layout_width="@dimen/xover_hlpass_text_width"
                             android:layout_height="@dimen/xover_hlpass_text_height"
                             android:layout_gravity="center"
@@ -715,6 +733,7 @@
 
                         <Button
                             android:id="@id/id_b_lp_freq_ch2"
+                            android:visibility="gone"
                             android:layout_width="@dimen/filter_button_width"
                             android:layout_height="@dimen/filter_type_freq_button_height"
                             android:background="@drawable/xover_show_freq"
@@ -812,6 +831,7 @@
 
                         <TextView
                             android:id="@id/id_tv_low_pass_ch3"
+                            android:visibility="gone"
                             android:layout_width="@dimen/xover_hlpass_text_width"
                             android:layout_height="@dimen/xover_hlpass_text_height"
                             android:layout_gravity="center"
@@ -947,6 +967,7 @@
 
                         <Button
                             android:id="@id/id_b_lp_freq_ch3"
+                            android:visibility="gone"
                             android:layout_width="@dimen/filter_button_width"
                             android:layout_height="@dimen/filter_type_freq_button_height"
                             android:background="@drawable/xover_show_freq"
@@ -1029,6 +1050,7 @@
 
                         <TextView
                             android:id="@id/id_tv_high_pass_ch4"
+                            android:visibility="gone"
                             android:layout_width="@dimen/xover_hlpass_text_width"
                             android:layout_height="@dimen/xover_hlpass_text_height"
                             android:layout_gravity="center"
@@ -1128,6 +1150,7 @@
 
                         <Button
                             android:id="@id/id_b_hp_freq_ch4"
+                            android:visibility="gone"
                             android:layout_width="@dimen/filter_button_width"
                             android:layout_height="@dimen/filter_type_freq_button_height"
                             android:background="@drawable/xover_show_freq"
@@ -1261,6 +1284,7 @@
 
                         <TextView
                             android:id="@id/id_tv_high_pass_ch5"
+                            android:visibility="gone"
                             android:layout_width="@dimen/xover_hlpass_text_width"
                             android:layout_height="@dimen/xover_hlpass_text_height"
                             android:layout_gravity="center"
@@ -1360,6 +1384,7 @@
 
                         <Button
                             android:id="@id/id_b_hp_freq_ch5"
+                            android:visibility="gone"
                             android:layout_width="@dimen/filter_button_width"
                             android:layout_height="@dimen/filter_type_freq_button_height"
                             android:background="@drawable/xover_show_freq"
@@ -1915,14 +1940,4 @@
             android:gravity="center"
             android:orientation="horizontal" />
     </LinearLayout>
-
-    <Button
-        android:id="@id/id_b_encryption_xover"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@drawable/encryption"
-        android:text="@string/HadEncryption"
-        android:textColor="@color/text_color_red"
-        android:textSize="35.0sp"
-        android:visibility="gone" />
 </RelativeLayout>
